@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <link rel="icon" href="logo/logo-icon.svg" type="image/svg+xml">
 </head>
 <body>
 
@@ -23,12 +23,26 @@
   <nav id="nav" class="nav">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">
-        <svg class="nav-logo-icon" viewBox="0 0 40 40" width="32" height="32">
-          <path d="M20 38 C20 38 8 28 8 18 C8 10 13 4 20 2 C27 4 32 10 32 18 C32 28 20 38 20 38Z" fill="none" stroke="#5cb85c" stroke-width="2"/>
-          <path d="M20 8 L20 30" stroke="#5cb85c" stroke-width="1.5" fill="none"/>
-          <path d="M20 14 C16 12 13 14 12 16" stroke="#5cb85c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <path d="M20 20 C24 18 27 20 28 22" stroke="#5cb85c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <path d="M20 26 C16 24 14 26 13 28" stroke="#5cb85c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <svg class="nav-logo-icon" viewBox="0 0 200 200" width="32" height="32">
+          <defs>
+            <linearGradient id="nav-leaf" x1="0" y1="0" x2="0.3" y2="1">
+              <stop offset="0%" stop-color="#8cd98c"/>
+              <stop offset="50%" stop-color="#5cb85c"/>
+              <stop offset="100%" stop-color="#3a8a3a"/>
+            </linearGradient>
+          </defs>
+          <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z" fill="none" stroke="url(#nav-leaf)" stroke-width="6" stroke-linejoin="round"/>
+          <line x1="100" y1="38" x2="100" y2="155" stroke="#5cb85c" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M100 62 C88 56 76 60 68 68" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
+          <path d="M100 92 C112 86 124 90 132 98" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
+          <path d="M100 122 C88 116 76 120 70 130" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
+          <path d="M68 68 L62 68 L62 58" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+          <path d="M132 98 L138 98 L138 108" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+          <path d="M70 130 L64 130 L64 140" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+          <circle cx="100" cy="62" r="5" fill="#5cb85c" opacity="0.6"/>
+          <circle cx="100" cy="92" r="5" fill="#5cb85c" opacity="0.6"/>
+          <circle cx="100" cy="122" r="5" fill="#5cb85c" opacity="0.6"/>
+          <circle cx="100" cy="148" r="6" fill="#d4a843" opacity="0.9"/>
         </svg>
         <span class="nav-logo-text">the vine</span>
       </a>
@@ -617,12 +631,26 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <svg class="footer-logo" viewBox="0 0 40 40" width="40" height="40">
-            <path d="M20 38 C20 38 8 28 8 18 C8 10 13 4 20 2 C27 4 32 10 32 18 C32 28 20 38 20 38Z" fill="none" stroke="#5cb85c" stroke-width="2"/>
-            <path d="M20 8 L20 30" stroke="#5cb85c" stroke-width="1.5" fill="none"/>
-            <path d="M20 14 C16 12 13 14 12 16" stroke="#5cb85c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-            <path d="M20 20 C24 18 27 20 28 22" stroke="#5cb85c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-            <path d="M20 26 C16 24 14 26 13 28" stroke="#5cb85c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <svg class="footer-logo" viewBox="0 0 200 200" width="40" height="40">
+            <defs>
+              <linearGradient id="footer-leaf" x1="0" y1="0" x2="0.3" y2="1">
+                <stop offset="0%" stop-color="#8cd98c"/>
+                <stop offset="50%" stop-color="#5cb85c"/>
+                <stop offset="100%" stop-color="#3a8a3a"/>
+              </linearGradient>
+            </defs>
+            <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z" fill="none" stroke="url(#footer-leaf)" stroke-width="6" stroke-linejoin="round"/>
+            <line x1="100" y1="38" x2="100" y2="155" stroke="#5cb85c" stroke-width="4.5" stroke-linecap="round"/>
+            <path d="M100 62 C88 56 76 60 68 68" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
+            <path d="M100 92 C112 86 124 90 132 98" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
+            <path d="M100 122 C88 116 76 120 70 130" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
+            <path d="M68 68 L62 68 L62 58" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+            <path d="M132 98 L138 98 L138 108" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+            <path d="M70 130 L64 130 L64 140" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+            <circle cx="100" cy="62" r="5" fill="#5cb85c" opacity="0.6"/>
+            <circle cx="100" cy="92" r="5" fill="#5cb85c" opacity="0.6"/>
+            <circle cx="100" cy="122" r="5" fill="#5cb85c" opacity="0.6"/>
+            <circle cx="100" cy="148" r="6" fill="#d4a843" opacity="0.9"/>
           </svg>
           <p class="footer-tagline">The Vine &mdash; Where Misfits Find Family</p>
           <p class="footer-location">Athens, Tennessee &bull; Ocoee River Region</p>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  THE VINE — Horizontal Logo Lockup
+  Usage: Nav bars, email signatures, letterhead, social media headers
+  Colors: Vine Green #5cb85c, Amber #d4a843 on Near-Black #0a0a0f
+  Fonts: Space Grotesk (body), JetBrains Mono (accent)
+  
+  Designed for The Vine Church — Athens, Tennessee
+  "Where Misfits Find Family"
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" width="600" height="120">
+  <defs>
+    <!-- Vine green gradient for the leaf outline -->
+    <linearGradient id="h-leaf-stroke" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#8cd98c"/>
+      <stop offset="50%" stop-color="#5cb85c"/>
+      <stop offset="100%" stop-color="#3a8a3a"/>
+    </linearGradient>
+
+    <!-- Title gradient -->
+    <linearGradient id="h-title-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8cd98c"/>
+      <stop offset="50%" stop-color="#5cb85c"/>
+      <stop offset="100%" stop-color="#3a8a3a"/>
+    </linearGradient>
+
+    <!-- Amber glow -->
+    <filter id="h-amber-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Leaf glow -->
+    <filter id="h-leaf-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#5cb85c" flood-opacity="0.1"/>
+      <feComposite in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ============================================================
+       ICON MARK (scaled to fit 120px height)
+       ============================================================ -->
+  <g transform="translate(10, 5) scale(0.55)">
+    <!-- Leaf shape -->
+    <path 
+      d="M100 185 
+         C100 185  40 135  40 82 
+         C40 42  65 15  100 8 
+         C135 15  160 42  160 82 
+         C160 135  100 185  100 185Z" 
+      fill="none" 
+      stroke="url(#h-leaf-stroke)" 
+      stroke-width="5" 
+      stroke-linejoin="round"
+      filter="url(#h-leaf-glow)"
+    />
+
+    <!-- Central vine stem -->
+    <line x1="100" y1="38" x2="100" y2="155" stroke="#5cb85c" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Branch 1 — upper left -->
+    <path d="M100 62  C88 56  76 60  68 68" fill="none" stroke="#5cb85c" stroke-width="3" stroke-linecap="round"/>
+    <!-- Branch 2 — middle right -->
+    <path d="M100 92  C112 86  124 90  132 98" fill="none" stroke="#5cb85c" stroke-width="3" stroke-linecap="round"/>
+    <!-- Branch 3 — lower left -->
+    <path d="M100 122  C88 116  76 120  70 130" fill="none" stroke="#5cb85c" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Circuit traces -->
+    <path d="M68 68  L62 68  L62 58" fill="none" stroke="#5cb85c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+    <path d="M132 98  L138 98  L138 108" fill="none" stroke="#5cb85c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+    <path d="M70 130  L64 130  L64 140" fill="none" stroke="#5cb85c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+
+    <!-- Junction nodes -->
+    <circle cx="100" cy="62"  r="4" fill="#5cb85c" opacity="0.6"/>
+    <circle cx="100" cy="92"  r="4" fill="#5cb85c" opacity="0.6"/>
+    <circle cx="100" cy="122" r="4" fill="#5cb85c" opacity="0.6"/>
+
+    <!-- Branch tip nodes -->
+    <circle cx="68"  cy="68"  r="3" fill="#5cb85c" opacity="0.4"/>
+    <circle cx="132" cy="98"  r="3" fill="#5cb85c" opacity="0.4"/>
+    <circle cx="70"  cy="130" r="3" fill="#5cb85c" opacity="0.4"/>
+
+    <!-- Circuit terminal squares -->
+    <rect x="59" y="55" width="6" height="6" rx="1" fill="none" stroke="#5cb85c" stroke-width="1" opacity="0.3"/>
+    <rect x="135" y="105" width="6" height="6" rx="1" fill="none" stroke="#5cb85c" stroke-width="1" opacity="0.3"/>
+    <rect x="61" y="137" width="6" height="6" rx="1" fill="none" stroke="#5cb85c" stroke-width="1" opacity="0.3"/>
+
+    <!-- Amber accent node -->
+    <circle cx="100" cy="148" r="5" fill="#d4a843" filter="url(#h-amber-glow)" opacity="0.9"/>
+  </g>
+
+  <!-- ============================================================
+       TYPOGRAPHY
+       ============================================================ -->
+
+  <!-- Divider line between icon and text -->
+  <line x1="130" y1="25" x2="130" y2="95" stroke="#5cb85c" stroke-width="1" opacity="0.2"/>
+
+  <!-- "the" — monospace, lightweight, wide-tracked -->
+  <text 
+    x="150" y="48" 
+    font-family="'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace" 
+    font-size="18" 
+    font-weight="300" 
+    fill="#a0a0b0" 
+    letter-spacing="0.35em"
+  >the</text>
+
+  <!-- "vine" — bold, tight, gradient -->
+  <text 
+    x="148" y="88" 
+    font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif" 
+    font-size="52" 
+    font-weight="700" 
+    fill="url(#h-title-grad)" 
+    letter-spacing="-0.03em"
+  >vine</text>
+
+  <!-- Tagline: "where misfits find family" — handwritten, amber -->
+  <text 
+    x="150" y="110" 
+    font-family="'Caveat', cursive" 
+    font-size="16" 
+    font-weight="400" 
+    fill="#d4a843" 
+    opacity="0.85"
+  >where misfits find family</text>
+
+  <!-- Subtle location text -->
+  <text 
+    x="410" y="110" 
+    font-family="'JetBrains Mono', monospace" 
+    font-size="10" 
+    font-weight="400" 
+    fill="#666680" 
+    letter-spacing="0.05em"
+  >athens, tn</text>
+
+</svg>

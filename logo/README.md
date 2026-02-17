@@ -113,6 +113,78 @@ For contexts requiring single-color output (screen printing, laser engraving, et
 
 ---
 
+## Social Media PNG Assets
+
+Pre-rendered PNG files are available in the `social/` directory, sized to each platform's exact specifications. All images use the near-black background (`#0a0a0f`) with the logo centered.
+
+### 📘 Facebook
+
+| File | Dimensions | Use |
+|---|---|---|
+| `social/facebook/fb-profile-180x180.png` | 180×180 | Profile picture |
+| `social/facebook/fb-cover-820x312.png` | 820×312 | Page cover photo |
+| `social/facebook/fb-post-1200x630.png` | 1200×630 | Link share / post image |
+| `social/facebook/fb-post-square-1080x1080.png` | 1080×1080 | Square post image |
+
+### 📸 Instagram
+
+| File | Dimensions | Use |
+|---|---|---|
+| `social/instagram/ig-profile-320x320.png` | 320×320 | Profile picture |
+| `social/instagram/ig-post-1080x1080.png` | 1080×1080 | Square feed post |
+| `social/instagram/ig-post-landscape-1080x566.png` | 1080×566 | Landscape feed post |
+| `social/instagram/ig-post-portrait-1080x1350.png` | 1080×1350 | Portrait feed post |
+| `social/instagram/ig-story-1080x1920.png` | 1080×1920 | Story / Reel cover |
+
+### 📺 YouTube
+
+| File | Dimensions | Use |
+|---|---|---|
+| `social/youtube/yt-profile-800x800.png` | 800×800 | Channel profile picture |
+| `social/youtube/yt-banner-2560x1440.png` | 2560×1440 | Channel banner / art |
+| `social/youtube/yt-thumbnail-1280x720.png` | 1280×720 | Video thumbnail |
+
+### 🐦 X / Twitter
+
+| File | Dimensions | Use |
+|---|---|---|
+| `social/x-twitter/x-profile-400x400.png` | 400×400 | Profile picture |
+| `social/x-twitter/x-header-1500x500.png` | 1500×500 | Profile header / banner |
+| `social/x-twitter/x-post-1600x900.png` | 1600×900 | Post image |
+
+### 💼 LinkedIn
+
+| File | Dimensions | Use |
+|---|---|---|
+| `social/linkedin/li-profile-400x400.png` | 400×400 | Profile / company picture |
+| `social/linkedin/li-cover-1128x191.png` | 1128×191 | Company page cover |
+| `social/linkedin/li-post-1200x627.png` | 1200×627 | Post / article image |
+
+### 🌐 General Purpose
+
+| File | Dimensions | Use |
+|---|---|---|
+| `social/general/favicon-16x16.png` | 16×16 | Browser favicon (tab) |
+| `social/general/favicon-32x32.png` | 32×32 | Browser favicon (bookmark) |
+| `social/general/favicon-48x48.png` | 48×48 | Browser favicon (desktop shortcut) |
+| `social/general/apple-touch-icon-180x180.png` | 180×180 | Apple touch icon (iOS home screen) |
+| `social/general/icon-192x192.png` | 192×192 | Android / PWA icon |
+| `social/general/icon-512x512.png` | 512×512 | Android / PWA splash icon |
+| `social/general/icon-1024x1024.png` | 1024×1024 | High-res general use |
+| `social/general/og-image-1200x630.png` | 1200×630 | Open Graph / link preview |
+
+### Regenerating PNGs
+
+If the source SVGs are updated, regenerate all PNGs by running:
+
+```bash
+bash logo/generate-social-pngs.sh
+```
+
+Requires ImageMagick 7+ (`magick` command).
+
+---
+
 ## Quick Reference
 
 ```

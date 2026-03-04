@@ -112,7 +112,7 @@ Quick-reference contact sheet for all publicity channels in Athens, TN & McMinn 
 
 | Listing | Type | Address | Phone | Website | Facebook |
 |---------|------|---------|-------|---------|----------|
-| **Discord Server** | Primary community hub | — | — | (invite link TBD) | — |
+| **Discord Server** | Primary community hub | — | — | [discord.gg/Qq8H3bdw](https://discord.gg/Qq8H3bdw) | — |
 | **Website** | Home base | — | — | thevineathens.church | — |
 | **Instagram** | Visual storytelling | — | — | @thevineathens | — |
 | **YouTube** | Long-form content | — | — | The Vine Athens | — |

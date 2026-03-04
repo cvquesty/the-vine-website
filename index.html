@@ -3,26 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ─── Page title and search-engine metadata ─────────────────
+       The title appears in browser tabs and search-result headings.
+       The description meta tag provides the snippet that Google and
+       other search engines display below the page title. Keywords
+       help associate the page with relevant local search terms.
+       ──────────────────────────────────────────────────────────── -->
   <title>The Vine | Where Misfits Find Family</title>
   <meta name="description" content="A church in Athens, TN for the rest of us. Real faith, real people, no dress code. Located near the Ocoee River in Southeast Tennessee.">
   <meta name="keywords" content="church, Athens TN, Cleveland TN, Ocoee, non-traditional church, inclusive church, vineyard, assembly of god">
+
+  <!-- ─── Open Graph metadata for link previews ─────────────────
+       When someone shares this URL on Facebook, Twitter/X, Slack,
+       iMessage, or any other platform that generates link previews,
+       these tags control the title, description, image, and URL
+       that appear in the preview card. Without og:image, most
+       platforms show a blank gray box.
+       ──────────────────────────────────────────────────────────── -->
   <meta property="og:title" content="The Vine | Where Misfits Find Family">
   <meta property="og:description" content="Not your typical church. A community for gamers, coders, bikers, and everyone who's ever felt like they don't belong.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thevineathens.church/">
+  <meta property="og:image" content="https://thevineathens.church/logo/social/general/og-image-1200x630.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- ─── Font preconnects and stylesheet ───────────────────────
+       We preconnect to the Google Fonts servers so the browser can
+       start the DNS lookup and TLS handshake before it even sees
+       the stylesheet request. This shaves time off font loading.
+       Three font families are loaded:
+         - Space Grotesk (body/headline)
+         - JetBrains Mono (code-flavored UI)
+         - Caveat (handwritten tagline and quotes)
+       ──────────────────────────────────────────────────────────── -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- ─── Main stylesheet ───────────────────────────────────────
+       All of the site's CSS lives in a single file. No build step,
+       no preprocessor — just plain CSS with custom properties.
+       ──────────────────────────────────────────────────────────── -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- ─── Favicons and touch icons ──────────────────────────────
+       Browsers use these icons in tabs, bookmarks, home-screen
+       shortcuts, and PWA manifests. We provide:
+         1. An SVG favicon for modern browsers (scales perfectly).
+         2. PNG fallbacks at standard sizes for older browsers and
+            platforms that do not support SVG favicons.
+         3. An Apple Touch Icon for iOS home-screen bookmarks.
+       The PNG files live in logo/social/general/ and are generated
+       from the source SVGs using the generate-social-pngs.sh script.
+       ──────────────────────────────────────────────────────────── -->
   <link rel="icon" href="logo/logo-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="logo/social/general/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="logo/social/general/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="logo/social/general/apple-touch-icon-180x180.png">
 </head>
 <body>
 
   <!-- ═══════════════════════════════════════════════════════
        NAVIGATION
+
+       Fixed nav bar pinned to the top of the viewport. Contains
+       the inline SVG logo, the "the vine" wordmark, and a
+       horizontal row of section links (plus a "connect" CTA).
+
+       On screens narrower than 650px, the links collapse into a
+       dropdown menu controlled by the hamburger toggle button.
+       JavaScript adds/removes the "scrolled" class on .nav to
+       darken the background once the visitor scrolls past 50px.
+
+       The inline SVG for the logo is duplicated here (rather
+       than referenced from an external file) to avoid an
+       extra HTTP request and ensure the logo renders instantly
+       on first paint without a flash of missing content.
        ═══════════════════════════════════════════════════════ -->
   <nav id="nav" class="nav">
     <div class="nav-inner">
+      <!-- Logo: links back to the hero / top of the page -->
       <a href="#hero" class="nav-logo">
+        <!-- Inline SVG of the vine leaf/circuit logo mark (32×32px). -->
         <svg class="nav-logo-icon" viewBox="0 0 200 200" width="32" height="32">
           <defs>
             <linearGradient id="nav-leaf" x1="0" y1="0" x2="0.3" y2="1">
@@ -31,26 +95,39 @@
               <stop offset="100%" stop-color="#3a8a3a"/>
             </linearGradient>
           </defs>
+          <!-- Leaf/teardrop outline -->
           <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z" fill="none" stroke="url(#nav-leaf)" stroke-width="6" stroke-linejoin="round"/>
+          <!-- Central stem -->
           <line x1="100" y1="38" x2="100" y2="155" stroke="#5cb85c" stroke-width="4.5" stroke-linecap="round"/>
+          <!-- Three organic branches alternating left–right–left -->
           <path d="M100 62 C88 56 76 60 68 68" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
           <path d="M100 92 C112 86 124 90 132 98" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
           <path d="M100 122 C88 116 76 120 70 130" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
+          <!-- Circuit traces extending from branch tips -->
           <path d="M68 68 L62 68 L62 58" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
           <path d="M132 98 L138 98 L138 108" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
           <path d="M70 130 L64 130 L64 140" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+          <!-- Junction nodes where branches meet the stem -->
           <circle cx="100" cy="62" r="5" fill="#5cb85c" opacity="0.6"/>
           <circle cx="100" cy="92" r="5" fill="#5cb85c" opacity="0.6"/>
           <circle cx="100" cy="122" r="5" fill="#5cb85c" opacity="0.6"/>
+          <!-- Amber "fruit" accent node at the base -->
           <circle cx="100" cy="148" r="6" fill="#d4a843" opacity="0.9"/>
         </svg>
         <span class="nav-logo-text">the vine</span>
       </a>
 
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <!--
+        Mobile hamburger toggle. Hidden on desktop via CSS. The
+        aria-label tells screen readers what the button does, and
+        aria-expanded (managed by JavaScript) announces whether
+        the menu is currently open or closed.
+      -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
+      <!-- Navigation links. On mobile, this becomes a dropdown panel. -->
       <div class="nav-links" id="nav-links">
         <a href="#about" class="nav-link">who we are</a>
         <a href="#beliefs" class="nav-link">what we believe</a>
@@ -63,10 +140,36 @@
 
   <!-- ═══════════════════════════════════════════════════════
        HERO
+
+       Full-viewport landing section. Three visual layers:
+         1. Background (.hero-bg): decorative vine/circuit SVG
+            paths that animate on load using a CSS stroke-
+            dashoffset technique, plus a mountain silhouette
+            along the bottom edge representing the Ocoee region.
+         2. Content (.hero-content): centered badge, headline,
+            tagline, CTA buttons, and a scroll-hint icon.
+         3. The fixed nav bar sits above both via z-index.
+
+       JavaScript applies a subtle parallax effect to the vine
+       SVG as the visitor scrolls, giving the hero depth.
        ═══════════════════════════════════════════════════════ -->
   <section id="hero" class="hero">
     <div class="hero-bg">
-      <!-- Animated vine/circuit SVG background -->
+
+      <!--
+        Animated vine/circuit SVG background. The "xMidYMid slice"
+        preserveAspectRatio ensures this SVG covers the entire hero
+        area on all screen sizes without leaving empty space (it
+        behaves similarly to CSS background-size: cover).
+
+        The vine paths use the CSS class .vine-path along with
+        stroke-dasharray / stroke-dashoffset to create an animated
+        "drawing" effect on page load. Branch paths are staggered
+        with increasing animation-delay values. Junction nodes
+        (.vine-node) fade in after their parent branch finishes
+        drawing. Tiny circuit traces and rectangles at the branch
+        tips reinforce the tech/code aesthetic.
+      -->
       <svg class="hero-vines" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
         <defs>
           <linearGradient id="vine-glow" x1="0" y1="0" x2="1" y2="1">
@@ -74,24 +177,24 @@
             <stop offset="100%" stop-color="#2d8a2d" stop-opacity="0.2"/>
           </linearGradient>
         </defs>
-        <!-- Main vine trunk -->
+        <!-- Main vine trunk: sweeps from left to right across the hero -->
         <path class="vine-path vine-path--1" d="M-50,450 C100,430 200,380 350,400 C500,420 550,350 720,300 C890,250 1000,320 1150,280 C1300,240 1400,200 1500,220" fill="none" stroke="url(#vine-glow)" stroke-width="3"/>
-        <!-- Branch 1 -->
+        <!-- Branch 1: grows upward from the left junction node -->
         <path class="vine-path vine-path--2" d="M350,400 C330,320 280,260 250,200 C220,140 240,80 300,40" fill="none" stroke="#5cb85c" stroke-width="1.5" opacity="0.3"/>
-        <!-- Branch 2 -->
+        <!-- Branch 2: grows upward from the center junction node -->
         <path class="vine-path vine-path--3" d="M720,300 C750,220 800,180 780,100" fill="none" stroke="#5cb85c" stroke-width="1.5" opacity="0.3"/>
-        <!-- Branch 3 -->
+        <!-- Branch 3: grows downward from the center junction node -->
         <path class="vine-path vine-path--4" d="M720,300 C700,380 650,440 680,520 C710,600 670,700 700,800" fill="none" stroke="#5cb85c" stroke-width="1.5" opacity="0.3"/>
-        <!-- Branch 4 -->
+        <!-- Branch 4: grows downward from the right junction node -->
         <path class="vine-path vine-path--5" d="M1150,280 C1180,350 1220,400 1200,480" fill="none" stroke="#5cb85c" stroke-width="1.5" opacity="0.3"/>
-        <!-- Leaves / nodes -->
+        <!-- Junction nodes: small circles that fade in at branch intersections -->
         <circle class="vine-node" cx="350" cy="400" r="4" fill="#5cb85c" opacity="0.4"/>
         <circle class="vine-node" cx="720" cy="300" r="5" fill="#5cb85c" opacity="0.5"/>
         <circle class="vine-node" cx="1150" cy="280" r="4" fill="#5cb85c" opacity="0.4"/>
         <circle class="vine-node" cx="250" cy="200" r="3" fill="#5cb85c" opacity="0.3"/>
         <circle class="vine-node" cx="780" cy="100" r="3" fill="#5cb85c" opacity="0.3"/>
         <circle class="vine-node" cx="680" cy="520" r="3" fill="#5cb85c" opacity="0.3"/>
-        <!-- Circuit traces -->
+        <!-- Circuit traces: right-angle lines with terminal rectangles -->
         <line class="circuit-line" x1="350" y1="400" x2="390" y2="400" stroke="#5cb85c" stroke-width="1" opacity="0.15"/>
         <line class="circuit-line" x1="390" y1="400" x2="390" y2="370" stroke="#5cb85c" stroke-width="1" opacity="0.15"/>
         <line class="circuit-line" x1="720" y1="300" x2="760" y2="300" stroke="#5cb85c" stroke-width="1" opacity="0.15"/>
@@ -100,7 +203,13 @@
         <rect x="756" y="326" width="8" height="8" fill="none" stroke="#5cb85c" stroke-width="0.5" opacity="0.15"/>
       </svg>
 
-      <!-- Mountain silhouette (Ocoee region) -->
+      <!--
+        Mountain silhouette at the bottom of the hero. Represents
+        the ridgeline of the Ocoee / Hiwassee region. Two layered
+        paths create a sense of depth (foreground + background
+        ridges). preserveAspectRatio="none" stretches the SVG to
+        the full viewport width regardless of aspect ratio.
+      -->
       <svg class="hero-mountains" viewBox="0 0 1440 200" preserveAspectRatio="none">
         <path d="M0,200 L0,120 C100,80 200,100 300,70 C400,40 450,90 550,50 C650,10 700,60 800,30 C900,0 950,40 1050,20 C1150,0 1200,30 1300,10 C1400,-10 1440,20 1440,20 L1440,200 Z" fill="#0f0f15"/>
         <path d="M0,200 L0,150 C150,120 250,140 400,130 C550,120 600,160 750,140 C900,120 1000,150 1150,130 C1300,110 1440,140 1440,140 L1440,200 Z" fill="#0a0a10"/>
@@ -135,7 +244,13 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       ABOUT — "WE'RE DIFFERENT"
+       ABOUT — "We're Not Your Typical Church"
+
+       Two-column layout: narrative paragraphs on the left and
+       a 2×2 grid of value cards on the right. Concludes with a
+       full-width blockquote from John 15:5. All cards and the
+       quote have data-reveal attributes so they fade in as the
+       visitor scrolls this section into view.
        ═══════════════════════════════════════════════════════ -->
   <section id="about" class="section section--about">
     <div class="container">
@@ -224,7 +339,13 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       BELIEFS — "WHAT WE'RE BUILT ON"
+       BELIEFS — "What We're Built On"
+
+       Eight numbered cards presenting the church's core doctrinal
+       beliefs in plain language. Each card has data-reveal for a
+       staggered entrance animation. The section concludes with a
+       footer card linking to the AG 16 Fundamental Truths and
+       Kingdom Theology resources for visitors who want more depth.
        ═══════════════════════════════════════════════════════ -->
   <section id="beliefs" class="section section--beliefs">
     <div class="container">
@@ -301,7 +422,13 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       COMMUNITY — "FIND YOUR PEOPLE"
+       COMMUNITY — "Find Your People"
+
+       Six group cards showcasing The Vine's community ministries:
+       Respawn (gaming), Terminal (code & coffee), Iron Horse
+       (motorcycle rides), Basecamp (outdoor adventures), Branches
+       (discipleship), and Amplified (music/worship). Each card
+       includes an SVG icon, a meeting-time tag, and a description.
        ═══════════════════════════════════════════════════════ -->
   <section id="community" class="section section--community">
     <div class="container">
@@ -403,7 +530,13 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       VISIT — "JOIN THE ADVENTURE"
+       VISIT — "Join the Adventure"
+
+       Two-column layout. The left column stacks three info cards:
+       service time, location, and a "What to Expect" list with
+       emoji icons. The right column displays an SVG illustration
+       of the Ocoee River region with an animated church-pin marker
+       and labels for Athens, TN and the Ocoee River.
        ═══════════════════════════════════════════════════════ -->
   <section id="visit" class="section section--visit">
     <div class="container">
@@ -455,23 +588,36 @@
           </div>
         </div>
 
+        <!--
+          Stylized illustration of the Ocoee River region. This is a
+          self-contained inline SVG that renders a night-sky scene with
+          stars, layered mountain ridges, pine-tree silhouettes, the
+          Ocoee River, and an animated pulsing church-pin marker showing
+          The Vine's location. A small info box at the bottom repeats
+          the service time and location text for visual emphasis.
+
+          The SVG uses its own inline gradients and does not depend on
+          any external images, so it loads instantly with the HTML.
+        -->
         <div class="visit-aside" data-reveal>
-          <!-- Stylized Ocoee region illustration -->
           <svg class="visit-illustration" viewBox="0 0 400 500" width="100%">
             <defs>
+              <!-- Gradient for the river: blue fading from opaque to translucent. -->
               <linearGradient id="river" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stop-color="#2a5a8a" stop-opacity="0.8"/>
                 <stop offset="100%" stop-color="#1a3a5a" stop-opacity="0.4"/>
               </linearGradient>
+              <!-- Gradient for the mountain silhouettes: dark green fade. -->
               <linearGradient id="mtn-grad" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stop-color="#2a3a2a"/>
                 <stop offset="100%" stop-color="#1a2a1a"/>
               </linearGradient>
             </defs>
 
+            <!-- Dark background rectangle with rounded corners. -->
             <rect width="400" height="500" fill="#0a0f0a" rx="12"/>
 
-            <!-- Stars -->
+            <!-- Scattered star dots in the night sky above the mountains. -->
             <circle cx="50" cy="30" r="1.5" fill="#fff" opacity="0.3"/>
             <circle cx="150" cy="50" r="1" fill="#fff" opacity="0.4"/>
             <circle cx="280" cy="25" r="1.5" fill="#fff" opacity="0.3"/>
@@ -479,11 +625,11 @@
             <circle cx="100" cy="70" r="0.8" fill="#fff" opacity="0.2"/>
             <circle cx="320" cy="40" r="1.2" fill="#fff" opacity="0.3"/>
 
-            <!-- Mountains -->
+            <!-- Two-layer mountain ridgeline creating a depth parallax look. -->
             <path d="M0,250 L60,140 L120,190 L200,100 L280,160 L340,90 L400,150 L400,350 L0,350 Z" fill="url(#mtn-grad)" opacity="0.6"/>
             <path d="M0,300 L80,210 L160,250 L240,180 L320,230 L400,190 L400,350 L0,350 Z" fill="url(#mtn-grad)" opacity="0.8"/>
 
-            <!-- Trees -->
+            <!-- Pine-tree silhouettes dotted along the ridgeline. -->
             <g opacity="0.4">
               <polygon points="90,250 85,220 80,250" fill="#2a4a2a"/>
               <polygon points="110,260 105,225 100,260" fill="#2a4a2a"/>
@@ -492,11 +638,18 @@
               <polygon points="180,220 175,190 170,220" fill="#2a4a2a"/>
             </g>
 
-            <!-- River (Ocoee) -->
+            <!--
+              The Ocoee River: a wide translucent stroke for the water
+              body, overlaid with a thin bright stroke for the bank edge.
+            -->
             <path d="M-20,320 C60,310 100,340 160,325 C220,310 260,335 320,320 C380,305 400,320 420,315" fill="none" stroke="url(#river)" stroke-width="20" stroke-linecap="round" opacity="0.6"/>
             <path d="M-20,320 C60,310 100,340 160,325 C220,310 260,335 320,320 C380,305 400,320 420,315" fill="none" stroke="#4a8abf" stroke-width="2" opacity="0.3"/>
 
-            <!-- Church pin -->
+            <!--
+              Animated church location pin. An outer ring pulses (grows
+              and fades) on a 3-second loop to draw the visitor's eye.
+              The inner circle and small cross icon mark the exact spot.
+            -->
             <g transform="translate(200, 260)">
               <circle r="18" fill="#5cb85c" opacity="0.2">
                 <animate attributeName="r" values="18;24;18" dur="3s" repeatCount="indefinite"/>
@@ -507,13 +660,13 @@
               <path d="M-3,-1 L3,-1" stroke="white" stroke-width="1.5"/>
             </g>
 
-            <!-- Labels -->
+            <!-- Text labels identifying the church location and the river. -->
             <text x="200" y="295" text-anchor="middle" fill="#5cb85c" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500">THE VINE</text>
             <text x="200" y="310" text-anchor="middle" fill="#888" font-family="'JetBrains Mono', monospace" font-size="9">Athens, TN</text>
 
             <text x="180" y="345" text-anchor="middle" fill="#4a8abf" font-family="'JetBrains Mono', monospace" font-size="9" opacity="0.6">Ocoee River</text>
 
-            <!-- Footer info -->
+            <!-- Info box at the bottom summarizing service time and location. -->
             <rect x="30" y="380" width="340" height="90" rx="8" fill="#12121a" opacity="0.8"/>
             <text x="200" y="405" text-anchor="middle" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="600">Sundays at 10:30am</text>
             <text x="200" y="425" text-anchor="middle" fill="#a0a0b0" font-family="'Space Grotesk', sans-serif" font-size="11">Athens, Tennessee</text>
@@ -526,7 +679,18 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       CONNECT
+       CONNECT — "Say Hello"
+
+       Two-column layout. The left column contains the contact form
+       (name, email, message, and interest dropdown). The form does
+       not currently submit to a real backend — JavaScript handles
+       it with a client-side confirmation and console log. In
+       production, wire it up to Netlify Forms, Formspree, or a
+       custom API.
+
+       The right column stacks three info cards: direct contact
+       details (email + phone), social media links (Discord,
+       Instagram, YouTube), and a "First-Timer?" welcome callout.
        ═══════════════════════════════════════════════════════ -->
   <section id="connect" class="section section--connect">
     <div class="container">
@@ -626,6 +790,16 @@
 
   <!-- ═══════════════════════════════════════════════════════
        FOOTER
+
+       Three-column layout (stacks on mobile): the brand column
+       with the inline SVG logo, tagline, and location; a column
+       of quick-links mirroring the navigation; and a column with
+       the John 15:5 verse. Below the grid, a bottom bar shows
+       the copyright notice and a developer Easter-egg comment.
+
+       The logo SVG here is identical to the one in the nav bar.
+       It is intentionally duplicated inline to avoid an extra
+       network request and to ensure it renders immediately.
        ═══════════════════════════════════════════════════════ -->
   <footer class="footer">
     <div class="container">
@@ -670,7 +844,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 The Vine Church &bull; Athens, TN</p>
+        <p>&copy; 2025&ndash;2026 The Vine Church &bull; Athens, TN</p>
         <p class="footer-easter-egg">
           <code>// built with faith, caffeine, and a mass quantity of parentheses</code>
         </p>
@@ -678,6 +852,13 @@
     </div>
   </footer>
 
+  <!--
+    Main JavaScript file. Handles navigation scroll behavior,
+    mobile menu toggling, scroll-reveal animations, contact form
+    submission, parallax on the hero, and Easter eggs. Loaded at
+    the end of the body and wrapped in a DOMContentLoaded listener
+    so it runs safely regardless of load order.
+  -->
   <script src="js/main.js"></script>
 </body>
 </html>

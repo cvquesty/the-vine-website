@@ -1,53 +1,120 @@
 /* ═══════════════════════════════════════════════════════════
-   THE VINE — Design System
+   THE VINE — Design System & Stylesheet
+
+   This is the sole stylesheet for The Vine church website. It
+   is organized into clearly delineated sections: custom properties
+   (design tokens), reset/base, navigation, hero, buttons, generic
+   section layouts, per-section styles, scroll-reveal animations,
+   and responsive breakpoints.
+
+   The design targets a dark, tech-forward aesthetic with organic
+   green accents — a "vine growing through a circuit board" vibe.
+   All colors, fonts, and spacing values are defined as CSS custom
+   properties on :root so they can be referenced consistently
+   throughout the file without duplication or drift.
    ═══════════════════════════════════════════════════════════ */
 
 :root {
-  /* Colors */
-  --bg-deep:     #0a0a0f;
-  --bg-surface:  #12121a;
-  --bg-card:     #1a1a24;
-  --bg-card-alt: #1e1e2a;
-  --border:      #2a2a3a;
-  --border-light:#3a3a4a;
+  /*
+   * COLOR TOKENS
+   *
+   * The palette is built around a near-black base with layered
+   * surface shades for depth, vine-green as the primary accent,
+   * warm amber for highlights, and a range of grays for text
+   * hierarchy. Every card, section, and interactive element
+   * references these variables so that a brand-wide palette
+   * change can be made in one place.
+   */
+  --bg-deep:     #0a0a0f;     /* Deepest background — body and alternating sections */
+  --bg-surface:  #12121a;     /* Slightly lighter surface for alternating sections */
+  --bg-card:     #1a1a24;     /* Card and panel backgrounds */
+  --bg-card-alt: #1e1e2a;     /* Alternate card shade (reserved for future use) */
+  --border:      #2a2a3a;     /* Default border for cards, inputs, dividers */
+  --border-light:#3a3a4a;     /* Lighter border for outline buttons and subtle separators */
 
-  --green:       #5cb85c;
-  --green-dark:  #3a8a3a;
-  --green-light: #8cd98c;
-  --green-glow:  rgba(92, 184, 92, 0.15);
+  --green:       #5cb85c;     /* Primary brand green — buttons, links, highlights */
+  --green-dark:  #3a8a3a;     /* Dark green for gradients, pressed/active states */
+  --green-light: #8cd98c;     /* Light green for hover states and gradient endpoints */
+  --green-glow:  rgba(92, 184, 92, 0.15); /* Translucent green used for focus rings and hover glows */
 
-  --amber:       #d4a843;
-  --amber-dark:  #a07a20;
-  --blue:        #4a8abf;
+  --amber:       #d4a843;     /* Warm amber accent — taglines, emphasis, fruit node */
+  --amber-dark:  #a07a20;     /* Darker amber (reserved for future emphasis states) */
+  --blue:        #4a8abf;     /* River blue — used in the visit section illustration */
 
-  --text:        #e0e0e8;
-  --text-secondary: #a0a0b0;
-  --text-muted:  #666680;
-  --text-dim:    #444455;
+  --text:        #e0e0e8;     /* Primary body text color */
+  --text-secondary: #a0a0b0;  /* Secondary text — descriptions, subtitles */
+  --text-muted:  #666680;     /* Muted text — labels, metadata, placeholders */
+  --text-dim:    #444455;     /* Dimmest text — timestamps, fine print, Easter eggs */
 
-  /* Fonts */
+  /*
+   * FONT STACKS
+   *
+   * Three typefaces define the brand voice:
+   *   - Space Grotesk for body/headline text (modern, geometric sans-serif)
+   *   - JetBrains Mono for code-flavored UI elements (nav, labels, tags)
+   *   - Caveat for the handwritten tagline and scripture quotes
+   *
+   * Each stack includes system-font fallbacks so text renders
+   * immediately even if Google Fonts loads slowly or fails.
+   */
   --font-body:  'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono:  'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
   --font-hand:  'Caveat', cursive;
 
-  /* Spacing */
+  /*
+   * SPACING TOKENS
+   *
+   * --section-pad uses clamp() to fluidly scale vertical section
+   * padding from 60px on small screens up to 120px on wide screens,
+   * with 10vw as the preferred middle value.
+   *
+   * --container uses min() to cap the content width at 1200px
+   * while giving narrower viewports 90% of the screen width.
+   */
   --section-pad: clamp(60px, 10vw, 120px);
   --container:   min(1200px, 90vw);
 
-  /* Transitions */
+  /*
+   * EASING CURVES
+   *
+   * --ease is a gentle ease-in-out for standard interactions
+   * (hover, focus, color transitions).
+   *
+   * --ease-out is a strong deceleration curve used for entrance
+   * animations (fade-ups, scroll reveals) where elements should
+   * arrive quickly and then settle into place.
+   */
   --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ═══════════════════════════════════════════════════════════
    RESET & BASE
+
+   A minimal CSS reset followed by base styles for the document.
+   We use the universal selector to enforce border-box sizing on
+   every element, then set sensible defaults on html and body.
    ═══════════════════════════════════════════════════════════ */
 
+/*
+ * Apply border-box sizing universally so that padding and borders
+ * are included in an element's declared width/height. Also zero
+ * out all default margins and padding to give us a clean slate.
+ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
+  /* Enable native smooth scrolling for all anchor-link navigation. */
   scroll-behavior: smooth;
+
+  /*
+   * Offset the scroll-snap destination by 80px to account for the
+   * fixed navigation bar. Without this, clicking an anchor link
+   * would scroll the target section underneath the navbar.
+   */
   scroll-padding-top: 80px;
+
+  /* Improve font rendering on macOS and iOS (Webkit and Firefox). */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -57,20 +124,43 @@ body {
   background: var(--bg-deep);
   color: var(--text);
   line-height: 1.7;
+
+  /*
+   * Prevent any horizontal scrollbar from appearing. Some of our
+   * decorative SVG elements (hero vines, mountains) extend to the
+   * full viewport width and can occasionally trigger a tiny
+   * horizontal overflow on certain browsers.
+   */
   overflow-x: hidden;
 }
 
+/* Default link styling: brand green with a smooth color transition on hover. */
 a { color: var(--green); text-decoration: none; transition: color 0.2s; }
 a:hover { color: var(--green-light); }
 
+/* Responsive images: prevent overflow and remove the inline gap below images. */
 img { max-width: 100%; display: block; }
 
+/* Text selection highlight: green background with dark text for readability. */
 ::selection { background: var(--green); color: var(--bg-deep); }
 
+/*
+ * The centered content container. Uses the --container custom
+ * property (min(1200px, 90vw)) so it maxes out at 1200px on wide
+ * screens and shrinks to 90% of the viewport on narrow ones.
+ */
 .container { width: var(--container); margin: 0 auto; }
 
 /* ═══════════════════════════════════════════════════════════
    NAVIGATION
+
+   The navbar is fixed to the top of the viewport and sits above
+   all other content (z-index: 1000). It starts with a semi-
+   transparent blurred background so the hero section shows through.
+   Once the visitor scrolls past the top 50 pixels of the page,
+   JavaScript adds a "scrolled" class that makes the background
+   more opaque and reveals a subtle bottom border — providing a
+   clear visual separation from the page content beneath it.
    ═══════════════════════════════════════════════════════════ */
 
 .nav {
@@ -78,18 +168,40 @@ img { max-width: 100%; display: block; }
   top: 0; left: 0; right: 0;
   z-index: 1000;
   padding: 0 5vw;
+
+  /*
+   * The semi-transparent background combined with backdrop-filter
+   * gives the nav a frosted-glass look. We include the -webkit-
+   * prefix for Safari compatibility, which still requires it as
+   * of early 2026.
+   */
   background: rgba(10, 10, 15, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+
+  /*
+   * The border starts transparent and is colored in by the
+   * .nav.scrolled rule once the visitor scrolls down. This avoids
+   * a visible layout shift when the border appears.
+   */
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s, background 0.3s;
 }
 
+/*
+ * Applied by JavaScript when the page is scrolled more than 50px.
+ * Increases the background opacity and reveals the bottom border
+ * to differentiate the navbar from the content below.
+ */
 .nav.scrolled {
   border-bottom-color: var(--border);
   background: rgba(10, 10, 15, 0.95);
 }
 
+/*
+ * Inner flex container for the nav. Caps at 1200px wide and
+ * vertically centers the logo and links within the 70px-tall bar.
+ */
 .nav-inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -99,6 +211,7 @@ img { max-width: 100%; display: block; }
   height: 70px;
 }
 
+/* The logo lockup: inline SVG icon + "the vine" text, side by side. */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -114,12 +227,18 @@ img { max-width: 100%; display: block; }
   letter-spacing: -0.02em;
 }
 
+/* Horizontal link row on desktop. Becomes a vertical dropdown on mobile. */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
+/*
+ * Individual navigation links, styled in monospace to reinforce
+ * the "code" aesthetic. Each has a subtle rounded-rectangle hover
+ * state with a translucent green background.
+ */
 .nav-link {
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -134,6 +253,30 @@ img { max-width: 100%; display: block; }
   background: var(--green-glow);
 }
 
+/*
+ * ACTIVE NAV LINK HIGHLIGHTING
+ *
+ * JavaScript toggles the "active" class on the nav link whose
+ * href matches the currently visible section. This provides a
+ * persistent visual cue so the visitor always knows where they
+ * are on the page. The style is intentionally identical to the
+ * hover state for visual consistency.
+ *
+ * NOTE: The CTA link ("connect") has its own green-background
+ * styling via .nav-link--cta which takes precedence when both
+ * .active and --cta classes are present, so the active state
+ * does not override the CTA button appearance.
+ */
+.nav-link.active {
+  color: var(--text);
+  background: var(--green-glow);
+}
+
+/*
+ * The call-to-action nav link ("connect") gets a solid green
+ * background to make it stand out from the other links. Its
+ * hover state lightens the green for feedback.
+ */
 .nav-link--cta {
   background: var(--green);
   color: var(--bg-deep);
@@ -145,6 +288,14 @@ img { max-width: 100%; display: block; }
   color: var(--bg-deep);
 }
 
+/*
+ * MOBILE HAMBURGER TOGGLE BUTTON
+ *
+ * Hidden on desktop (display: none). On screens 650px and below,
+ * the media query switches it to display: flex, revealing three
+ * horizontal bars. When JavaScript adds the "active" class, the
+ * bars animate into an "X" via CSS transforms.
+ */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -155,6 +306,7 @@ img { max-width: 100%; display: block; }
   padding: 8px;
 }
 
+/* Each bar is a 24×2px horizontal line in the hamburger icon. */
 .nav-toggle span {
   display: block;
   width: 24px;
@@ -163,12 +315,33 @@ img { max-width: 100%; display: block; }
   transition: transform 0.3s, opacity 0.3s;
 }
 
+/*
+ * When the menu is open, the three bars transform into an "X":
+ *   - Top bar slides down 7px and rotates 45°
+ *   - Middle bar fades out completely
+ *   - Bottom bar slides up 7px and rotates -45°
+ */
 .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-toggle.active span:nth-child(2) { opacity: 0; }
 .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ═══════════════════════════════════════════════════════════
    HERO
+
+   The hero section spans the full viewport height and serves as
+   the initial visual impact when a visitor loads the page. It has
+   three visual layers stacked with z-index:
+
+     1. The background layer (.hero-bg, z-index: 0) — contains
+        the animated vine/circuit SVG paths and the mountain
+        silhouette SVG at the bottom.
+     2. The content layer (.hero-content, z-index: 1) — the
+        headline, tagline, CTA buttons, and scroll hint, all
+        centered in the viewport.
+     3. The fixed nav bar (z-index: 1000) — sits above everything.
+
+   A subtle radial gradient behind the content adds a warm glow
+   effect to the center of the hero section.
    ═══════════════════════════════════════════════════════════ */
 
 .hero {
@@ -178,15 +351,31 @@ img { max-width: 100%; display: block; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  /*
+   * A soft radial gradient emanating from the upper-center gives
+   * the hero a subtle spotlight effect. It transitions from a
+   * slightly warmer dark shade (#141428) into the deep background.
+   */
   background: radial-gradient(ellipse at 50% 40%, #141428 0%, var(--bg-deep) 70%);
 }
 
+/*
+ * The full-bleed background container for the hero's decorative
+ * SVG artwork. It sits behind the hero content at z-index: 0.
+ * The "inset: 0" shorthand stretches it to fill the hero entirely.
+ */
 .hero-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
 
+/*
+ * The animated vine/circuit SVG background that fills the hero.
+ * Starts at 50% opacity and is further faded by JavaScript as
+ * the visitor scrolls down (parallax effect).
+ */
 .hero-vines {
   position: absolute;
   inset: 0;
@@ -195,6 +384,11 @@ img { max-width: 100%; display: block; }
   opacity: 0.5;
 }
 
+/*
+ * The mountain silhouette SVG pinned to the bottom of the hero.
+ * It represents the Ocoee region mountains and provides a natural
+ * visual transition from the hero into the first content section.
+ */
 .hero-mountains {
   position: absolute;
   bottom: 0; left: 0;
@@ -202,7 +396,20 @@ img { max-width: 100%; display: block; }
   height: 30vh;
 }
 
-/* Vine path drawing animation */
+/*
+ * VINE PATH DRAWING ANIMATION
+ *
+ * Each SVG vine path uses the classic stroke-dasharray /
+ * stroke-dashoffset technique to create a "drawing" effect on
+ * page load. The stroke is initially offset by its full dash
+ * length (making it invisible), then the drawVine keyframe
+ * animates the offset to zero, causing the stroke to appear
+ * as if it is being drawn in real time.
+ *
+ * The main trunk (vine-path--1) draws first over 4 seconds.
+ * Branch paths (--2 through --5) have staggered delays and
+ * shorter dash lengths to match their shorter path distances.
+ */
 .vine-path {
   stroke-dasharray: 2000;
   stroke-dashoffset: 2000;
@@ -218,6 +425,15 @@ img { max-width: 100%; display: block; }
   to { stroke-dashoffset: 0; }
 }
 
+/*
+ * VINE NODE FADE-IN
+ *
+ * The small circular "junction nodes" along the vine paths start
+ * fully transparent and fade in on a stagger after their parent
+ * branch has finished drawing. The nth-child selectors target
+ * specific nodes within the hero SVG to create a cascading
+ * appearance from left to right.
+ */
 .vine-node {
   opacity: 0;
   animation: fadeInNode 0.5s ease forwards;
@@ -234,7 +450,14 @@ img { max-width: 100%; display: block; }
   to { opacity: 0.5; }
 }
 
-/* Hero content */
+/*
+ * HERO CONTENT
+ *
+ * The text and buttons layer. Positioned at z-index: 1 to sit
+ * above the background artwork. Centered both vertically and
+ * horizontally via the parent's flexbox. Horizontal padding
+ * prevents text from touching screen edges on very small phones.
+ */
 .hero-content {
   position: relative;
   z-index: 1;
@@ -242,6 +465,14 @@ img { max-width: 100%; display: block; }
   padding: 0 20px;
 }
 
+/*
+ * HERO BADGE
+ *
+ * The small pill-shaped badge that reads "Athens, TN • Ocoee Region"
+ * above the headline. It has a pulsing green dot to the left that
+ * suggests "live" or "active" status, adding a tech aesthetic.
+ * The entire badge fades up into view on a 0.5-second delay.
+ */
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -258,6 +489,7 @@ img { max-width: 100%; display: block; }
   animation: fadeUp 0.8s var(--ease-out) 0.5s forwards;
 }
 
+/* The pulsing green status dot inside the location badge. */
 .hero-badge-dot {
   width: 6px; height: 6px;
   border-radius: 50%;
@@ -265,11 +497,21 @@ img { max-width: 100%; display: block; }
   animation: pulse 2s infinite;
 }
 
+/* Pulsing animation: expands a green glow ring then contracts it. */
 @keyframes pulse {
   0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(92, 184, 92, 0.4); }
   50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(92, 184, 92, 0); }
 }
 
+/*
+ * HERO TITLE
+ *
+ * The title is split into two stacked spans:
+ *   - .hero-title-the — small monospace "the" with wide letter-spacing
+ *   - .hero-title-vine — massive gradient-filled "vine" as the visual anchor
+ *
+ * The whole title block fades up on a 0.7-second delay (after the badge).
+ */
 .hero-title {
   margin-bottom: 16px;
   line-height: 0.9;
@@ -288,6 +530,12 @@ img { max-width: 100%; display: block; }
   margin-bottom: 8px;
 }
 
+/*
+ * The "vine" text uses a three-stop green gradient as its fill
+ * color (via background-clip: text). A soft drop-shadow provides
+ * a green glow halo behind the text. The clamp() sizing scales
+ * the text fluidly from 5rem on phones to 12rem on wide screens.
+ */
 .hero-title-vine {
   display: block;
   font-family: var(--font-body);
@@ -301,6 +549,11 @@ img { max-width: 100%; display: block; }
   filter: drop-shadow(0 0 40px rgba(92, 184, 92, 0.15));
 }
 
+/*
+ * The handwritten tagline "Where Misfits Find Family" in Caveat
+ * (the hand-drawn script font). Amber-colored for warmth and
+ * contrast against the green headline above it.
+ */
 .hero-tagline {
   font-family: var(--font-hand);
   font-size: clamp(1.5rem, 4vw, 2.5rem);
@@ -310,6 +563,7 @@ img { max-width: 100%; display: block; }
   animation: fadeUp 0.8s var(--ease-out) 0.9s forwards;
 }
 
+/* Supporting text beneath the tagline. Capped at 500px wide for readability. */
 .hero-sub {
   font-size: clamp(1rem, 2vw, 1.2rem);
   color: var(--text-secondary);
@@ -319,6 +573,7 @@ img { max-width: 100%; display: block; }
   animation: fadeUp 0.8s var(--ease-out) 1.1s forwards;
 }
 
+/* The two CTA buttons ("Learn More" and "Visit This Sunday"). Wraps on narrow screens. */
 .hero-ctas {
   display: flex;
   gap: 16px;
@@ -328,6 +583,15 @@ img { max-width: 100%; display: block; }
   animation: fadeUp 0.8s var(--ease-out) 1.3s forwards;
 }
 
+/*
+ * SCROLL HINT
+ *
+ * A small "scroll" label and mouse icon pinned to the bottom
+ * center of the hero. Fades in last (2-second delay) so it
+ * doesn't compete with the title entrance sequence. Hidden on
+ * small screens via the 650px media query since phone users
+ * intuitively swipe to scroll.
+ */
 .hero-scroll-hint {
   position: absolute;
   bottom: 40px;
@@ -345,6 +609,11 @@ img { max-width: 100%; display: block; }
   animation: fadeUp 0.8s var(--ease-out) 2s forwards;
 }
 
+/*
+ * The small dot inside the mouse icon bounces up and down to
+ * simulate a scroll-wheel motion. Uses the SVG cy attribute
+ * to move the circle center from y=8 to y=16 and back.
+ */
 .scroll-dot {
   animation: scrollBounce 2s infinite;
 }
@@ -354,6 +623,15 @@ img { max-width: 100%; display: block; }
   50% { cy: 16; opacity: 0.3; }
 }
 
+/*
+ * FADE-UP ENTRANCE ANIMATION
+ *
+ * Shared by most hero elements. Each starts 20px below its final
+ * position and fully transparent, then slides up and fades in.
+ * Different animation-delay values on each element create a
+ * staggered cascade: badge → title → tagline → subtitle → buttons
+ * → scroll hint.
+ */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -361,6 +639,13 @@ img { max-width: 100%; display: block; }
 
 /* ═══════════════════════════════════════════════════════════
    BUTTONS
+
+   Reusable button styles used for CTAs throughout the page.
+   All buttons share the same base (.btn) with monospace text,
+   generous padding, and a rounded shape. Variants control color:
+     - .btn--primary — solid green fill (for primary actions)
+     - .btn--outline — transparent with a subtle border (secondary actions)
+     - .btn--full — forces full-width (used inside the contact form)
    ═══════════════════════════════════════════════════════════ */
 
 .btn {
@@ -378,6 +663,7 @@ img { max-width: 100%; display: block; }
   text-decoration: none;
 }
 
+/* Solid green button. Lifts up 2px on hover with a green shadow. */
 .btn--primary {
   background: var(--green);
   color: var(--bg-deep);
@@ -392,6 +678,7 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 8px 24px rgba(92, 184, 92, 0.25);
 }
 
+/* Ghost/outline button. Border turns green on hover. */
 .btn--outline {
   background: transparent;
   color: var(--text);
@@ -404,10 +691,17 @@ img { max-width: 100%; display: block; }
   transform: translateY(-2px);
 }
 
+/* Full-width variant used for the contact form submit button. */
 .btn--full { width: 100%; justify-content: center; }
 
 /* ═══════════════════════════════════════════════════════════
-   SECTIONS
+   SECTIONS — SHARED LAYOUT
+
+   Every major content section below the hero shares these base
+   styles. Sections alternate between --bg-deep and --bg-surface
+   backgrounds to create a subtle visual rhythm as the visitor
+   scrolls. Each section uses fluid vertical padding
+   (--section-pad) that scales with the viewport.
    ═══════════════════════════════════════════════════════════ */
 
 .section {
@@ -415,12 +709,21 @@ img { max-width: 100%; display: block; }
   position: relative;
 }
 
+/*
+ * Alternating background colors for visual separation.
+ * The pattern is: surface → deep → surface → deep → surface.
+ */
 .section--about { background: var(--bg-surface); }
 .section--beliefs { background: var(--bg-deep); }
 .section--community { background: var(--bg-surface); }
 .section--visit { background: var(--bg-deep); }
 .section--connect { background: var(--bg-surface); }
 
+/*
+ * The "// who we are" code-comment-style label that appears above
+ * each section title. Monospace font + green color + slight opacity
+ * makes it look like a developer comment in the markup.
+ */
 .section-label {
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -429,6 +732,7 @@ img { max-width: 100%; display: block; }
   margin-bottom: 12px;
 }
 
+/* Section headline. Uses clamp() for fluid sizing from 2rem to 3.5rem. */
 .section-title {
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
@@ -437,6 +741,11 @@ img { max-width: 100%; display: block; }
   letter-spacing: -0.02em;
 }
 
+/*
+ * Green gradient text used on emphasized words within section
+ * titles (e.g., "Typical Church", "Built On", "Party Awaits").
+ * Uses the same background-clip: text technique as the hero "vine."
+ */
 .highlight {
   background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%);
   -webkit-background-clip: text;
@@ -444,6 +753,10 @@ img { max-width: 100%; display: block; }
   background-clip: text;
 }
 
+/*
+ * Introductory paragraph below the section title. Capped at
+ * 700px wide to maintain a comfortable reading line length.
+ */
 .section-intro {
   font-size: 1.1rem;
   color: var(--text-secondary);
@@ -452,13 +765,23 @@ img { max-width: 100%; display: block; }
   line-height: 1.8;
 }
 
+/* Strengthen inline <strong> text in section intros for emphasis. */
 .section-intro strong { color: var(--text); }
+
+/* Underline links inside section intros for visibility on dark backgrounds. */
 .section-intro a { border-bottom: 1px solid var(--green); }
 
 /* ═══════════════════════════════════════════════════════════
-   ABOUT SECTION
+   ABOUT SECTION — "Who We Are"
+
+   The about section uses a two-column grid: long-form narrative
+   text on the left, and a 2×2 grid of value cards on the right.
+   Below both, a full-width blockquote displays the John 15:5
+   scripture. On screens narrower than 900px, everything stacks
+   into a single column.
    ═══════════════════════════════════════════════════════════ */
 
+/* Two equal columns with generous spacing between them. */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -466,26 +789,38 @@ img { max-width: 100%; display: block; }
   margin-bottom: 60px;
 }
 
+/* Default paragraph style in the about narrative column. */
 .about-main p {
   color: var(--text-secondary);
   margin-bottom: 20px;
   font-size: 1.05rem;
 }
 
+/*
+ * The lead (first) paragraph gets larger, brighter text to draw
+ * attention. The !important overrides the generic .about-main p
+ * rules above so this paragraph stands out from the rest.
+ */
 .about-lead {
   font-size: 1.2rem !important;
   color: var(--text) !important;
   line-height: 1.8;
 }
 
+/* Emphasized text in the about section renders in amber (not italic). */
 .about-main em { color: var(--amber); font-style: normal; font-weight: 600; }
 
+/* The 2×2 grid of core-value cards on the right side. */
 .about-values {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
+/*
+ * Individual value cards. Each has an icon, title, and description.
+ * Hover state lifts the card up and highlights the border in green.
+ */
 .value-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -516,6 +851,12 @@ img { max-width: 100%; display: block; }
   line-height: 1.5;
 }
 
+/*
+ * The scripture blockquote card at the bottom of the about section.
+ * A thick green left border provides visual distinction from the
+ * value cards above. The quote itself uses the handwritten font
+ * and the citation is in monospace green.
+ */
 .about-quote {
   text-align: center;
   padding: 40px;
@@ -540,9 +881,19 @@ img { max-width: 100%; display: block; }
 }
 
 /* ═══════════════════════════════════════════════════════════
-   BELIEFS SECTION
+   BELIEFS SECTION — "What We Believe"
+
+   Eight numbered belief cards arranged in a responsive grid.
+   The auto-fit / minmax pattern ensures 2–3 columns on desktop
+   that automatically collapse to fewer columns (and eventually
+   a single column on phones) without a separate media query.
    ═══════════════════════════════════════════════════════════ */
 
+/*
+ * The beliefs grid uses auto-fit with a minimum card width of
+ * 280px. This lets the browser decide the number of columns
+ * based on available width — no explicit breakpoint needed.
+ */
 .beliefs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -550,6 +901,11 @@ img { max-width: 100%; display: block; }
   margin-bottom: 40px;
 }
 
+/*
+ * Individual belief cards. Each contains a numbered label (01–08),
+ * a title, and a description. Hover lifts the card and highlights
+ * the border — same interaction pattern as the value cards.
+ */
 .belief-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -564,6 +920,7 @@ img { max-width: 100%; display: block; }
   transform: translateY(-4px);
 }
 
+/* The two-digit number label (e.g., "01") in the top-left of each card. */
 .belief-num {
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -584,8 +941,13 @@ img { max-width: 100%; display: block; }
   line-height: 1.6;
 }
 
+/* Inline emphasis in belief descriptions renders as amber bold text. */
 .belief-card p em { color: var(--amber); font-style: normal; font-weight: 600; }
 
+/*
+ * Footer card below the beliefs grid with links to the AG 16
+ * Fundamental Truths and Kingdom Theology resources.
+ */
 .beliefs-footer {
   text-align: center;
   padding: 24px;
@@ -605,15 +967,28 @@ img { max-width: 100%; display: block; }
 }
 
 /* ═══════════════════════════════════════════════════════════
-   COMMUNITY SECTION
+   COMMUNITY SECTION — "Find Your People"
+
+   Six community group cards in a responsive auto-fit grid. Each
+   card showcases one of The Vine's small-group ministries: gaming,
+   code & coffee, motorcycles, outdoor adventures, discipleship,
+   and worship music. Same card interaction pattern as beliefs.
    ═══════════════════════════════════════════════════════════ */
 
+/*
+ * Auto-fit grid with a minimum card width of 300px. This
+ * naturally produces 2 columns on tablets and 3 on desktops.
+ */
 .community-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
+/*
+ * Each group card shows an SVG icon, meeting-time tag, group
+ * name, and short description. Hover lifts and highlights.
+ */
 .group-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -632,6 +1007,10 @@ img { max-width: 100%; display: block; }
   margin-bottom: 12px;
 }
 
+/*
+ * The meeting-time tag (e.g., "Friday Nights", "Wednesday Mornings")
+ * appears in uppercase amber monospace above the group name.
+ */
 .group-tag {
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -654,7 +1033,12 @@ img { max-width: 100%; display: block; }
 }
 
 /* ═══════════════════════════════════════════════════════════
-   VISIT SECTION
+   VISIT SECTION — "Join the Adventure"
+
+   Two-column layout: visit info cards on the left (service time,
+   location, what-to-expect list) and an SVG illustration of the
+   Ocoee River region on the right. Stacks to a single column
+   below 900px.
    ═══════════════════════════════════════════════════════════ */
 
 .visit-grid {
@@ -664,6 +1048,11 @@ img { max-width: 100%; display: block; }
   align-items: start;
 }
 
+/*
+ * Visit info cards. Unlike the belief/value cards, these do not
+ * lift on hover — just a border highlight. Cards are spaced
+ * vertically with margin-bottom so they read like a stack.
+ */
 .visit-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -682,6 +1071,11 @@ img { max-width: 100%; display: block; }
   line-height: 1.7;
 }
 
+/*
+ * The "What to Expect" list uses emoji icons alongside each item.
+ * Flexbox keeps the icon and text neatly aligned, and flex-shrink: 0
+ * on the icon prevents it from compressing on narrow screens.
+ */
 .expect-list {
   list-style: none;
   display: flex;
@@ -703,13 +1097,18 @@ img { max-width: 100%; display: block; }
   text-align: center;
 }
 
+/* The SVG illustration card showing the Ocoee region map. */
 .visit-illustration {
   border-radius: 12px;
   border: 1px solid var(--border);
 }
 
 /* ═══════════════════════════════════════════════════════════
-   CONNECT SECTION
+   CONNECT SECTION — "Say Hello"
+
+   Two-column layout: the contact form on the left, and a stack
+   of info cards (direct contact, social links, first-timer
+   welcome) on the right. Stacks to a single column below 900px.
    ═══════════════════════════════════════════════════════════ */
 
 .connect-grid {
@@ -719,6 +1118,7 @@ img { max-width: 100%; display: block; }
   align-items: start;
 }
 
+/* The contact form container card. */
 .contact-form {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -730,6 +1130,7 @@ img { max-width: 100%; display: block; }
   margin-bottom: 20px;
 }
 
+/* Form labels use monospace to match the site's code aesthetic. */
 .form-group label {
   display: block;
   font-family: var(--font-mono);
@@ -738,6 +1139,13 @@ img { max-width: 100%; display: block; }
   margin-bottom: 6px;
 }
 
+/*
+ * All form inputs, textareas, and selects share a consistent dark
+ * background with a subtle border. On focus, the border turns
+ * green and a translucent green ring appears around the field
+ * (box-shadow with --green-glow) to clearly indicate which field
+ * is active.
+ */
 .form-group input,
 .form-group textarea,
 .form-group select {
@@ -760,14 +1168,22 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 0 0 3px var(--green-glow);
 }
 
+/* Placeholder text is dim so it does not compete with actual input. */
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: var(--text-dim);
 }
 
 .form-group select { cursor: pointer; }
+
+/* Select dropdown options use the card background for consistency. */
 .form-group select option { background: var(--bg-card); }
 
+/*
+ * The privacy note below the submit button. Its text content is
+ * swapped by JavaScript after a successful submission to show a
+ * personalized thank-you message, then reverted after a delay.
+ */
 .form-note {
   font-size: 0.75rem;
   color: var(--text-dim);
@@ -775,6 +1191,7 @@ img { max-width: 100%; display: block; }
   margin-top: 12px;
 }
 
+/* Right-column info cards stacked vertically. */
 .connect-aside {
   display: flex;
   flex-direction: column;
@@ -799,6 +1216,7 @@ img { max-width: 100%; display: block; }
   margin-bottom: 8px;
 }
 
+/* The "Email:" / "Phone:" label preceding contact details. */
 .connect-label {
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -806,12 +1224,17 @@ img { max-width: 100%; display: block; }
   margin-right: 8px;
 }
 
+/* Social media link row. Wraps on narrow containers. */
 .social-links {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
 }
 
+/*
+ * Each social link is a pill-shaped button with an icon and label.
+ * Hover highlights the border and text in green.
+ */
 .social-link {
   display: flex;
   align-items: center;
@@ -830,6 +1253,11 @@ img { max-width: 100%; display: block; }
   color: var(--green);
 }
 
+/*
+ * The "First-Timer?" card gets a pre-highlighted green border and
+ * a very subtle green gradient background to stand out from the
+ * other info cards and draw the visitor's eye.
+ */
 .connect-card--highlight {
   border-color: var(--green);
   background: linear-gradient(135deg, rgba(92, 184, 92, 0.05) 0%, var(--bg-card) 100%);
@@ -837,6 +1265,12 @@ img { max-width: 100%; display: block; }
 
 /* ═══════════════════════════════════════════════════════════
    FOOTER
+
+   A three-column footer: brand identity on the left (logo,
+   tagline, location), quick navigation links in the center,
+   and the John 15:5 verse on the right. Below the grid, a
+   horizontal rule separates the copyright line and developer
+   Easter-egg comment. Everything stacks on narrow screens.
    ═══════════════════════════════════════════════════════════ */
 
 .footer {
@@ -845,6 +1279,11 @@ img { max-width: 100%; display: block; }
   padding: 60px 0 30px;
 }
 
+/*
+ * Three-column grid: the brand column gets 2fr (double width)
+ * because it contains the logo, tagline, and location text.
+ * The links and verse columns share the remaining space equally.
+ */
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -866,6 +1305,7 @@ img { max-width: 100%; display: block; }
   color: var(--text-muted);
 }
 
+/* Vertical list of anchor links mirroring the main navigation. */
 .footer-links {
   display: flex;
   flex-direction: column;
@@ -880,6 +1320,7 @@ img { max-width: 100%; display: block; }
 
 .footer-links a:hover { color: var(--green); }
 
+/* The handwritten John 15:5 verse in the right footer column. */
 .footer-verse {
   font-family: var(--font-hand);
   font-size: 1.1rem;
@@ -887,12 +1328,18 @@ img { max-width: 100%; display: block; }
   line-height: 1.5;
 }
 
+/* The scripture reference ("John 15:5") below the verse text. */
 .footer-verse span {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--text-dim);
 }
 
+/*
+ * The bottom bar with copyright and the developer Easter-egg
+ * comment. Uses flex-wrap so the two items stack gracefully on
+ * narrow screens instead of overflowing.
+ */
 .footer-bottom {
   border-top: 1px solid var(--border);
   padding-top: 20px;
@@ -908,6 +1355,11 @@ img { max-width: 100%; display: block; }
   color: var(--text-dim);
 }
 
+/*
+ * A playful code-style Easter egg visible only to visitors who
+ * scroll all the way to the bottom. Very dim so it does not
+ * distract from the copyright text.
+ */
 .footer-easter-egg code {
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -916,21 +1368,38 @@ img { max-width: 100%; display: block; }
 }
 
 /* ═══════════════════════════════════════════════════════════
-   REVEAL ANIMATIONS
+   SCROLL-REVEAL ANIMATIONS
+
+   Any element with the data-reveal attribute starts invisible
+   and offset 30px downward. When JavaScript's IntersectionObserver
+   adds the "revealed" class, the element transitions into its
+   final position with a smooth fade-and-slide.
+
+   Sibling reveal elements are staggered by 0.1 seconds per
+   nth-child index, so a row of cards animates in one after
+   another (a "cascade" or "waterfall" effect) rather than all
+   appearing at the same instant.
    ═══════════════════════════════════════════════════════════ */
 
+/* Initial hidden state for all reveal elements. */
 [data-reveal] {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
 }
 
+/* Final visible state applied by JavaScript when the element scrolls into view. */
 [data-reveal].revealed {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Stagger children */
+/*
+ * Staggered transition delays for sibling reveal elements.
+ * Each successive sibling waits an additional 0.1 seconds before
+ * its reveal begins. This covers up to 8 children, which is
+ * enough for the largest card grid (beliefs: 8 cards).
+ */
 [data-reveal]:nth-child(2) { transition-delay: 0.1s; }
 [data-reveal]:nth-child(3) { transition-delay: 0.2s; }
 [data-reveal]:nth-child(4) { transition-delay: 0.3s; }
@@ -940,27 +1409,54 @@ img { max-width: 100%; display: block; }
 [data-reveal]:nth-child(8) { transition-delay: 0.7s; }
 
 /* ═══════════════════════════════════════════════════════════
-   RESPONSIVE
+   RESPONSIVE BREAKPOINTS
+
+   Two breakpoints handle the layout transitions:
+
+     @900px — Collapses all two-column grids (about, visit,
+              connect, footer) into a single-column stack. The
+              auto-fit grids (beliefs, community) naturally
+              handle their own column reduction and don't need
+              explicit rules here.
+
+     @650px — Switches the navigation from a horizontal link
+              row to a dropdown hamburger menu. Also forces the
+              value cards, belief cards, and community cards
+              into single-column stacks to prevent cards from
+              being too narrow on small phones. Hides the hero
+              scroll hint (phone users intuitively swipe) and
+              centers the footer bottom row.
+
+   These two breakpoints were chosen to work well at the three
+   key testing widths noted in AGENTS.md:
+     375px → fully inside the 650px breakpoint
+     768px → inside the 900px breakpoint (tablet)
+     1024px → full desktop layout (no breakpoint active)
    ═══════════════════════════════════════════════════════════ */
 
 @media (max-width: 900px) {
+  /* Stack the about section's narrative + values into one column. */
   .about-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
+  /* Keep value cards in a 2-column grid even after the about grid stacks. */
   .about-values {
     grid-template-columns: 1fr 1fr;
   }
 
+  /* Stack visit info cards above the Ocoee illustration. */
   .visit-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Stack the contact form above the info cards. */
   .connect-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Stack all three footer columns vertically. */
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -968,8 +1464,15 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 650px) {
+  /* Show the hamburger menu button on small screens. */
   .nav-toggle { display: flex; }
 
+  /*
+   * The nav links become a full-width dropdown panel positioned
+   * directly below the navbar. Hidden by default (display: none)
+   * and shown when JavaScript adds the "open" class. The frosted-
+   * glass backdrop-filter matches the nav bar appearance.
+   */
   .nav-links {
     display: none;
     position: absolute;
@@ -984,28 +1487,35 @@ img { max-width: 100%; display: block; }
     gap: 4px;
   }
 
+  /* When open, the nav links panel becomes visible. */
   .nav-links.open { display: flex; }
 
+  /* Nav links stretch full-width and get larger tap targets. */
   .nav-link {
     width: 100%;
     padding: 12px 16px;
     font-size: 1rem;
   }
 
+  /* Value cards drop to a single column on phones. */
   .about-values {
     grid-template-columns: 1fr;
   }
 
+  /* Belief cards drop to a single column on phones. */
   .beliefs-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Community cards drop to a single column on phones. */
   .community-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Hide the scroll hint on phones — swiping is intuitive on touch devices. */
   .hero-scroll-hint { display: none; }
 
+  /* Center-align and stack the footer bottom row on small screens. */
   .footer-bottom {
     flex-direction: column;
     text-align: center;

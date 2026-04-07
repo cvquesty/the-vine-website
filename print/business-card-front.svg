@@ -62,11 +62,11 @@
     <line x1="800" y1="0" x2="800" y2="600"/>
   </g>
 
-  <!-- Centered logo (scaled up for card) -->
-  <!-- Leaf icon centered, then text below -->
-  <g transform="translate(525, 200)">
-    <!-- Leaf outline (enlarged from 200px to ~280px) -->
-    <g transform="scale(1.4)">
+  <!-- Centered logo (scaled for card) -->
+  <!-- Leaf icon sized to fit above text without overlap -->
+  <g transform="translate(525, 160)">
+    <!-- Leaf outline (~200px tall, fits cleanly above text) -->
+    <g transform="scale(1.0)">
       <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z"
             fill="none" stroke="url(#leaf-stroke)" stroke-width="6" stroke-linejoin="round" filter="url(#leaf-glow)"/>
       <!-- Stem -->
@@ -89,12 +89,12 @@
   </g>
 
   <!-- "the" prefix -->
-  <text x="525" y="370" text-anchor="middle"
+  <text x="525" y="380" text-anchor="middle"
         font-family="'JetBrains Mono', 'Fira Code', monospace"
         font-size="42" font-weight="300" fill="#a0a0b0" letter-spacing="0.4em">the</text>
 
   <!-- "vine" title -->
-  <text x="525" y="435" text-anchor="middle"
+  <text x="525" y="445" text-anchor="middle"
         font-family="'Space Grotesk', sans-serif"
         font-size="112" font-weight="700" fill="url(#title-grad)"
         letter-spacing="-0.04em">vine</text>

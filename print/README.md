@@ -9,18 +9,21 @@ Print-ready designs matching the website's dark tech-forward aesthetic: vine-gre
 | File | Purpose | Size | How to Print |
 |------|---------|------|--------------|
 | `business-card-front.svg` | Front of 2-sided business card | 3.5" × 2" (US) | Open in browser → Save as PDF, or open in Illustrator/Inkscape → Export PDF |
-| `business-card-back.svg` | Back of 2-sided business card | 3.5" × 2" (US) | Same as front |
-| `flyer.html` | Half-letter hand flyer | 5.5" × 8.5" | Open in browser → **Cmd/Ctrl + P** → Set paper size to **Half Letter (5.5×8.5)** → Save as PDF |
-| `interest-form.html` | Letter-size interest form | 8.5" × 11" | Open in browser → **Cmd/Ctrl + P** → Set paper size to **Letter (8.5×11)** → Save as PDF |
+| `business-card-back.svg` | Back of 2-sided business card (with QR) | 3.5" × 2" (US) | Same as front |
+| `business-card-square-front.svg` | Front of square card (rounded corners) | 2.5" × 2.5" | Same as above |
+| `business-card-square-back.svg` | Back of square card (with QR) | 2.5" × 2.5" | Same as above |
+| `flyer.svg` | Half-letter hand flyer | 5.5" × 8.5" | Open in browser/Illustrator/Inkscape → Export PDF or Print |
+| `interest-form.svg` | Letter-size interest form | 8.5" × 11" | Open in browser/Illustrator/Inkscape → Export PDF or Print |
 
 ---
 
 ## Business Cards
 
 **Specs:**
-- Standard US business card: **3.5" × 2"** (89 × 51 mm)
+- Standard US: **3.5" × 2"** (89 × 51 mm) — rectangular
+- Square variant: **2.5" × 2.5"** (64 × 64 mm) — rounded corners (rx=48)
 - Resolution: 300 DPI (vector SVG scales perfectly)
-- Two-sided: Front = logo + tagline; Back = contact info + QR placeholder
+- Two-sided: Front = logo + tagline; Back = contact info + scannable QR
 
 **Print tips:**
 1. Open `business-card-front.svg` and `business-card-back.svg` in your browser.
@@ -28,7 +31,7 @@ Print-ready designs matching the website's dark tech-forward aesthetic: vine-gre
 3. For professional print: open SVGs in Adobe Illustrator or Inkscape, add 1/8" bleed if your printer requires it, then export to press-ready PDF.
 4. Print on thick cardstock (14pt or 16pt) with matte or soft-touch finish for best feel.
 
-**QR code note:** The back has a decorative placeholder. For a real QR linking to `thevineathens.church`, generate one (e.g., via QRCode Monkey) and paste the SVG or PNG into the placeholder area in your design tool.
+**QR code:** Both back designs include a real scannable QR code linking to `https://thevineathens.church` (version 2 matrix, SVG). Test by scanning with any phone camera app before printing.
 
 ---
 
@@ -40,12 +43,10 @@ Print-ready designs matching the website's dark tech-forward aesthetic: vine-gre
 - Includes a clickable link to the website (becomes plain text on print).
 
 **Print tips:**
-1. Open `flyer.html` in Chrome/Safari/Firefox.
-2. **Cmd/Ctrl + P** → choose **"Save as PDF"**.
-3. Under **Layout**, choose **Portrait**.
-4. Under **Paper size**, pick **Custom** and set **5.5 × 8.5 inches** (or "Half Letter" if your printer lists it).
-5. Margins: "Default" or "None" for full-bleed feel (the flyer has its own internal margins).
-6. Print on 14pt cardstock or 80# cover paper for durability.
+1. Open `flyer.svg` in your browser, Illustrator, or Inkscape.
+2. **Browser:** Right-click → "Save image as..." → PDF, or **Print → Save as PDF** (set paper to 5.5 × 8.5").
+3. **Vector editor:** Export directly to PDF at 300 DPI.
+4. Print on 14pt cardstock or 80# cover paper for durability.
 
 **Tip:** For bulk printing (church lobby, events), export the PDF and send to a local print shop (Staples, Vistaprint, etc.) with a request for "half letter cardstock, matte finish."
 
@@ -55,17 +56,17 @@ Print-ready designs matching the website's dark tech-forward aesthetic: vine-gre
 
 **Specs:**
 - Letter: **8.5" × 11"** (portrait)
-- Fillable form fields: Name, Email, Phone, Interest checkboxes, Notes textarea.
-- Submit button opens mailto to `hello@thevineathens.church` (works in browser).
-- Fields are pre-styled for print (borders print cleanly).
+- Visual form fields: Name, Email, Phone, Interest checkboxes (6), Notes textarea.
+- Print-ready: all fields render as pen-fillable boxes. No interactive submit (SVG is static for print).
+- Same motif: dark bg, vine green accents, Caveat tagline.
 
 **Print tips:**
-1. Open `interest-form.html` in a browser.
-2. **Option A (digital use):** Fill out fields directly in the browser, then click "Send" (opens email client).
-3. **Option B (print):** Fill fields, then **Cmd/Ctrl + P** → **Letter** paper → Save as PDF or print to paper.
-4. For printed paper forms: use 24lb bond paper (or heavier) so writing doesn't bleed through.
+1. Open `interest-form.svg` in browser or vector editor.
+2. Export to PDF or Print directly to **Letter (8.5×11)**.
+3. For pen/paper use: print on 24lb bond or heavier paper so handwriting doesn't bleed.
+4. Place printed forms on lobby table with pens for guests.
 
-**Tip:** If you want a stack of blank forms, print multiple copies and cut the margins if needed. Or print on a heavier paper and leave a stack on a lobby table with pens.
+**Tip:** For digital fill, use the original HTML version or type onto a printed copy. The SVG is optimized for clean print output.
 
 ---
 
@@ -90,9 +91,9 @@ Print-ready designs matching the website's dark tech-forward aesthetic: vine-gre
 
 | Item | Front | Back | Paper | Finish |
 |------|-------|------|-------|--------|
-| Business cards | `business-card-front.svg` | `business-card-back.svg` | 14–16pt cardstock | Matte or soft-touch |
-| Flyers (half letter) | `flyer.html` → PDF | — | 80# cover or 14pt | Matte |
-| Interest forms | `interest-form.html` → PDF | — | 24lb bond or heavier | Matte |
+| Business cards | `business-card-front.svg` or `business-card-square-front.svg` | `business-card-back.svg` or `business-card-square-back.svg` | 14–16pt cardstock | Matte or soft-touch |
+| Flyers (half letter) | `flyer.svg` → PDF | — | 80# cover or 14pt | Matte |
+| Interest forms | `interest-form.svg` → PDF | — | 24lb bond or heavier | Matte |
 
 ---
 

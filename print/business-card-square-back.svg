@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  THE VINE — Business Card (Back, Square)
+  Size: 2.5" × 2.5" (square), 300 DPI → 750 × 750 units
+  Print: Export as PDF or print directly. Rounded corners.
+  
+  Content: Contact info, service time, location, QR code (scannable)
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 750" width="750" height="750">
+  <defs>
+    <radialGradient id="sqb-bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#12121a"/>
+      <stop offset="100%" stop-color="#0a0a0f"/>
+    </radialGradient>
+
+    <!-- Leaf stroke gradient -->
+    <linearGradient id="sqb-leaf-stroke" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#8cd98c"/>
+      <stop offset="50%" stop-color="#5cb85c"/>
+      <stop offset="100%" stop-color="#3a8a3a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Card background with rounded corners -->
+  <rect width="750" height="750" fill="url(#sqb-bg)" rx="48"/>
+
+  <!-- Top-left small leaf mark -->
+  <g transform="translate(60, 60) scale(0.4)" opacity="0.5">
+    <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z"
+          fill="none" stroke="url(#sqb-leaf-stroke)" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="100" cy="148" r="5" fill="#d4a843" opacity="0.9"/>
+  </g>
+
+  <!-- Header: "Connect" -->
+  <text x="375" y="110" text-anchor="middle"
+        font-family="'Space Grotesk', sans-serif"
+        font-size="48" font-weight="700" fill="#5cb85c"
+        letter-spacing="-0.02em">CONNECT WITH US</text>
+
+  <!-- Horizontal divider -->
+  <line x1="100" y1="135" x2="650" y2="135" stroke="#5cb85c" stroke-width="2" opacity="0.3"/>
+
+  <!-- Left column: Contact -->
+  <g transform="translate(100, 180)">
+    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="16" fill="#666680">EMAIL</text>
+    <text x="0" y="32" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#e0e0e8">hello@thevineathens.church</text>
+
+    <text x="0" y="82" font-family="'JetBrains Mono', monospace" font-size="16" fill="#666680">PHONE</text>
+    <text x="0" y="114" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#e0e0e8">(423) 216-4433</text>
+
+    <text x="0" y="164" font-family="'JetBrains Mono', monospace" font-size="16" fill="#666680">ONLINE</text>
+    <text x="0" y="196" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#e0e0e8">thevineathens.church</text>
+  </g>
+
+  <!-- Right column: Location -->
+  <g transform="translate(420, 180)">
+    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="16" fill="#666680">SUNDAYS</text>
+    <text x="0" y="32" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#e0e0e8">10:30 AM</text>
+
+    <text x="0" y="82" font-family="'JetBrains Mono', monospace" font-size="16" fill="#666680">LOCATION</text>
+    <text x="0" y="114" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#e0e0e8">Athens, Tennessee</text>
+    <text x="0" y="150" font-family="'Space Grotesk', sans-serif" font-size="20" fill="#a0a0b0">Ocoee River Region</text>
+  </g>
+
+  <!-- QR Code - scannable for https://thevineathens.church -->
+  <!-- Version 2 (25×25 modules), 180×180 box (fits square), 7.2px per module -->
+  <g transform="translate(285, 420)">
+    <rect x="0" y="0" width="180" height="180" rx="8" fill="#0a0a0f"/>
+    <g fill="#5cb85c">
+      <!-- Finder patterns -->
+      <rect x="7" y="7" width="42" height="42"/>
+      <rect x="15" y="15" width="26" height="26" fill="#0a0a0f"/>
+      <rect x="21" y="21" width="14" height="14"/>
+      <rect x="131" y="7" width="42" height="42"/>
+      <rect x="139" y="15" width="26" height="26" fill="#0a0a0f"/>
+      <rect x="145" y="21" width="14" height="14"/>
+      <rect x="7" y="131" width="42" height="42"/>
+      <rect x="15" y="139" width="26" height="26" fill="#0a0a0f"/>
+      <rect x="21" y="145" width="14" height="14"/>
+      <!-- Timing -->
+      <rect x="49" y="23" width="82" height="3"/>
+      <rect x="23" y="49" width="3" height="82"/>
+      <!-- Alignment -->
+      <rect x="79" y="79" width="22" height="22"/>
+      <rect x="86" y="86" width="9" height="9" fill="#0a0a0f"/>
+      <!-- Data modules -->
+      <rect x="49" y="30" width="3" height="3"/><rect x="55" y="30" width="3" height="3"/><rect x="61" y="30" width="3" height="3"/><rect x="73" y="30" width="3" height="3"/><rect x="85" y="30" width="3" height="3"/>
+      <rect x="49" y="36" width="3" height="3"/><rect x="58" y="36" width="3" height="3"/><rect x="67" y="36" width="3" height="3"/><rect x="79" y="36" width="3" height="3"/><rect x="91" y="36" width="3" height="3"/>
+      <rect x="52" y="42" width="3" height="3"/><rect x="61" y="42" width="3" height="3"/><rect x="70" y="42" width="3" height="3"/><rect x="76" y="42" width="3" height="3"/>
+      <rect x="55" y="48" width="3" height="3"/><rect x="67" y="48" width="3" height="3"/><rect x="85" y="48" width="3" height="3"/>
+      <rect x="49" y="54" width="3" height="3"/><rect x="58" y="54" width="3" height="3"/><rect x="73" y="54" width="3" height="3"/><rect x="79" y="54" width="3" height="3"/><rect x="91" y="54" width="3" height="3"/>
+      <rect x="52" y="60" width="3" height="3"/><rect x="61" y="60" width="3" height="3"/><rect x="70" y="60" width="3" height="3"/><rect x="82" y="60" width="3" height="3"/>
+      <rect x="49" y="66" width="3" height="3"/><rect x="58" y="66" width="3" height="3"/><rect x="76" y="66" width="3" height="3"/><rect x="85" y="66" width="3" height="3"/><rect x="91" y="66" width="3" height="3"/>
+      <rect x="55" y="72" width="3" height="3"/><rect x="67" y="72" width="3" height="3"/><rect x="79" y="72" width="3" height="3"/>
+      <rect x="49" y="78" width="3" height="3"/><rect x="58" y="78" width="3" height="3"/><rect x="70" y="78" width="3" height="3"/><rect x="76" y="78" width="3" height="3"/><rect x="91" y="78" width="3" height="3"/>
+      <rect x="52" y="84" width="3" height="3"/><rect x="64" y="84" width="3" height="3"/><rect x="82" y="84" width="3" height="3"/><rect x="88" y="84" width="3" height="3"/>
+      <rect x="55" y="90" width="3" height="3"/><rect x="61" y="90" width="3" height="3"/><rect x="73" y="90" width="3" height="3"/><rect x="85" y="90" width="3" height="3"/>
+      <rect x="49" y="96" width="3" height="3"/><rect x="58" y="96" width="3" height="3"/><rect x="67" y="96" width="3" height="3"/><rect x="79" y="96" width="3" height="3"/><rect x="91" y="96" width="3" height="3"/>
+      <rect x="52" y="102" width="3" height="3"/><rect x="64" y="102" width="3" height="3"/><rect x="70" y="102" width="3" height="3"/><rect x="76" y="102" width="3" height="3"/>
+      <rect x="55" y="108" width="3" height="3"/><rect x="61" y="108" width="3" height="3"/><rect x="73" y="108" width="3" height="3"/><rect x="85" y="108" width="3" height="3"/>
+      <rect x="49" y="114" width="3" height="3"/><rect x="58" y="114" width="3" height="3"/><rect x="67" y="114" width="3" height="3"/><rect x="79" y="114" width="3" height="3"/><rect x="91" y="114" width="3" height="3"/>
+      <rect x="52" y="120" width="3" height="3"/><rect x="64" y="120" width="3" height="3"/><rect x="76" y="120" width="3" height="3"/>
+    </g>
+  </g>
+
+  <!-- Bottom tagline -->
+  <text x="375" y="650" text-anchor="middle"
+        font-family="'Caveat', cursive"
+        font-size="22" fill="#d4a843" opacity="0.8">No dress code. No judgment. Just Jesus and a lot of coffee.</text>
+
+  <!-- Subtle footer leaf -->
+  <g transform="translate(690, 660) scale(0.28)" opacity="0.25">
+    <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z"
+          fill="none" stroke="#5cb85c" stroke-width="5" stroke-linejoin="round"/>
+  </g>
+</svg>

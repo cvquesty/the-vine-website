@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  THE VINE — Interest Form
+  Size: 8.5" × 11" (letter), 300 DPI → 2550 × 3300 units
+  Print: Export as PDF or print directly. Fillable visually — print and hand-write.
+  
+  Design: Same motif as website. Form fields are visual boxes for pen/paper.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2550 3300" width="2550" height="3300">
+  <defs>
+    <!-- Background gradient -->
+    <radialGradient id="form-bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#12121a"/>
+      <stop offset="100%" stop-color="#0a0a0f"/>
+    </radialGradient>
+
+    <!-- Leaf gradient -->
+    <linearGradient id="form-leaf" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#8cd98c"/>
+      <stop offset="50%" stop-color="#5cb85c"/>
+      <stop offset="100%" stop-color="#3a8a3a"/>
+    </linearGradient>
+
+    <!-- Amber glow -->
+    <filter id="form-amber-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Leaf glow -->
+    <filter id="form-leaf-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#5cb85c" flood-opacity="0.15"/>
+      <feComposite in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="2550" height="3300" fill="url(#form-bg)"/>
+
+  <!-- ===== HEADER ===== -->
+  <g transform="translate(0, 0)">
+    <!-- Header bar -->
+    <rect width="2550" height="300" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+
+    <!-- Logo -->
+    <g transform="translate(140, 80) scale(0.75)">
+      <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z"
+            fill="none" stroke="url(#form-leaf)" stroke-width="8" stroke-linejoin="round"
+            filter="url(#form-leaf-glow)"/>
+      <line x1="100" y1="38" x2="100" y2="155" stroke="#5cb85c" stroke-width="5" stroke-linecap="round"/>
+      <path d="M100 62 C88 56 76 60 68 68" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
+      <path d="M100 92 C112 86 124 90 132 98" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
+      <path d="M100 122 C88 116 76 120 70 130" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="100" cy="148" r="7" fill="#d4a843" filter="url(#form-amber-glow)"/>
+    </g>
+
+    <!-- Title + tagline -->
+    <text x="280" y="115" font-family="'Space Grotesk', sans-serif"
+          font-size="82" font-weight="700" fill="#5cb85c">THE VINE</text>
+    <text x="280" y="200" font-family="'Caveat', cursive"
+          font-size="52" fill="#d4a843" opacity="0.9">Where Misfits Find Family</text>
+  </g>
+
+  <!-- ===== INTRO ===== -->
+  <g transform="translate(0, 340)">
+    <text x="140" y="50" font-family="'JetBrains Mono', monospace"
+          font-size="32" fill="#5cb85c" letter-spacing="0.1em">// SAY HELLO</text>
+
+    <text x="140" y="115" font-family="'Space Grotesk', sans-serif"
+          font-size="46" fill="#a0a0b0">We'd love to hear from you. No spam, no pressure — just a real person who cares.</text>
+    <text x="140" y="175" font-family="'Space Grotesk', sans-serif"
+          font-size="46" fill="#a0a0b0">Fill this out and we'll get back to you soon.</text>
+  </g>
+
+  <!-- ===== FORM FIELDS ===== -->
+  <g transform="translate(0, 560)">
+    <!-- Name + Phone row -->
+    <g>
+      <!-- Name -->
+      <text x="140" y="0" font-family="'JetBrains Mono', monospace" font-size="30" fill="#a0a0b0">NAME</text>
+      <rect x="140" y="30" width="1020" height="110" rx="14" fill="#1a1a24" stroke="#2a2a3a" stroke-width="2"/>
+      <text x="170" y="98" font-family="'Space Grotesk', sans-serif" font-size="42" fill="#666680" opacity="0.7">What should we call you?</text>
+
+      <!-- Phone -->
+      <text x="1230" y="0" font-family="'JetBrains Mono', monospace" font-size="30" fill="#a0a0b0">PHONE</text>
+      <rect x="1230" y="30" width="1020" height="110" rx="14" fill="#1a1a24" stroke="#2a2a3a" stroke-width="2"/>
+      <text x="1260" y="98" font-family="'Space Grotesk', sans-serif" font-size="42" fill="#666680" opacity="0.7">(423) 555-1234</text>
+    </g>
+
+    <!-- Email -->
+    <g transform="translate(0, 180)">
+      <text x="140" y="0" font-family="'JetBrains Mono', monospace" font-size="30" fill="#a0a0b0">EMAIL</text>
+      <rect x="140" y="30" width="2110" height="110" rx="14" fill="#1a1a24" stroke="#2a2a3a" stroke-width="2"/>
+      <text x="170" y="98" font-family="'Space Grotesk', sans-serif" font-size="42" fill="#666680" opacity="0.7">your@email.com</text>
+    </g>
+
+    <!-- Section: What brings you here? -->
+    <g transform="translate(0, 360)">
+      <text x="140" y="0" font-family="'JetBrains Mono', monospace" font-size="32" fill="#5cb85c" letter-spacing="0.1em">// WHAT BRINGS YOU HERE?</text>
+
+      <!-- Checkbox grid 2×3 -->
+      <!-- Row 1 -->
+      <g transform="translate(140, 60)">
+        <!-- Visiting -->
+        <g>
+          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+          <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
+          <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">Visiting this Sunday</text>
+          <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">First time or coming back</text>
+        </g>
+        <!-- Groups -->
+        <g transform="translate(1050, 0)">
+          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+          <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
+          <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">Finding a community group</text>
+          <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Gaming, coffee, rides, worship, etc.</text>
+        </g>
+      </g>
+
+      <!-- Row 2 -->
+      <g transform="translate(140, 220)">
+        <!-- Serving -->
+        <g>
+          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+          <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
+          <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">Serving / volunteering</text>
+          <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Help with events, tech, outreach</text>
+        </g>
+        <!-- Questions -->
+        <g transform="translate(1050, 0)">
+          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+          <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
+          <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">Questions about faith</text>
+          <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Just exploring, no pressure</text>
+        </g>
+      </g>
+
+      <!-- Row 3 -->
+      <g transform="translate(140, 380)">
+        <!-- Prayer -->
+        <g>
+          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+          <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
+          <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">Prayer request</text>
+          <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">We'd love to pray with you</text>
+        </g>
+        <!-- Something else -->
+        <g transform="translate(1050, 0)">
+          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+          <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
+          <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">Something else</text>
+          <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Tell us in the notes below</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Notes textarea -->
+    <g transform="translate(0, 880)">
+      <text x="140" y="0" font-family="'JetBrains Mono', monospace" font-size="30" fill="#a0a0b0">NOTES / MESSAGE</text>
+      <rect x="140" y="30" width="2110" height="380" rx="14" fill="#1a1a24" stroke="#2a2a3a" stroke-width="2"/>
+      <text x="170" y="88" font-family="'Space Grotesk', sans-serif" font-size="42" fill="#666680" opacity="0.7">Anything else you'd like us to know? Questions, prayer requests,</text>
+      <text x="170" y="138" font-family="'Space Grotesk', sans-serif" font-size="42" fill="#666680" opacity="0.7">or just saying hi…</text>
+    </g>
+  </g>
+
+  <!-- ===== FOOTER / SUBMIT ===== -->
+  <g transform="translate(0, 1950)">
+    <!-- Footer bar -->
+    <rect width="2550" height="380" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+
+    <!-- Submit button (visual) -->
+    <rect x="140" y="70" width="2270" height="130" rx="16" fill="#5cb85c"/>
+    <text x="1275" y="155" text-anchor="middle"
+          font-family="'JetBrains Mono', monospace"
+          font-size="52" font-weight="700" fill="#0a0a0f">Send to hello@thevineathens.church</text>
+
+    <!-- Contact info -->
+    <text x="1275" y="280" text-anchor="middle"
+          font-family="'Space Grotesk', sans-serif"
+          font-size="38" fill="#666680">Or text/call us directly: <tspan font-weight="600" fill="#a0a0b0">(423) 216-4433</tspan></text>
+    <text x="1275" y="330" text-anchor="middle"
+          font-family="'Space Grotesk', sans-serif"
+          font-size="36" fill="#666680">Sundays at 10:30am • Athens, TN • thevineathens.church</text>
+  </g>
+</svg>

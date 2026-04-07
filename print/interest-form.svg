@@ -180,71 +180,74 @@
       <g transform="translate(140, 580)">
         <!-- TERMINAL -->
         <g>
-          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+          <rect x="0" y="0" width="650" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
           <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
           <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">TERMINAL</text>
           <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Code and Coffee</text>
         </g>
         <!-- RESPAWN -->
-        <g transform="translate(1050, 0)">
-          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+        <g transform="translate(700, 0)">
+          <rect x="0" y="0" width="650" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
           <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
           <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">RESPAWN</text>
           <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Monthly Game Night</text>
+        </g>
+        <!-- BRANCHES -->
+        <g transform="translate(1400, 0)">
+          <rect x="0" y="0" width="650" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+          <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
+          <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">BRANCHES</text>
+          <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Bible and Food</text>
         </g>
       </g>
 
       <!-- Row 2 -->
       <g transform="translate(140, 740)">
-        <!-- BRANCHES -->
-        <g>
-          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
-          <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
-          <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">BRANCHES</text>
-          <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Bible and Food</text>
-        </g>
         <!-- SERVE -->
-        <g transform="translate(1050, 0)">
-          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+        <g>
+          <rect x="0" y="0" width="650" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
           <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
           <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">SERVE</text>
           <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Community Outreach</text>
         </g>
-      </g>
-
-      <!-- Row 3 -->
-      <g transform="translate(140, 900)">
         <!-- BASECAMP -->
-        <g>
-          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+        <g transform="translate(700, 0)">
+          <rect x="0" y="0" width="650" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
           <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
           <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">BASECAMP</text>
           <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Outdoor Activities</text>
         </g>
         <!-- CONFIG -->
-        <g transform="translate(1050, 0)">
-          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+        <g transform="translate(1400, 0)">
+          <rect x="0" y="0" width="650" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
           <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
           <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">CONFIG</text>
           <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Free "Tech Help" Clinics</text>
         </g>
       </g>
 
-      <!-- Row 4 -->
-      <g transform="translate(140, 1060)">
+      <!-- Row 3 -->
+      <g transform="translate(140, 900)">
         <!-- AMPLIFIED -->
         <g>
-          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+          <rect x="0" y="0" width="650" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
           <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
           <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">AMPLIFIED</text>
           <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Open Worship and Jam Night</text>
         </g>
         <!-- CHURCH2U -->
-        <g transform="translate(1050, 0)">
-          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+        <g transform="translate(700, 0)">
+          <rect x="0" y="0" width="650" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
           <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
           <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">CHURCH2U</text>
           <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Food Delivery and Cookouts</text>
+        </g>
+        <!-- ROOT ACCESS -->
+        <g transform="translate(1400, 0)">
+          <rect x="0" y="0" width="650" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+          <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
+          <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">ROOT ACCESS</text>
+          <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Vine Men</text>
         </g>
       </g>
     </g>

@@ -187,6 +187,11 @@
         <text x="28" y="40" font-family="'JetBrains Mono', monospace" font-size="26" fill="#5cb85c">BASECAMP</text>
         <text x="28" y="82" font-family="'Space Grotesk', sans-serif" font-size="32" fill="#e0e0e8">Monthly outdoor adventures</text>
       </g>
+      <g transform="translate(720, 140)">
+        <rect x="0" y="0" width="680" height="120" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="1.5"/>
+        <text x="28" y="40" font-family="'JetBrains Mono', monospace" font-size="26" fill="#5cb85c">AMPLIFIED</text>
+        <text x="28" y="82" font-family="'Space Grotesk', sans-serif" font-size="32" fill="#e0e0e8">Monthly open worship and creative night</text>
+      </g>
 
       <!-- Row 3 -->
       <g transform="translate(0, 280)">

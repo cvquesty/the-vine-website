@@ -139,7 +139,9 @@
           font-size="28" fill="#5cb85c" letter-spacing="0.1em">// SUNDAYS AT 10:30AM</text>
 
     <text x="100" y="135" font-family="'Space Grotesk', sans-serif"
-          font-size="72" font-weight="600" fill="#e0e0e8">No dress code. No judgment.<br/>Just Jesus and a lot of coffee.</text>
+          font-size="68" font-weight="600" fill="#e0e0e8">No dress code. No judgment.</text>
+    <text x="100" y="205" font-family="'Space Grotesk', sans-serif"
+          font-size="68" font-weight="600" fill="#e0e0e8">Just Jesus and a lot of coffee.</text>
 
     <text x="100" y="240" font-family="'Space Grotesk', sans-serif"
           font-size="42" fill="#a0a0b0" line-height="1.7">

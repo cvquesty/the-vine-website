@@ -147,12 +147,13 @@
           font-size="38" fill="#a0a0b0">We're a church for the rest of us</text>
 
     <text x="100" y="318" font-family="'Space Grotesk', sans-serif"
-          font-size="38" fill="#a0a0b0" line-height="1.5">
-      Gamers, bikers, creatives, and musicians.<br/>
-      Anyone who's ever felt like they don't fit the mold.<br/>
-      <br/>
-      Real faith. Real people. Real community.
-    </text>
+          font-size="38" fill="#a0a0b0">Gamers, bikers, creatives, and musicians.</text>
+
+    <text x="100" y="356" font-family="'Space Grotesk', sans-serif"
+          font-size="38" fill="#a0a0b0">Anyone who's ever felt like they don't fit the mold.</text>
+
+    <text x="100" y="394" font-family="'Space Grotesk', sans-serif"
+          font-size="38" fill="#a0a0b0">Real faith. Real people. Real community.</text>
 
     <!-- Info grid -->
     <g transform="translate(100, 340)">

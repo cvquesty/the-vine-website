@@ -143,16 +143,21 @@
     <text x="825" y="205" text-anchor="middle" font-family="'Space Grotesk', sans-serif"
           font-size="66" font-weight="600" fill="#e0e0e8">Just Jesus and a lot of coffee.</text>
 
-    <text x="100" y="280" font-family="'Space Grotesk', sans-serif"
+    <text x="100" y="243" font-family="'Space Grotesk', sans-serif"
+          font-size="38" fill="#a0a0b0"></text>
+    <text x="100" y="281" font-family="'Space Grotesk', sans-serif"
+          font-size="38" fill="#a0a0b0"></text>
+
+    <text x="100" y="319" font-family="'Space Grotesk', sans-serif"
           font-size="38" fill="#a0a0b0">We're a church for the rest of us</text>
 
-    <text x="100" y="318" font-family="'Space Grotesk', sans-serif"
+    <text x="100" y="357" font-family="'Space Grotesk', sans-serif"
           font-size="38" fill="#a0a0b0">Gamers, bikers, creatives, and musicians.</text>
 
-    <text x="100" y="356" font-family="'Space Grotesk', sans-serif"
+    <text x="100" y="395" font-family="'Space Grotesk', sans-serif"
           font-size="38" fill="#a0a0b0">Anyone who's ever felt like they don't fit the mold.</text>
 
-    <text x="100" y="394" font-family="'Space Grotesk', sans-serif"
+    <text x="100" y="433" font-family="'Space Grotesk', sans-serif"
           font-size="38" fill="#a0a0b0">Real faith. Real people. Real community.</text>
 
     <!-- Community section -->

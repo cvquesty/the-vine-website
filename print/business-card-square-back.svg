@@ -64,8 +64,8 @@
     <text x="0" y="64" font-family="'Space Grotesk', sans-serif" font-size="20" fill="#a0a0b0">Ocoee River Region</text>
   </g>
 
-  <!-- QR Code - user-generated PNG for https://thevineathens.church, tinted to vine green -->
-  <g transform="translate(285, 380)">
+  <!-- QR Code - user-generated PNG for https://thevineathens.church -->
+  <g transform="translate(285, 437)">
     <rect x="0" y="0" width="180" height="180" rx="12" fill="#ffffff"/>
     <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAA+CAIAAAD8oz8TAAABp0lEQVRo3u2aSw7CMAxEW8ShuBh79lyMY7HoJsLy6MVBoEyaDajNTxNnPLa7bWf7fduPn+frAQfcb4+P/vFJ7N+2OLa2h8u8qF81QhlaHG+N5fG2XZfvwQV1ja7GjNs6sWyyBy/Ue1u0V84k2rJ1WxV1zcrZORDmWQ91Yn+xT4tl/D9ynu6oc/vrRTfrH8fyPUyM+j7C5TVFOX4TvFDPMCOIaiw1o+u1DPX6zjVJ7WR6IyM9ql3L0Ztyy9YzHP9rmr4dFcfOj3pmi9rnaVYm/E2YKptnfoap5VU469dmWEnDEF7/Vqw5kjPz0uu9HBz7a99JZiAn48Xr/Nbrt1zVkDjVkdcJe/Acy0jMxVnfMfvVm83qzYRlPbM5fRlGVxfGM+IZrplN6xUdMwJEW/dGk7zqRBjMRa/zXArJgdUyAkTZO+r1ms4mJ8a1JHnupRyJjuPakPhagrSjNyWRJY9BiUfkWYDs+XrfCGSKj8Q4fKzOuq1Xrea1hxp3Zd7dxJsWUeeVD53nIbdoDVsfqWUSj0tugrleL34jwKsdJJPYWwmc3tbP9o/2BufWAr3A0tT/AAAAAElFTkSuQmCC" x="0" y="0" width="180" height="180" preserveAspectRatio="xMidYMid meet"/>
   </g>

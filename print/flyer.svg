@@ -143,11 +143,11 @@
     <text x="100" y="205" font-family="'Space Grotesk', sans-serif"
           font-size="66" font-weight="600" fill="#e0e0e8">Just Jesus and a lot of coffee.</text>
 
-    <text x="100" y="240" font-family="'Space Grotesk', sans-serif"
-          font-size="42" fill="#a0a0b0" line-height="1.7">
+    <text x="100" y="260" font-family="'Space Grotesk', sans-serif"
+          font-size="38" fill="#a0a0b0" line-height="1.5">
       We're a church for the rest of us<br/>
-      gamers, coders, bikers, creatives,<br/>
-      and anyone who's ever felt like they don't fit the mold.<br/>
+      gamers, coders, bikers, creatives, and anyone who's ever felt like<br/>
+      they don't fit the mold.<br/>
       Real faith. Real people. Real community.
     </text>
 

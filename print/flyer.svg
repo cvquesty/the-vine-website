@@ -155,22 +155,6 @@
     <text x="100" y="394" font-family="'Space Grotesk', sans-serif"
           font-size="38" fill="#a0a0b0">Real faith. Real people. Real community.</text>
 
-    <!-- Info grid -->
-    <g transform="translate(100, 340)">
-      <!-- WHEN -->
-      <rect x="0" y="0" width="680" height="160" rx="16" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
-      <text x="32" y="48" font-family="'JetBrains Mono', monospace" font-size="26" fill="#5cb85c">WHEN</text>
-      <text x="32" y="108" font-family="'Space Grotesk', sans-serif" font-size="44" fill="#e0e0e8">Sundays at 10:30am</text>
-
-      <!-- WHERE -->
-      <g transform="translate(720, 0)">
-        <rect x="0" y="0" width="680" height="160" rx="16" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
-        <text x="32" y="48" font-family="'JetBrains Mono', monospace" font-size="26" fill="#5cb85c">WHERE</text>
-        <text x="32" y="92" font-family="'Space Grotesk', sans-serif" font-size="44" fill="#e0e0e8">Athens, Tennessee</text>
-        <text x="32" y="130" font-family="'Space Grotesk', sans-serif" font-size="34" fill="#a0a0b0">Ocoee River Region</text>
-      </g>
-    </g>
-
     <!-- Community section -->
     <text x="100" y="590" font-family="'JetBrains Mono', monospace"
           font-size="28" fill="#5cb85c" letter-spacing="0.1em">// FIND YOUR PEOPLE</text>

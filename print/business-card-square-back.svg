@@ -71,8 +71,6 @@
     <text x="90" y="205" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="16" fill="#5cb85c">SCAN FOR</text>
     <text x="90" y="221" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="16" fill="#5cb85c">MORE INFO</text>
   </g>
-    </g>
-  </g>
 
   <!-- Bottom tagline -->
   <text x="375" y="650" text-anchor="middle"

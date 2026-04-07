@@ -68,7 +68,7 @@
     <rect x="-37.5" y="-37.5" width="1725" height="557.5" fill="#12121a"/>
 
     <!-- Logo icon centered -->
-    <g transform="translate(825, 120) scale(0.85)">
+    <g transform="translate(950, 80) scale(0.85)">
       <!-- Leaf -->
       <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z"
             fill="none" stroke="url(#leaf-grad)" stroke-width="8" stroke-linejoin="round"

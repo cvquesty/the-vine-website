@@ -155,7 +155,7 @@
           font-size="38" fill="#a0a0b0">Real faith. Real people. Real community.</text>
 
     <!-- Community section -->
-    <text x="100" y="620" font-family="'JetBrains Mono', monospace"
+    <text x="100" y="590" font-family="'JetBrains Mono', monospace"
           font-size="28" fill="#5cb85c" letter-spacing="0.1em">// FIND YOUR PEOPLE</text>
 
     <text x="100" y="665" font-family="'Space Grotesk', sans-serif"

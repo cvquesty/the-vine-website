@@ -70,7 +70,7 @@
   <!-- QR Code - user-generated PNG for https://thevineathens.church, tinted to vine green -->
   <g transform="translate(560, 290)">
     <rect x="0" y="0" width="220" height="220" rx="16" fill="#0a0a0f"/>
-    <image href="../logo/thevine_qrcode.png" x="0" y="0" width="220" height="220" preserveAspectRatio="xMidYMid meet" filter="url(#qr-green)"/>
+    <image href="../logo/thevine_qrcode.png" x="0" y="0" width="220" height="220" preserveAspectRatio="xMidYMid meet"/>
     <text x="110" y="245" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="16" fill="#5cb85c">SCAN FOR</text>
     <text x="110" y="261" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="16" fill="#5cb85c">MORE INFO</text>
   </g>

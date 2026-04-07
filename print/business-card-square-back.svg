@@ -65,7 +65,7 @@
   </g>
 
   <!-- QR Code - user-generated PNG for https://thevineathens.church (black + #5cb85c green) -->
-  <g transform="translate(285, 333)">
+  <g transform="translate(285, 423)">
     <rect x="0" y="0" width="180" height="180" rx="12" fill="#ffffff"/>
     <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAA+CAIAAAD8oz8TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAqwCrAKtqnd0ZAAAAB3RJTUUH6gQGEiMwLDJbiwAAAcxJREFUaN7tmkGOwjAMRWE0h+MQHI9DcDwW2UTz66/nZERlw9+A0jhJH67jOlwuX71f1/Fxf96hweP2+NNfW7T/LLVdW8PPmdz29Kt3E0mpEN6e5bg6z8vX0IW63pknMTPjvh7Nkl1DL+pZqb/O7UNRJPGe7fWp1H1Ujn4HEnmIelEn/qd9Zpb6PSti1YU6978s3ai/2vI1FKZ+XTMj+UwUSfafhKEu1CNmhKhn6SO6n0tVPl8/8HXvhdlfJrLSdmI1z1WYeribcs/2I4zvazn9bKW29alHvuj3PB+VSfwmkSoapzD1gzoM90se9ddG8KpPfRaJ6//1rrlTMytM/SBfz8Zg7e/3TjKCrkpVn7oyI0+9v8qzGq++cX0mQdj4jDwr8mz0jTARCeWhVLKVsKhnNKaqPnVyurBfEde5/HuWn7Ew9bAioPLv8zoCf8/ne0ivuE5qiCTqk0oi31N9/lOfelbZSmI2lyTthakfZI5eUb1Ar/K9Vvtru6o+9SF+Ps977sRy396F+hDPGX3LbOv3VO79vSJMVvzsYS12Rbt7k910kTo/+YiseBT/DF/fOcvUEcipHVlDq8xx8T8C/LSDVBKzJ4Hlff2rM/QCpMoFD2pitcsAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjYtMDQtMDZUMjI6Mzc6MzMtMDQ6MDDYxD3eAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDI2LTA0LTA2VDIyOjM3OjMzLTA0OjAwqZmFYgAAAABJRU5ErkJggg==" x="0" y="0" width="180" height="180" preserveAspectRatio="xMidYMid meet"/>
   </g>

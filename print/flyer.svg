@@ -83,12 +83,6 @@
       <circle cx="100" cy="148" r="7" fill="#d4a843" filter="url(#amber-glow)"/>
     </g>
 
-    <!-- "the vine" -->
-    <text x="825" y="245" text-anchor="middle"
-          font-family="'JetBrains Mono', monospace"
-          font-size="42" font-weight="400" fill="#666680"
-          letter-spacing="0.35em">the vine</text>
-
     <!-- "THE VINE" title -->
     <text x="825" y="355" text-anchor="middle"
           font-family="'Space Grotesk', sans-serif"

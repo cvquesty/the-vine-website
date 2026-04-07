@@ -187,7 +187,7 @@
           font-size="38" fill="#666680">Or text/call us directly: <tspan font-weight="600" fill="#a0a0b0">(423) 216-4433</tspan></text>
     <text x="1275" y="330" text-anchor="middle"
           font-family="'Space Grotesk', sans-serif"
-          font-size="36" fill="#666680">Sundays at 10:30am • Athens, TN • thevineathens.church</text>
+          font-size="36" fill="#666680">Athens, TN • thevineathens.church</text>
   </g>
 
   <!-- ===== CROP MARKS (trim corners) ===== -->

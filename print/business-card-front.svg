@@ -64,7 +64,7 @@
 
   <!-- Centered logo (scaled for card) -->
   <!-- Leaf icon sized to fit above text without overlap -->
-  <g transform="translate(590, 65)">
+  <g transform="translate(557.5, 97.5)">
     <!-- Leaf outline (~200px tall, fits cleanly above text) -->
     <g transform="scale(1.0)">
       <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z"

@@ -242,6 +242,13 @@
           <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">CHURCH2U</text>
           <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Food Delivery and Cookouts</text>
         </g>
+        <!-- THEOLOGY PIE -->
+        <g transform="translate(1400, 0)">
+          <rect x="0" y="0" width="650" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+          <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
+          <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">THEOLOGY PIE</text>
+          <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Quarterly Pizza and Theology</text>
+        </g>
       </g>
 
       <!-- Row 4: 9th checkbox with write-in text box -->

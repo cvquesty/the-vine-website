@@ -181,12 +181,6 @@
     <!-- Footer bar (extended to bleed horizontally) -->
     <rect x="-37.5" width="2625" height="380" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
 
-    <!-- Submit button (visual) -->
-    <rect x="140" y="70" width="2270" height="130" rx="16" fill="#5cb85c"/>
-    <text x="1275" y="155" text-anchor="middle"
-          font-family="'JetBrains Mono', monospace"
-          font-size="52" font-weight="700" fill="#0a0a0f">Send to hello@thevineathens.church</text>
-
     <!-- Contact info -->
     <text x="1275" y="280" text-anchor="middle"
           font-family="'Space Grotesk', sans-serif"

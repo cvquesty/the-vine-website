@@ -182,9 +182,12 @@
     <rect x="-37.5" width="2625" height="380" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
 
     <!-- Contact info -->
-    <text x="1275" y="340" text-anchor="middle"
+    <text x="1275" y="280" text-anchor="middle"
           font-family="'Space Grotesk', sans-serif"
           font-size="38" fill="#666680">Or text/call us directly: <tspan font-weight="600" fill="#a0a0b0">(423) 216-4433</tspan></text>
+    <text x="1275" y="330" text-anchor="middle"
+          font-family="'Space Grotesk', sans-serif"
+          font-size="36" fill="#666680">Sundays at 10:30am • Athens, TN • thevineathens.church</text>
   </g>
 
   <!-- ===== CROP MARKS (trim corners) ===== -->

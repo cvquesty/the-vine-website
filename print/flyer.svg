@@ -138,10 +138,6 @@
 
   <!-- ===== CONTENT ===== -->
   <g transform="translate(0, 1000)">
-    <!-- Sundays intro -->
-    <text x="100" y="60" font-family="'JetBrains Mono', monospace"
-          font-size="28" fill="#5cb85c" letter-spacing="0.1em">// SUNDAYS AT 10:30AM</text>
-
     <text x="100" y="135" font-family="'Space Grotesk', sans-serif"
           font-size="68" font-weight="600" fill="#e0e0e8">No dress code. No judgment.</text>
     <text x="100" y="205" font-family="'Space Grotesk', sans-serif"

@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  THE VINE — Interest Form
-  Size: 8.5" × 11" (letter), 300 DPI → 2550 × 3300 units
-  Print: Export as PDF or print directly. Fillable visually — print and hand-write.
+  THE VINE — Interest Form (Camera-Ready)
+  Trim: 8.5" × 11" (letter) at 300 DPI → 2550 × 3300 units
+  Bleed: 1/8" (37.5 units) on all sides → document 2625 × 3375
+  Crop marks: included at trim corners
   
-  Design: Same motif as website. Form fields are visual boxes for pen/paper.
+  Print workflow: Open in Illustrator/Inkscape → Export to PDF → Send to printer
+  Fonts: Space Grotesk, JetBrains Mono, Caveat (must be installed or outline before print)
+  
+  Colors: #0a0a0f bg, #5cb85c green, #d4a843 amber, #e0e0e8 text
+  Form fields: white fill (#ffffff) for handwritten legibility
 -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2550 3300" width="2550" height="3300">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-37.5 -37.5 2625 3375" width="2625" height="3375">
   <defs>
     <!-- Background gradient -->
     <radialGradient id="form-bg" cx="50%" cy="40%" r="70%">
@@ -42,13 +47,13 @@
     </filter>
   </defs>
 
-  <!-- Background -->
-  <rect width="2550" height="3300" fill="url(#form-bg)"/>
+  <!-- Background (extended to bleed) -->
+  <rect x="-37.5" y="-37.5" width="2625" height="3375" fill="url(#form-bg)"/>
 
   <!-- ===== HEADER ===== -->
   <g transform="translate(0, 0)">
-    <!-- Header bar -->
-    <rect width="2550" height="300" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+    <!-- Header bar (extended to top bleed) -->
+    <rect x="-37.5" y="-37.5" width="2625" height="337.5" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
 
     <!-- Logo -->
     <g transform="translate(140, 80) scale(0.75)">
@@ -173,8 +178,8 @@
 
   <!-- ===== FOOTER / SUBMIT ===== -->
   <g transform="translate(0, 1950)">
-    <!-- Footer bar -->
-    <rect width="2550" height="380" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+    <!-- Footer bar (extended to bleed horizontally) -->
+    <rect x="-37.5" width="2625" height="380" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
 
     <!-- Submit button (visual) -->
     <rect x="140" y="70" width="2270" height="130" rx="16" fill="#5cb85c"/>
@@ -189,5 +194,17 @@
     <text x="1275" y="330" text-anchor="middle"
           font-family="'Space Grotesk', sans-serif"
           font-size="36" fill="#666680">Sundays at 10:30am • Athens, TN • thevineathens.church</text>
+  </g>
+
+  <!-- ===== CROP MARKS (trim corners) ===== -->
+  <g stroke="#000000" stroke-width="1" fill="none">
+    <!-- Top-left -->
+    <path d="M-15,0 L0,0 L0,-15"/>
+    <!-- Top-right -->
+    <path d="M2550,-15 L2550,0 L2565,0"/>
+    <!-- Bottom-left -->
+    <path d="M-15,3300 L0,3300 L0,3315"/>
+    <!-- Bottom-right -->
+    <path d="M2550,3315 L2550,3300 L2565,3300"/>
   </g>
 </svg>

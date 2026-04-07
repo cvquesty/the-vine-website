@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  THE VINE — Hand Flyer
-  Size: 5.5" × 8.5" (half letter), 300 DPI → 1650 × 2550 units
-  Print: Export as PDF or print directly. Same motif as website.
+  THE VINE — Hand Flyer (Camera-Ready)
+  Trim: 5.5" × 8.5" (half letter) at 300 DPI → 1650 × 2550 units
+  Bleed: 1/8" (37.5 units) on all sides → document 1725 × 2625
+  Crop marks: included at trim corners
   
-  Design: Dark bg, vine green #5cb85c, amber #d4a843, Space Grotesk / JetBrains Mono / Caveat
+  Print workflow: Open in Illustrator/Inkscape → Export to PDF → Send to printer
+  Fonts: Space Grotesk, JetBrains Mono, Caveat (must be installed or outline before print)
+  
+  Colors: #0a0a0f bg, #5cb85c green, #d4a843 amber, #e0e0e8 text
 -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1650 2550" width="1650" height="2550">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-37.5 -37.5 1725 2625" width="1725" height="2625">
   <defs>
     <!-- Background gradient -->
     <radialGradient id="flyer-bg" cx="50%" cy="40%" r="70%">
@@ -55,13 +59,13 @@
     </filter>
   </defs>
 
-  <!-- Background -->
-  <rect width="1650" height="2550" fill="url(#flyer-bg)"/>
+  <!-- Background (extended to bleed) -->
+  <rect x="-37.5" y="-37.5" width="1725" height="2625" fill="url(#flyer-bg)"/>
 
   <!-- ===== HEADER ===== -->
   <g transform="translate(0, 0)">
-    <!-- Header bg band -->
-    <rect width="1650" height="520" fill="#12121a"/>
+    <!-- Header bg band (extended to top bleed) -->
+    <rect x="-37.5" y="-37.5" width="1725" height="557.5" fill="#12121a"/>
 
     <!-- Logo icon centered -->
     <g transform="translate(825, 120) scale(0.85)">
@@ -100,8 +104,8 @@
 
   <!-- ===== ILLUSTRATION (Ocoee River / Mountains) ===== -->
   <g transform="translate(0, 520)">
-    <!-- Dark green bg -->
-    <rect width="1650" height="480" fill="#0a0f0a"/>
+    <!-- Dark green bg (extended to bleed horizontally) -->
+    <rect x="-37.5" width="1725" height="480" fill="#0a0f0a"/>
 
     <!-- Mountains back layer -->
     <path d="M0,260 L180,150 L360,210 L600,105 L840,180 L1020,90 L1200,165 L1350,120 L1650,195 L1650,480 L0,480 Z"
@@ -215,8 +219,8 @@
 
   <!-- ===== CTA FOOTER ===== -->
   <g transform="translate(0, 1990)">
-    <!-- CTA bg -->
-    <rect width="1650" height="340" fill="#12121a" stroke="#2a2a3a" stroke-width="1"/>
+    <!-- CTA bg (extended to bleed horizontally) -->
+    <rect x="-37.5" width="1725" height="340" fill="#12121a" stroke="#2a2a3a" stroke-width="1"/>
 
     <!-- Button -->
     <rect x="100" y="60" width="1450" height="120" rx="16" fill="#5cb85c"/>
@@ -232,10 +236,23 @@
 
   <!-- ===== BOTTOM BAR ===== -->
   <g transform="translate(0, 2330)">
-    <rect width="1650" height="220" fill="#0a0a0f" stroke="#2a2a3a" stroke-width="1"/>
+    <!-- Extended to bleed horizontally -->
+    <rect x="-37.5" width="1725" height="220" fill="#0a0a0f" stroke="#2a2a3a" stroke-width="1"/>
     <text x="825" y="125" text-anchor="middle"
           font-family="'JetBrains Mono', monospace"
           font-size="28" fill="#666680"
           letter-spacing="0.05em">THE VINE CHURCH — ATHENS, TN • HELLO@THEVINEATHENS.CHURCH • THEVINEATHENS.CHURCH</text>
+  </g>
+
+  <!-- ===== CROP MARKS (trim corners) ===== -->
+  <g stroke="#000000" stroke-width="1" fill="none">
+    <!-- Top-left -->
+    <path d="M-15,0 L0,0 L0,-15"/>
+    <!-- Top-right -->
+    <path d="M1650,-15 L1650,0 L1665,0"/>
+    <!-- Bottom-left -->
+    <path d="M-15,2550 L0,2550 L0,2565"/>
+    <!-- Bottom-right -->
+    <path d="M1650,2565 L1650,2550 L1665,2550"/>
   </g>
 </svg>

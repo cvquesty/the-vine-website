@@ -2,6 +2,8 @@
 
 Print-ready designs matching the website's dark tech-forward aesthetic: vine-green `#5cb85c`, amber `#d4a843`, near-black `#0a0a0f`, with Space Grotesk / JetBrains Mono / Caveat fonts.
 
+**Camera-ready SVGs:** `flyer.svg` and `interest-form.svg` include 1/8" bleed and crop marks — open directly in Illustrator/Inkscape and export to press-ready PDF. No manual bleed setup needed.
+
 ---
 
 ## Files
@@ -43,9 +45,9 @@ Print-ready designs matching the website's dark tech-forward aesthetic: vine-gre
 - Includes a clickable link to the website (becomes plain text on print).
 
 **Print tips:**
-1. Open `flyer.svg` in your browser, Illustrator, or Inkscape.
-2. **Browser:** Right-click → "Save image as..." → PDF, or **Print → Save as PDF** (set paper to 5.5 × 8.5").
-3. **Vector editor:** Export directly to PDF at 300 DPI.
+1. `flyer.svg` is camera-ready — includes 1/8" bleed and crop marks.
+2. Open in Illustrator/Inkscape → Export to PDF (300 DPI, include bleed).
+3. For quick print: open in browser → Print → Save as PDF (trim manually if needed).
 4. Print on 14pt cardstock or 80# cover paper for durability.
 
 **Tip:** For bulk printing (church lobby, events), export the PDF and send to a local print shop (Staples, Vistaprint, etc.) with a request for "half letter cardstock, matte finish."
@@ -61,10 +63,10 @@ Print-ready designs matching the website's dark tech-forward aesthetic: vine-gre
 - Same motif: dark bg, vine green accents, Caveat tagline.
 
 **Print tips:**
-1. Open `interest-form.svg` in browser or vector editor.
-2. Export to PDF or Print directly to **Letter (8.5×11)**.
+1. `interest-form.svg` is camera-ready — includes 1/8" bleed and crop marks.
+2. Open in Illustrator/Inkscape → Export to PDF (300 DPI, include bleed).
 3. For pen/paper use: print on 24lb bond or heavier paper so handwriting doesn't bleed.
-4. Place printed forms on lobby table with pens for guests.
+4. Form fields are white for legible handwritten responses. Place on lobby table with pens.
 
 **Tip:** For digital fill, use the original HTML version or type onto a printed copy. The SVG is optimized for clean print output.
 
@@ -92,8 +94,8 @@ Print-ready designs matching the website's dark tech-forward aesthetic: vine-gre
 | Item | Front | Back | Paper | Finish |
 |------|-------|------|-------|--------|
 | Business cards | `business-card-front.svg` or `business-card-square-front.svg` | `business-card-back.svg` or `business-card-square-back.svg` | 14–16pt cardstock | Matte or soft-touch |
-| Flyers (half letter) | `flyer.svg` → PDF | — | 80# cover or 14pt | Matte |
-| Interest forms | `interest-form.svg` → PDF | — | 24lb bond or heavier | Matte |
+| Flyers (half letter) | `flyer.svg` (camera-ready, bleed+crop) → PDF | — | 80# cover or 14pt | Matte |
+| Interest forms | `interest-form.svg` (camera-ready, bleed+crop) → PDF | — | 24lb bond or heavier | Matte |
 
 ---
 

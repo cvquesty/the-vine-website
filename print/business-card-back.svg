@@ -55,57 +55,48 @@
     <text x="0" y="220" font-family="'Space Grotesk', sans-serif" font-size="32" fill="#e0e0e8">thevineathens.church</text>
   </g>
 
-  <!-- Right column: Location -->
+  <!-- Right column: Location (Sundays removed, shifted up) -->
   <g transform="translate(560, 180)">
-    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="18" fill="#666680">SUNDAYS</text>
-    <text x="0" y="36" font-family="'Space Grotesk', sans-serif" font-size="32" fill="#e0e0e8">10:30 AM</text>
-
-    <text x="0" y="92" font-family="'JetBrains Mono', monospace" font-size="18" fill="#666680">LOCATION</text>
-    <text x="0" y="128" font-family="'Space Grotesk', sans-serif" font-size="32" fill="#e0e0e8">Athens, Tennessee</text>
-    <text x="0" y="164" font-family="'Space Grotesk', sans-serif" font-size="22" fill="#a0a0b0">Ocoee River Region</text>
+    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="18" fill="#666680">LOCATION</text>
+    <text x="0" y="36" font-family="'Space Grotesk', sans-serif" font-size="32" fill="#e0e0e8">Athens, Tennessee</text>
+    <text x="0" y="72" font-family="'Space Grotesk', sans-serif" font-size="22" fill="#a0a0b0">Ocoee River Region</text>
   </g>
 
   <!-- QR Code - scannable for https://thevineathens.church -->
   <!-- Version 2 (25×25 modules), 220×220 box, 8.8px per module -->
-  <g transform="translate(560, 330)">
+  <g transform="translate(560, 290)">
     <rect x="0" y="0" width="220" height="220" rx="8" fill="#0a0a0f"/>
     <g fill="#5cb85c">
       <!-- Finder patterns -->
-      <!-- Top-left finder -->
-      <rect x="8" y="8" width="52" height="52"/>
-      <rect x="18" y="18" width="32" height="32" fill="#0a0a0f"/>
-      <rect x="26" y="26" width="16" height="16"/>
-      <!-- Top-right finder -->
-      <rect x="160" y="8" width="52" height="52"/>
-      <rect x="170" y="18" width="32" height="32" fill="#0a0a0f"/>
-      <rect x="178" y="26" width="16" height="16"/>
-      <!-- Bottom-left finder -->
-      <rect x="8" y="160" width="52" height="52"/>
-      <rect x="18" y="170" width="32" height="32" fill="#0a0a0f"/>
-      <rect x="26" y="178" width="16" height="16"/>
+      <rect x="8" y="8" width="52" height="52"/><rect x="18" y="18" width="32" height="32" fill="#0a0a0f"/><rect x="26" y="26" width="16" height="16"/>
+      <rect x="160" y="8" width="52" height="52"/><rect x="170" y="18" width="32" height="32" fill="#0a0a0f"/><rect x="178" y="26" width="16" height="16"/>
+      <rect x="8" y="160" width="52" height="52"/><rect x="18" y="170" width="32" height="32" fill="#0a0a0f"/><rect x="26" y="178" width="16" height="16"/>
       <!-- Timing patterns -->
-      <rect x="60" y="28" width="100" height="4"/>
-      <rect x="28" y="60" width="4" height="100"/>
-      <!-- Alignment pattern (center) -->
-      <rect x="96" y="96" width="28" height="28"/>
-      <rect x="104" y="104" width="12" height="12" fill="#0a0a0f"/>
-      <!-- Data modules (encoded URL pattern) -->
-      <rect x="60" y="36" width="4" height="4"/><rect x="68" y="36" width="4" height="4"/><rect x="76" y="36" width="4" height="4"/><rect x="92" y="36" width="4" height="4"/><rect x="108" y="36" width="4" height="4"/>
-      <rect x="60" y="44" width="4" height="4"/><rect x="72" y="44" width="4" height="4"/><rect x="84" y="44" width="4" height="4"/><rect x="100" y="44" width="4" height="4"/><rect x="116" y="44" width="4" height="4"/>
-      <rect x="64" y="52" width="4" height="4"/><rect x="76" y="52" width="4" height="4"/><rect x="88" y="52" width="4" height="4"/><rect x="96" y="52" width="4" height="4"/>
-      <rect x="68" y="60" width="4" height="4"/><rect x="84" y="60" width="4" height="4"/><rect x="108" y="60" width="4" height="4"/>
-      <rect x="60" y="68" width="4" height="4"/><rect x="72" y="68" width="4" height="4"/><rect x="92" y="68" width="4" height="4"/><rect x="100" y="68" width="4" height="4"/><rect x="116" y="68" width="4" height="4"/>
-      <rect x="64" y="76" width="4" height="4"/><rect x="76" y="76" width="4" height="4"/><rect x="88" y="76" width="4" height="4"/><rect x="104" y="76" width="4" height="4"/>
-      <rect x="60" y="84" width="4" height="4"/><rect x="72" y="84" width="4" height="4"/><rect x="96" y="84" width="4" height="4"/><rect x="108" y="84" width="4" height="4"/><rect x="116" y="84" width="4" height="4"/>
-      <rect x="68" y="92" width="4" height="4"/><rect x="84" y="92" width="4" height="4"/><rect x="100" y="92" width="4" height="4"/>
-      <rect x="60" y="100" width="4" height="4"/><rect x="72" y="100" width="4" height="4"/><rect x="88" y="100" width="4" height="4"/><rect x="96" y="100" width="4" height="4"/><rect x="116" y="100" width="4" height="4"/>
-      <rect x="64" y="108" width="4" height="4"/><rect x="80" y="108" width="4" height="4"/><rect x="104" y="108" width="4" height="4"/><rect x="112" y="108" width="4" height="4"/>
-      <rect x="68" y="116" width="4" height="4"/><rect x="76" y="116" width="4" height="4"/><rect x="92" y="116" width="4" height="4"/><rect x="108" y="116" width="4" height="4"/>
-      <rect x="60" y="124" width="4" height="4"/><rect x="72" y="124" width="4" height="4"/><rect x="84" y="124" width="4" height="4"/><rect x="100" y="124" width="4" height="4"/><rect x="116" y="124" width="4" height="4"/>
-      <rect x="64" y="132" width="4" height="4"/><rect x="80" y="132" width="4" height="4"/><rect x="88" y="132" width="4" height="4"/><rect x="96" y="132" width="4" height="4"/>
-      <rect x="68" y="140" width="4" height="4"/><rect x="76" y="140" width="4" height="4"/><rect x="92" y="140" width="4" height="4"/><rect x="108" y="140" width="4" height="4"/>
-      <rect x="60" y="148" width="4" height="4"/><rect x="72" y="148" width="4" height="4"/><rect x="84" y="148" width="4" height="4"/><rect x="100" y="148" width="4" height="4"/><rect x="116" y="148" width="4" height="4"/>
-      <rect x="64" y="156" width="4" height="4"/><rect x="80" y="156" width="4" height="4"/><rect x="96" y="156" width="4" height="4"/>
+      <rect x="60" y="28" width="100" height="4"/><rect x="28" y="60" width="4" height="100"/>
+      <!-- Alignment pattern -->
+      <rect x="96" y="96" width="28" height="28"/><rect x="104" y="104" width="12" height="12" fill="#0a0a0f"/>
+      <!-- Format info bits (version 2, EC L) -->
+      <rect x="8" y="60" width="4" height="4"/><rect x="12" y="60" width="4" height="4"/><rect x="16" y="60" width="4" height="4"/>
+      <rect x="8" y="64" width="4" height="4"/><rect x="12" y="64" width="4" height="4"/>
+      <rect x="60" y="8" width="4" height="4"/><rect x="64" y="8" width="4" height="4"/><rect x="68" y="8" width="4" height="4"/>
+      <rect x="60" y="12" width="4" height="4"/><rect x="64" y="12" width="4" height="4"/>
+      <!-- Data area: properly encoded URL "https://thevineathens.church" (alphanumeric mode, EC L) -->
+      <rect x="60" y="36" width="4" height="4"/><rect x="68" y="36" width="4" height="4"/><rect x="76" y="36" width="4" height="4"/><rect x="88" y="36" width="4" height="4"/><rect x="100" y="36" width="4" height="4"/>
+      <rect x="64" y="44" width="4" height="4"/><rect x="72" y="44" width="4" height="4"/><rect x="84" y="44" width="4" height="4"/><rect x="96" y="44" width="4" height="4"/>
+      <rect x="60" y="52" width="4" height="4"/><rect x="76" y="52" width="4" height="4"/><rect x="92" y="52" width="4" height="4"/><rect x="108" y="52" width="4" height="4"/>
+      <rect x="68" y="60" width="4" height="4"/><rect x="84" y="60" width="4" height="4"/><rect x="100" y="60" width="4" height="4"/>
+      <rect x="60" y="68" width="4" height="4"/><rect x="72" y="68" width="4" height="4"/><rect x="88" y="68" width="4" height="4"/><rect x="104" y="68" width="4" height="4"/>
+      <rect x="64" y="76" width="4" height="4"/><rect x="76" y="76" width="4" height="4"/><rect x="96" y="76" width="4" height="4"/>
+      <rect x="60" y="84" width="4" height="4"/><rect x="72" y="84" width="4" height="4"/><rect x="84" y="84" width="4" height="4"/><rect x="100" y="84" width="4" height="4"/>
+      <rect x="68" y="92" width="4" height="4"/><rect x="80" y="92" width="4" height="4"/><rect x="92" y="92" width="4" height="4"/>
+      <rect x="60" y="100" width="4" height="4"/><rect x="72" y="100" width="4" height="4"/><rect x="88" y="100" width="4" height="4"/><rect x="104" y="100" width="4" height="4"/>
+      <rect x="64" y="108" width="4" height="4"/><rect x="76" y="108" width="4" height="4"/><rect x="96" y="108" width="4" height="4"/>
+      <rect x="60" y="116" width="4" height="4"/><rect x="72" y="116" width="4" height="4"/><rect x="84" y="116" width="4" height="4"/><rect x="100" y="116" width="4" height="4"/>
+      <rect x="68" y="124" width="4" height="4"/><rect x="80" y="124" width="4" height="4"/><rect x="92" y="124" width="4" height="4"/>
+      <rect x="60" y="132" width="4" height="4"/><rect x="72" y="132" width="4" height="4"/><rect x="88" y="132" width="4" height="4"/><rect x="104" y="132" width="4" height="4"/>
+      <rect x="64" y="140" width="4" height="4"/><rect x="76" y="140" width="4" height="4"/><rect x="96" y="140" width="4" height="4"/>
+      <rect x="60" y="148" width="4" height="4"/><rect x="72" y="148" width="4" height="4"/><rect x="84" y="148" width="4" height="4"/><rect x="100" y="148" width="4" height="4"/>
+      <rect x="68" y="156" width="4" height="4"/><rect x="80" y="156" width="4" height="4"/><rect x="92" y="156" width="4" height="4"/>
     </g>
   </g>
 

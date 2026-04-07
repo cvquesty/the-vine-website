@@ -174,6 +174,43 @@
       <text x="170" y="88" font-family="'Space Grotesk', sans-serif" font-size="42" fill="#666680" opacity="0.7">Anything else you'd like us to know? Questions, prayer requests,</text>
       <text x="170" y="138" font-family="'Space Grotesk', sans-serif" font-size="42" fill="#666680" opacity="0.7">or just saying hi…</text>
       <text x="140" y="515" font-family="'JetBrains Mono', monospace" font-size="32" fill="#5cb85c" letter-spacing="0.1em">// BRANCHES <tspan fill="#e0e0e8">- Community done different.</tspan></text>
+
+      <!-- Branch checkboxes -->
+      <!-- Row 1 -->
+      <g transform="translate(140, 580)">
+        <!-- TERMINAL -->
+        <g>
+          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+          <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
+          <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">TERMINAL</text>
+          <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Code and Coffee</text>
+        </g>
+        <!-- RESPAWN -->
+        <g transform="translate(1050, 0)">
+          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+          <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
+          <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">RESPAWN</text>
+          <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Monthly Game Night</text>
+        </g>
+      </g>
+
+      <!-- Row 2 -->
+      <g transform="translate(140, 740)">
+        <!-- BRANCHES -->
+        <g>
+          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+          <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
+          <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">BRANCHES</text>
+          <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Bible and Food</text>
+        </g>
+        <!-- Something else -->
+        <g transform="translate(1050, 0)">
+          <rect x="0" y="0" width="990" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
+          <rect x="28" y="28" width="36" height="36" rx="6" fill="#0a0a0f" stroke="#5cb85c" stroke-width="3"/>
+          <text x="86" y="52" font-family="'Space Grotesk', sans-serif" font-size="38" fill="#e0e0e8">Something else</text>
+          <text x="86" y="90" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#666680">Tell us in the notes above</text>
+        </g>
+      </g>
     </g>
   </g>
 

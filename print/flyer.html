@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Vine — Hand Flyer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --green: #5cb85c;
+      --green-light: #8cd98c;
+      --green-dark: #3a8a3a;
+      --amber: #d4a843;
+      --text: #e0e0e8;
+      --text-secondary: #a0a0b0;
+      --text-muted: #666680;
+      --border: #2a2a3a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      background: #2a2a3a;
+      color: var(--text);
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .flyer {
+      width: 5.5in;
+      min-height: 8.5in;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 60px rgba(0,0,0,0.6);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Header */
+    .header {
+      background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
+      padding: 36px 32px 24px;
+      text-align: center;
+      position: relative;
+    }
+    .logo-icon {
+      width: 72px; height: 72px;
+      margin-bottom: 12px;
+    }
+    .logo-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      letter-spacing: 0.35em;
+      text-transform: lowercase;
+    }
+    .title {
+      font-size: 3.2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--green-light), var(--green), var(--green-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+    }
+    .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+      color: var(--amber);
+      margin-top: 8px;
+    }
+    /* Hero image / illustration */
+    .hero-illustration {
+      height: 160px;
+      background: #0a0f0a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-illustration svg {
+      width: 100%; height: 100%;
+      opacity: 0.7;
+    }
+    /* Content */
+    .content {
+      flex: 1;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--green);
+      opacity: 0.7;
+      letter-spacing: 0.1em;
+    }
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .lead {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .info-card h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--green);
+      margin-bottom: 4px;
+      letter-spacing: 0.05em;
+    }
+    .info-card p {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    /* Community highlights */
+    .groups {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 0.9rem;
+    }
+    .group strong {
+      display: block;
+      color: var(--green);
+      font-size: 0.8rem;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 4px;
+    }
+    /* CTA Footer */
+    .cta {
+      margin-top: auto;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 24px 32px;
+      text-align: center;
+    }
+    .cta .btn {
+      display: inline-block;
+      background: var(--green);
+      color: var(--bg);
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 12px;
+    }
+    .cta .btn:hover { background: var(--green-light); }
+    .cta p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+    /* Footer bar */
+    .footer {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 12px 32px;
+      border-top: 1px solid var(--border);
+    }
+    /* Print */
+    @media print {
+      body { background: white; padding: 0; }
+      .flyer {
+        box-shadow: none;
+        border: none;
+        width: 5.5in;
+        min-height: 8.5in;
+        margin: 0 auto;
+      }
+      .no-print { display: none; }
+      a { text-decoration: none; color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <div class="flyer">
+    <!-- Header -->
+    <header class="header">
+      <svg class="logo-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="leaf" x1="0" y1="0" x2="0.3" y2="1">
+            <stop offset="0%" stop-color="#8cd98c"/>
+            <stop offset="50%" stop-color="#5cb85c"/>
+            <stop offset="100%" stop-color="#3a8a3a"/>
+          </linearGradient>
+        </defs>
+        <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z" fill="none" stroke="url(#leaf)" stroke-width="8" stroke-linejoin="round"/>
+        <line x1="100" y1="38" x2="100" y2="155" stroke="#5cb85c" stroke-width="5" stroke-linecap="round"/>
+        <path d="M100 62 C88 56 76 60 68 68" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
+        <path d="M100 92 C112 86 124 90 132 98" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
+        <path d="M100 122 C88 116 76 120 70 130" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="100" cy="148" r="7" fill="#d4a843"/>
+      </svg>
+      <div class="logo-text">the vine</div>
+      <div class="title">THE VINE</div>
+      <div class="tagline">Where Misfits Find Family</div>
+    </header>
+
+    <!-- Illustration -->
+    <div class="hero-illustration">
+      <svg viewBox="0 0 400 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="river" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2a5a8a" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#1a3a5a" stop-opacity="0.3"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="140" fill="#0a0f0a"/>
+        <!-- Mountains -->
+        <path d="M0,90 L60,50 L120,70 L200,35 L280,60 L340,30 L400,55 L400,140 L0,140 Z" fill="#1a2a1a"/>
+        <path d="M0,105 L80,70 L160,85 L240,55 L320,75 L400,60 L400,140 L0,140 Z" fill="#2a3a2a"/>
+        <!-- River -->
+        <path d="M-10,110 Q100,100 200,115 Q300,105 410,112" fill="none" stroke="url(#river)" stroke-width="18" stroke-linecap="round"/>
+        <!-- Church pin -->
+        <g transform="translate(200,70)">
+          <circle r="10" fill="#5cb85c" opacity="0.3"/>
+          <circle r="5" fill="#5cb85c"/>
+          <path d="M0,-3 L0,3" stroke="white" stroke-width="1.5"/>
+          <path d="M-2,0 L2,0" stroke="white" stroke-width="1.5"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <div>
+        <div class="section-label">// SUNDAYS AT 10:30AM</div>
+        <h2>No dress code. No judgment.<br>Just Jesus and a lot of coffee.</h2>
+        <p class="lead">
+          We're a church for the rest of us — gamers, coders, bikers, creatives, and anyone who's ever felt like they don't fit the mold.
+          Real faith. Real people. Real community.
+        </p>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>WHEN</h3>
+          <p>Sundays at 10:30am</p>
+        </div>
+        <div class="info-card">
+          <h3>WHERE</h3>
+          <p>Athens, Tennessee<br>Ocoee River Region</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-label">// FIND YOUR PEOPLE</div>
+        <h2>Community That Fits You</h2>
+        <div class="groups">
+          <div class="group"><strong>RESPAWN</strong> Friday night gaming &amp; tabletop</div>
+          <div class="group"><strong>TERMINAL</strong> Wednesday morning code &amp; coffee</div>
+          <div class="group"><strong>IRON HORSE</strong> Saturday motorcycle rides</div>
+          <div class="group"><strong>BASECAMP</strong> Monthly outdoor adventures</div>
+          <div class="group"><strong>BRANCHES</strong> Weekly discipleship groups</div>
+          <div class="group"><strong>AMPLIFIED</strong> Thursday music &amp; worship</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Footer -->
+    <div class="cta">
+      <a href="https://thevineathens.church" class="btn">Visit thevineathens.church</a>
+      <p>Questions? Text or call (423) 216-4433 — a real human will reply.</p>
+    </div>
+
+    <div class="footer">
+      THE VINE CHURCH — ATHENS, TN • HELLO@THEVINEATHENS.CHURCH • THEVINEATHENS.CHURCH
+    </div>
+  </div>
+
+  <p class="no-print" style="margin-top: 20px; color: #888; font-size: 0.85rem; text-align: center;">
+    Print this page (Cmd/Ctrl + P) or save as PDF. Set paper size to 5.5 × 8.5 inches (half letter) for best results.
+  </p>
+</body>
+</html>

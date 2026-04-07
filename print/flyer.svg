@@ -158,11 +158,11 @@
     <text x="100" y="620" font-family="'JetBrains Mono', monospace"
           font-size="28" fill="#5cb85c" letter-spacing="0.1em">// FIND YOUR PEOPLE</text>
 
-    <text x="825" y="695" text-anchor="middle" font-family="'Space Grotesk', sans-serif"
+    <text x="825" y="771" text-anchor="middle" font-family="'Space Grotesk', sans-serif"
           font-size="72" font-weight="600" fill="#e0e0e8">Community That Fits You</text>
 
     <!-- Groups grid (2 columns) -->
-    <g transform="translate(100, 750)">
+    <g transform="translate(100, 826)">
       <!-- Row 1 -->
       <g>
         <rect x="0" y="0" width="680" height="120" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="1.5"/>

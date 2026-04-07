@@ -196,9 +196,9 @@
     <rect x="-37.5" y="210" width="1725" height="50" fill="#12121a" stroke="#2a2a3a" stroke-width="1"/>
 
     <!-- Help text -->
-    <text x="825" y="240" text-anchor="middle"
+    <text x="825" y="260" text-anchor="middle"
           font-family="'Space Grotesk', sans-serif"
-          font-size="40" fill="#666680">Questions? Text or call (423) 216-4433 — a real human will reply.</text>
+          font-size="46" fill="#666680">Questions? Text or call (423) 216-4433 — a real human will reply.</text>
   </g>
 
   <!-- ===== BOTTOM BAR ===== -->

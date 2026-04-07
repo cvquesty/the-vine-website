@@ -64,7 +64,7 @@
 
   <!-- Centered logo (scaled for card) -->
   <!-- Leaf icon sized to fit above text without overlap -->
-  <g transform="translate(557.5, 117.5)">
+  <g transform="translate(557.5, 107.5)">
     <!-- Leaf outline (~200px tall, fits cleanly above text) -->
     <g transform="scale(1.0)">
       <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z"
@@ -89,33 +89,33 @@
   </g>
 
   <!-- "the" prefix -->
-  <text x="525" y="320" text-anchor="middle"
+  <text x="525" y="310" text-anchor="middle"
         font-family="'JetBrains Mono', 'Fira Code', monospace"
         font-size="42" font-weight="300" fill="#a0a0b0" letter-spacing="0.4em">the</text>
 
   <!-- "vine" title -->
-  <text x="525" y="410" text-anchor="middle"
+  <text x="525" y="400" text-anchor="middle"
         font-family="'Space Grotesk', sans-serif"
         font-size="112" font-weight="700" fill="url(#title-grad)"
         letter-spacing="-0.04em">vine</text>
 
   <!-- Tagline -->
-  <text x="525" y="480" text-anchor="middle"
+  <text x="525" y="470" text-anchor="middle"
         font-family="'Caveat', cursive"
         font-size="36" fill="#d4a843" opacity="0.9">where misfits find family</text>
 
   <!-- Website (bottom) -->
-  <text x="525" y="530" text-anchor="middle"
+  <text x="525" y="520" text-anchor="middle"
         font-family="'JetBrains Mono', monospace"
         font-size="22" fill="#666680" letter-spacing="0.08em">thevineathens.church</text>
 
   <!-- Corner accent: small leaf icon -->
-  <g transform="translate(60, 60) scale(0.35)" opacity="0.3">
+  <g transform="translate(60, 50) scale(0.35)" opacity="0.3">
     <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z"
           fill="none" stroke="#5cb85c" stroke-width="5" stroke-linejoin="round"/>
     <circle cx="100" cy="148" r="5" fill="#d4a843" opacity="0.7"/>
   </g>
-  <g transform="translate(990, 540) scale(0.35)" opacity="0.3">
+  <g transform="translate(990, 530) scale(0.35)" opacity="0.3">
     <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z"
           fill="none" stroke="#5cb85c" stroke-width="5" stroke-linejoin="round"/>
     <circle cx="100" cy="148" r="5" fill="#d4a843" opacity="0.7"/>

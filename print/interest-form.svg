@@ -177,7 +177,7 @@
 
       <!-- Branch checkboxes -->
       <!-- Row 1 -->
-      <g transform="translate(140, 580)">
+      <g transform="translate(140, 615)">
         <!-- TERMINAL -->
         <g>
           <rect x="0" y="0" width="650" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
@@ -202,7 +202,7 @@
       </g>
 
       <!-- Row 2 -->
-      <g transform="translate(140, 740)">
+      <g transform="translate(140, 775)">
         <!-- SERVE -->
         <g>
           <rect x="0" y="0" width="650" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>
@@ -227,7 +227,7 @@
       </g>
 
       <!-- Row 3 -->
-      <g transform="translate(140, 900)">
+      <g transform="translate(140, 935)">
         <!-- AMPLIFIED -->
         <g>
           <rect x="0" y="0" width="650" height="140" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="2"/>

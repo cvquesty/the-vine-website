@@ -132,37 +132,32 @@
 
   <!-- ===== CONTENT ===== -->
   <g transform="translate(0, 1000)">
-    <text x="825" y="135" text-anchor="middle" font-family="'Space Grotesk', sans-serif"
+    <text x="825" y="120" text-anchor="middle" font-family="'Space Grotesk', sans-serif"
           font-size="66" font-weight="600" fill="#e0e0e8">No dress code. No judgment.</text>
-    <text x="825" y="205" text-anchor="middle" font-family="'Space Grotesk', sans-serif"
+    <text x="825" y="190" text-anchor="middle" font-family="'Space Grotesk', sans-serif"
           font-size="66" font-weight="600" fill="#e0e0e8">Just Jesus and a lot of coffee.</text>
 
-    <text x="100" y="243" font-family="'Space Grotesk', sans-serif"
-          font-size="38" fill="#a0a0b0"></text>
-    <text x="100" y="281" font-family="'Space Grotesk', sans-serif"
-          font-size="38" fill="#a0a0b0"></text>
-
-    <text x="100" y="319" font-family="'Space Grotesk', sans-serif"
+    <text x="100" y="250" font-family="'Space Grotesk', sans-serif"
           font-size="38" fill="#a0a0b0">We're a church for the rest of us.</text>
 
-    <text x="100" y="357" font-family="'Space Grotesk', sans-serif"
+    <text x="100" y="290" font-family="'Space Grotesk', sans-serif"
           font-size="38" fill="#a0a0b0">Gamers, bikers, creatives, and musicians.</text>
 
-    <text x="100" y="395" font-family="'Space Grotesk', sans-serif"
+    <text x="100" y="330" font-family="'Space Grotesk', sans-serif"
           font-size="38" fill="#a0a0b0">Anyone who's ever felt like they don't fit the mold.</text>
 
-    <text x="100" y="433" font-family="'Space Grotesk', sans-serif"
+    <text x="100" y="370" font-family="'Space Grotesk', sans-serif"
           font-size="38" fill="#a0a0b0">Real faith. Real people. Real community.</text>
 
     <!-- Community section -->
-    <text x="100" y="590" font-family="'JetBrains Mono', monospace"
+    <text x="100" y="470" font-family="'JetBrains Mono', monospace"
           font-size="28" fill="#5cb85c" letter-spacing="0.1em">// FIND YOUR PEOPLE</text>
 
-    <text x="100" y="665" font-family="'Space Grotesk', sans-serif"
+    <text x="100" y="545" font-family="'Space Grotesk', sans-serif"
           font-size="72" font-weight="600" fill="#e0e0e8">Community That Fits You</text>
 
     <!-- Groups grid (2 columns) -->
-    <g transform="translate(100, 720)">
+    <g transform="translate(100, 620)">
       <!-- Row 1 -->
       <g>
         <rect x="0" y="0" width="680" height="120" rx="12" fill="#12121a" stroke="#2a2a3a" stroke-width="1.5"/>

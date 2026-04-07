@@ -212,12 +212,6 @@
     <!-- CTA bg (extended to bleed horizontally) -->
     <rect x="-37.5" width="1725" height="340" fill="#12121a" stroke="#2a2a3a" stroke-width="1"/>
 
-    <!-- Button -->
-    <rect x="100" y="60" width="1450" height="120" rx="16" fill="#5cb85c"/>
-    <text x="825" y="130" text-anchor="middle"
-          font-family="'JetBrains Mono', monospace"
-          font-size="48" font-weight="700" fill="#0a0a0f">Visit thevineathens.church</text>
-
     <!-- Help text -->
     <text x="825" y="240" text-anchor="middle"
           font-family="'Space Grotesk', sans-serif"

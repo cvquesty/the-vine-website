@@ -108,7 +108,7 @@
     </g>
 
     <!-- Section: What brings you here? -->
-    <g transform="translate(0, 360)">
+    <g transform="translate(0, 395)">
       <text x="140" y="0" font-family="'JetBrains Mono', monospace" font-size="32" fill="#5cb85c" letter-spacing="0.1em">// WHAT BRINGS YOU HERE?</text>
 
       <!-- Checkbox grid 2×3 -->
@@ -168,7 +168,7 @@
     </g>
 
     <!-- Notes textarea -->
-    <g transform="translate(0, 915)">
+    <g transform="translate(0, 950)">
       <text x="140" y="0" font-family="'JetBrains Mono', monospace" font-size="30" fill="#a0a0b0">NOTES / MESSAGE</text>
       <rect x="140" y="30" width="2110" height="380" rx="14" fill="#ffffff" stroke="#2a2a3a" stroke-width="2"/>
       <text x="170" y="88" font-family="'Space Grotesk', sans-serif" font-size="42" fill="#666680" opacity="0.7">Anything else you'd like us to know? Questions, prayer requests,</text>

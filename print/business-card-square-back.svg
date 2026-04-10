@@ -60,7 +60,7 @@
   <!-- Right column: Location (Sundays removed, shifted right to avoid email overlap) -->
   <g transform="translate(470, 180)">
     <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="16" fill="#666680">LOCATION</text>
-    <text x="0" y="32" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#e0e0e8">Athens, Tennessee</text>
+    <text x="0" y="32" font-family="'Space Grotesk', sans-serif" font-size="24" fill="#e0e0e8">Athens, TN</text>
     <text x="0" y="64" font-family="'Space Grotesk', sans-serif" font-size="20" fill="#a0a0b0">Ocoee River Region</text>
   </g>
 

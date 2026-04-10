@@ -48,7 +48,7 @@
   <!-- Left column: Contact -->
   <g transform="translate(100, 180)">
     <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="16" fill="#666680">EMAIL</text>
-    <text x="0" y="32" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#e0e0e8">hello@thevineathens.church</text>
+    <text x="0" y="32" font-family="'Space Grotesk', sans-serif" font-size="24" fill="#e0e0e8">hello@thevineathens.church</text>
 
     <text x="0" y="82" font-family="'JetBrains Mono', monospace" font-size="16" fill="#666680">PHONE</text>
     <text x="0" y="114" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#e0e0e8">(423) 216-4433</text>

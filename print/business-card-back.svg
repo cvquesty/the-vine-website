@@ -49,7 +49,7 @@
   <g transform="translate(140, 180)">
     <!-- Email -->
     <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="18" fill="#666680">EMAIL</text>
-    <text x="0" y="36" font-family="'Space Grotesk', sans-serif" font-size="32" fill="#e0e0e8">hello@thevineathens.church</text>
+    <text x="0" y="36" font-family="'Space Grotesk', sans-serif" font-size="26" fill="#e0e0e8">hello@thevineathens.church</text>
 
     <!-- Phone -->
     <text x="0" y="92" font-family="'JetBrains Mono', monospace" font-size="18" fill="#666680">PHONE</text>

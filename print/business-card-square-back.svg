@@ -54,7 +54,7 @@
     <text x="0" y="114" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#e0e0e8">(423) 216-4433</text>
 
     <text x="0" y="164" font-family="'JetBrains Mono', monospace" font-size="16" fill="#666680">ONLINE</text>
-    <text x="0" y="196" font-family="'Space Grotesk', sans-serif" font-size="28" fill="#e0e0e8">thevineathens.church</text>
+    <text x="0" y="196" font-family="'Space Grotesk', sans-serif" font-size="24" fill="#e0e0e8">thevineathens.church</text>
   </g>
 
   <!-- Right column: Location (Sundays removed, shifted right to avoid email overlap) -->

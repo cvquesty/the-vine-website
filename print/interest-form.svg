@@ -267,10 +267,13 @@
 
   <!-- ===== BOTTOM CONTACT ===== -->
   <g transform="translate(0, 3250)">
+    <text x="1275" y="-60" text-anchor="middle"
+          font-family="'Space Grotesk', sans-serif"
+          font-size="38" fill="#e0e0e8">Give Us a call</text>
     <text x="1275" y="-15" text-anchor="middle"
           font-family="'Space Grotesk', sans-serif"
-          font-size="38" fill="#666680">Or text/call us directly: <tspan font-weight="600" fill="#a0a0b0">(423) 216-4433</tspan></text>
-    <text x="1275" y="20" text-anchor="middle"
+          font-size="42" fill="#e0e0e8" font-weight="700">423.216.4433</text>
+    <text x="1275" y="35" text-anchor="middle"
           font-family="'Space Grotesk', sans-serif"
           font-size="36" fill="#666680">Athens, TN • thevineathens.church</text>
   </g>

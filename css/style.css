@@ -326,6 +326,83 @@ img { max-width: 100%; display: block; }
 .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ═══════════════════════════════════════════════════════════
+   ANNOUNCEMENT BANNER
+
+   A full-width announcement bar that sits between the fixed
+   navbar and the hero section. It uses the same card background,
+   border treatment, and font stack as the rest of the site. The
+   top padding accounts for the 70px fixed nav so the banner is
+   not hidden beneath it. A green left-accent border and the
+   pulsing dot badge tie it into the vine/tech aesthetic.
+   ═══════════════════════════════════════════════════════════ */
+
+.announcement {
+  padding-top: 90px;
+  padding-bottom: 0;
+  background: var(--bg-deep);
+}
+
+.announcement-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--green);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.announcement-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: rgba(92, 184, 92, 0.08);
+  border: 1px solid rgba(92, 184, 92, 0.2);
+  padding: 4px 14px;
+  border-radius: 30px;
+  margin-bottom: 16px;
+}
+
+.announcement-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: pulse 2s infinite;
+}
+
+.announcement-text {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.announcement-text strong {
+  color: var(--amber);
+  font-weight: 600;
+}
+
+.announcement-phone {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--green) !important;
+  border-bottom: 1px solid rgba(92, 184, 92, 0.3);
+  transition: border-color 0.2s;
+}
+
+.announcement-phone:hover {
+  color: var(--green-light) !important;
+  border-bottom-color: var(--green-light);
+}
+
+/* ═══════════════════════════════════════════════════════════
    HERO
 
    The hero section spans the full viewport height and serves as
@@ -1511,6 +1588,16 @@ img { max-width: 100%; display: block; }
   /* Community cards drop to a single column on phones. */
   .community-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Reduce announcement padding on phones. */
+  .announcement-inner {
+    padding: 20px 20px;
+    margin: 0 16px;
+  }
+
+  .announcement-text {
+    font-size: 0.95rem;
   }
 
   /* Hide the scroll hint on phones — swiping is intuitive on touch devices. */

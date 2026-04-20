@@ -3,17 +3,21 @@
 ## Stack
 - Vanilla HTML/CSS/JS static site
 - No build step, no framework
-- Google Fonts: Fraunces, Plus Jakarta Sans, Caveat
+- Google Fonts: Playfair Display, Lora, Inter, JetBrains Mono, Caveat
 
 ## Design Language
-- Palette: warm linen cream canvas (#faf6ee), sage/forest green
-  primary (#5a7a52), honey/amber accents (#d6a35a), warm neutral ink
-- Typography: Fraunces (serif headings), Plus Jakarta Sans (body),
-  Caveat (tagline + quote attribution), SF Mono (code-flavored labels)
-- Shape language: soft rounded (8-18px radii), subtle shadows,
-  botanical vines with hints of tech motif
-- Retained from original: `//` comment-style section labels,
-  mono-flavored metadata, subtle circuit accents in the hero
+- Palette: warm newsprint cream (#f4ede0) canvas, deep warm ink
+  (#1f1d18), rust/terracotta primary (#c8553d), teal secondary
+  (#2a5f5b), antique gold highlight (#b88828)
+- Typography: Playfair Display (display headlines, italic 700-900),
+  Lora (long-form body), Inter (UI), JetBrains Mono (editorial
+  labels, eyebrows, indicia), Caveat (handwritten tagline + verse
+  attribution only)
+- Shape language: hard edges, hairline rules, hard ink shadows
+  (3-6px offset, no blur), square corners, letterpress feel
+- Editorial idioms: top-strip indicia, masthead nav, tear-off
+  marquee, drop caps, pull quotes, numbered manifesto, dispatch
+  cards, letterpress map plate, colophon footer
 
 ## Style Preferences
 - Use semantic HTML5 elements
@@ -26,6 +30,6 @@
 - Hosted at https://thevineathens.church/
 
 ## Important Notes
-- Logo files are in /logo/ - sage/honey palette for logo-icon.svg
+- Logo files are in /logo/ - woodcut block-print in teal/rust/cream
 - Social media logos and other variants in /logo/social/
 - Always test responsiveness at 375px, 768px, and 1024px

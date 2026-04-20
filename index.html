@@ -15,7 +15,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,900&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -24,30 +24,47 @@
 <body>
 
   <!-- ═══════════════════════════════════════════════════════
-       NAVIGATION
+       EDITORIAL TOP STRIP
+       The narrow band that runs above the masthead, like the
+       indicia on a magazine. Issue number, location, dateline.
+       ═══════════════════════════════════════════════════════ -->
+  <div class="topstrip" aria-hidden="true">
+    <div class="topstrip-inner">
+      <span>Issue N&deg; 01</span>
+      <span class="topstrip-sep">&bull;</span>
+      <span>Athens, Tennessee</span>
+      <span class="topstrip-sep">&bull;</span>
+      <span>Ocoee River Region</span>
+      <span class="topstrip-sep">&bull;</span>
+      <span>Est. 2025</span>
+      <span class="topstrip-sep">&bull;</span>
+      <span>Sundays at 10:30am</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       MASTHEAD / NAVIGATION
+       Newspaper-style masthead with the logo + wordmark left
+       and section index right. The logo is a flat woodcut
+       block-print to match the editorial tone.
        ═══════════════════════════════════════════════════════ -->
   <nav id="nav" class="nav">
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo">
-        <svg class="nav-logo-icon" viewBox="0 0 200 200" width="36" height="36" aria-hidden="true">
-          <defs>
-            <linearGradient id="nav-leaf" x1="0" y1="0" x2="0.4" y2="1">
-              <stop offset="0%" stop-color="#8caf83"/>
-              <stop offset="50%" stop-color="#5a7a52"/>
-              <stop offset="100%" stop-color="#3d5836"/>
-            </linearGradient>
-          </defs>
-          <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z" fill="none" stroke="url(#nav-leaf)" stroke-width="6" stroke-linejoin="round"/>
-          <line x1="100" y1="38" x2="100" y2="155" stroke="#5a7a52" stroke-width="4" stroke-linecap="round"/>
-          <path d="M100 62 C86 56 74 58 64 66" fill="none" stroke="#5a7a52" stroke-width="3.5" stroke-linecap="round"/>
-          <path d="M100 92 C114 86 126 88 136 96" fill="none" stroke="#5a7a52" stroke-width="3.5" stroke-linecap="round"/>
-          <path d="M100 122 C86 116 74 118 66 128" fill="none" stroke="#5a7a52" stroke-width="3.5" stroke-linecap="round"/>
-          <circle cx="100" cy="62" r="5" fill="#5a7a52" opacity="0.7"/>
-          <circle cx="100" cy="92" r="5" fill="#5a7a52" opacity="0.7"/>
-          <circle cx="100" cy="122" r="5" fill="#5a7a52" opacity="0.7"/>
-          <circle cx="100" cy="150" r="6.5" fill="#d6a35a"/>
+      <a href="#hero" class="nav-mast">
+        <svg class="nav-mast-icon" viewBox="0 0 200 200" width="44" height="44" aria-hidden="true">
+          <path d="M100 188 C100 188 38 138 38 82 C38 40 64 12 100 4 C136 12 162 40 162 82 C162 138 100 188 100 188Z" fill="#2a5f5b" stroke="#1f1d18" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M100 32 L100 162" stroke="#f4ede0" stroke-width="6" stroke-linecap="round"/>
+          <path d="M100 60 C84 52 70 56 60 64" fill="none" stroke="#f4ede0" stroke-width="5" stroke-linecap="round"/>
+          <path d="M100 92 C116 84 130 88 140 96" fill="none" stroke="#f4ede0" stroke-width="5" stroke-linecap="round"/>
+          <path d="M100 124 C84 116 70 120 60 132" fill="none" stroke="#f4ede0" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="100" cy="60" r="6" fill="#c8553d"/>
+          <circle cx="100" cy="92" r="6" fill="#c8553d"/>
+          <circle cx="100" cy="124" r="6" fill="#c8553d"/>
+          <circle cx="100" cy="156" r="8" fill="#b88828"/>
         </svg>
-        <span class="nav-logo-text">the vine</span>
+        <span class="nav-mast-text">
+          <span class="nav-mast-the">The</span><span class="nav-mast-vine">Vine</span>
+        </span>
       </a>
 
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -55,574 +72,624 @@
       </button>
 
       <div class="nav-links" id="nav-links">
-        <a href="#about" class="nav-link">who we are</a>
-        <a href="#beliefs" class="nav-link">what we believe</a>
-        <a href="#community" class="nav-link">find your people</a>
-        <a href="#visit" class="nav-link">visit us</a>
-        <a href="#connect" class="nav-link nav-link--cta">connect</a>
+        <a href="#about" class="nav-link"><span class="nav-link-num">01</span> Who We Are</a>
+        <a href="#beliefs" class="nav-link"><span class="nav-link-num">02</span> What We Believe</a>
+        <a href="#community" class="nav-link"><span class="nav-link-num">03</span> Find Your People</a>
+        <a href="#visit" class="nav-link"><span class="nav-link-num">04</span> Visit Us</a>
+        <a href="#connect" class="nav-link nav-link--cta">Connect &rarr;</a>
       </div>
     </div>
   </nav>
 
   <!-- ═══════════════════════════════════════════════════════
-       ANNOUNCEMENT BANNER
+       BULLETIN STRIP
+       Always-on banner styled like a tear-off ticker on a
+       community board. Phone number remains a tel: link.
        ═══════════════════════════════════════════════════════ -->
-  <div class="announcement">
-    <div class="announcement-inner">
-      <div class="announcement-badge">
-        <span class="announcement-dot"></span>
-        upcoming
-      </div>
-      <p class="announcement-text">
-        We will be announcing <strong>interest gatherings</strong> over the next several months,
-        and would love to have you come and hang out with us! The location is TBA, but if
-        you'd like to discuss, call us at
-        <a href="tel:+14232164433" class="announcement-phone">(423) 216-4433</a>.
-        We'd love to talk with you!
+  <div class="bulletin">
+    <div class="bulletin-inner">
+      <span class="bulletin-tag">Bulletin</span>
+      <p class="bulletin-text">
+        We will be announcing <strong>interest gatherings</strong> over the next several months.
+        Location TBA &mdash; if you'd like to talk it through, ring us at
+        <a href="tel:+14232164433" class="bulletin-phone">(423) 216-4433</a>.
+        We'd love to hear from you.
       </p>
     </div>
   </div>
 
   <!-- ═══════════════════════════════════════════════════════
-       HERO
+       COVER / HERO
+       Magazine-cover composition: huge serif display, an
+       overlaid handwritten tagline, and a sidebar table of
+       contents on the right edge.
        ═══════════════════════════════════════════════════════ -->
-  <section id="hero" class="hero">
-    <div class="hero-bg">
+  <header id="hero" class="cover">
+    <div class="cover-grid">
 
-      <!-- Soft, sparse background washes - sage and honey, no pink -->
-      <svg class="hero-blooms" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <radialGradient id="wash-sage" cx="0.5" cy="0.5" r="0.5">
-            <stop offset="0%" stop-color="#cfdfc7" stop-opacity="0.6"/>
-            <stop offset="100%" stop-color="#cfdfc7" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="wash-honey" cx="0.5" cy="0.5" r="0.5">
-            <stop offset="0%" stop-color="#f3e0bb" stop-opacity="0.55"/>
-            <stop offset="100%" stop-color="#f3e0bb" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="wash-stone" cx="0.5" cy="0.5" r="0.5">
-            <stop offset="0%" stop-color="#e8dfd0" stop-opacity="0.5"/>
-            <stop offset="100%" stop-color="#e8dfd0" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-        <circle cx="180" cy="240" r="320" fill="url(#wash-sage)"/>
-        <circle cx="1260" cy="200" r="300" fill="url(#wash-honey)"/>
-        <circle cx="1320" cy="720" r="280" fill="url(#wash-sage)"/>
-        <circle cx="220" cy="700" r="260" fill="url(#wash-stone)"/>
-      </svg>
-
-      <!-- Decorative botanical vines drawing on load -->
-      <svg class="hero-vines" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <linearGradient id="vine-stem" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#6b9163" stop-opacity="0.75"/>
-            <stop offset="100%" stop-color="#4d7548" stop-opacity="0.4"/>
-          </linearGradient>
-        </defs>
-
-        <path class="vine-path vine-path--1" d="M-50,460 C100,440 200,380 350,400 C500,420 560,340 720,300 C890,250 1000,320 1150,280 C1300,240 1400,200 1500,220" fill="none" stroke="url(#vine-stem)" stroke-width="2.5"/>
-        <path class="vine-path vine-path--2" d="M350,400 C330,320 280,260 250,200 C220,140 240,80 300,40" fill="none" stroke="#6b9163" stroke-width="1.5" opacity="0.45"/>
-        <path class="vine-path vine-path--3" d="M720,300 C750,220 800,180 780,100" fill="none" stroke="#6b9163" stroke-width="1.5" opacity="0.45"/>
-        <path class="vine-path vine-path--4" d="M720,300 C700,380 650,440 680,520 C710,600 670,700 700,800" fill="none" stroke="#6b9163" stroke-width="1.5" opacity="0.45"/>
-        <path class="vine-path vine-path--5" d="M1150,280 C1180,350 1220,400 1200,480" fill="none" stroke="#6b9163" stroke-width="1.5" opacity="0.45"/>
-
-        <g class="vine-leaves" fill="#6b9163" opacity="0.6">
-          <ellipse cx="250" cy="200" rx="8" ry="4" transform="rotate(-30 250 200)"/>
-          <ellipse cx="780" cy="100" rx="9" ry="4.5" transform="rotate(20 780 100)"/>
-          <ellipse cx="680" cy="520" rx="9" ry="4.5" transform="rotate(-20 680 520)"/>
-          <ellipse cx="1200" cy="480" rx="8" ry="4" transform="rotate(40 1200 480)"/>
-          <ellipse cx="300" cy="40" rx="7" ry="3.5" transform="rotate(60 300 40)"/>
-        </g>
-
-        <g class="vine-blossoms">
-          <circle cx="350" cy="400" r="5" fill="#5a7a52" opacity="0.7"/>
-          <circle cx="720" cy="300" r="6.5" fill="#d6a35a" opacity="0.85"/>
-          <circle cx="1150" cy="280" r="5" fill="#5a7a52" opacity="0.7"/>
-        </g>
-
-        <!-- Subtle right-angle accent strokes - hint of the original tech motif -->
-        <g opacity="0.18">
-          <line x1="350" y1="400" x2="385" y2="400" stroke="#5a7a52" stroke-width="1"/>
-          <line x1="385" y1="400" x2="385" y2="372" stroke="#5a7a52" stroke-width="1"/>
-          <line x1="1150" y1="280" x2="1185" y2="280" stroke="#5a7a52" stroke-width="1"/>
-          <line x1="1185" y1="280" x2="1185" y2="252" stroke="#5a7a52" stroke-width="1"/>
-        </g>
-      </svg>
-
-      <!-- Mountain silhouette in muted sage/stone -->
-      <svg class="hero-hills" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,200 L0,120 C100,80 200,100 300,70 C400,40 450,90 550,50 C650,10 700,60 800,30 C900,0 950,40 1050,20 C1150,0 1200,30 1300,10 C1400,-10 1440,20 1440,20 L1440,200 Z" fill="#cdd9c5" opacity="0.55"/>
-        <path d="M0,200 L0,150 C150,120 250,140 400,130 C550,120 600,160 750,140 C900,120 1000,150 1150,130 C1300,110 1440,140 1440,140 L1440,200 Z" fill="#a8bda0" opacity="0.65"/>
-      </svg>
-    </div>
-
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="hero-badge-dot"></span>
-        Athens, TN &bull; Ocoee Region
+      <div class="cover-eyebrow">
+        <span class="cover-eyebrow-num">Athens, TN</span>
+        <span class="cover-eyebrow-line"></span>
+        <span>A Community for the Rest of Us</span>
       </div>
-      <h1 class="hero-title">
-        <span class="hero-title-the">the</span>
-        <span class="hero-title-vine">vine</span>
-      </h1>
-      <p class="hero-tagline">Where Misfits Find Family</p>
-      <p class="hero-sub">
-        No dress code. No judgment. Just Jesus, community, and a lot of coffee.
+
+      <div class="cover-headline">
+        <span class="cover-headline-the">the</span>
+        <span class="cover-headline-vine">Vine</span>
+      </div>
+
+      <p class="cover-tagline">Where Misfits Find Family</p>
+
+      <p class="cover-deck">
+        No dress code. No judgment. Just Jesus, community,
+        and a&nbsp;lot of coffee.
       </p>
-      <div class="hero-ctas">
-        <a href="#about" class="btn btn--primary">Learn More</a>
-        <a href="#visit" class="btn btn--outline">Visit This Sunday</a>
+
+      <div class="cover-ctas">
+        <a href="#about" class="btn btn--primary">Read the Issue</a>
+        <a href="#visit" class="btn btn--ghost">Visit This Sunday &rarr;</a>
       </div>
-      <div class="hero-scroll-hint">
-        <span>scroll</span>
-        <svg width="16" height="24" viewBox="0 0 16 24" fill="none" aria-hidden="true">
-          <rect x="1" y="1" width="14" height="22" rx="7" stroke="currentColor" stroke-width="1.5"/>
-          <circle class="scroll-dot" cx="8" cy="8" r="2" fill="currentColor"/>
-        </svg>
+
+      <aside class="cover-toc" aria-label="In this issue">
+        <div class="cover-toc-label">In This Issue</div>
+        <ol class="cover-toc-list">
+          <li><a href="#about"><span>01</span><em>Who We Are</em></a></li>
+          <li><a href="#beliefs"><span>02</span><em>What We Believe</em></a></li>
+          <li><a href="#community"><span>03</span><em>Find Your People</em></a></li>
+          <li><a href="#visit"><span>04</span><em>Visit Us</em></a></li>
+          <li><a href="#connect"><span>05</span><em>Letters &amp; Hellos</em></a></li>
+        </ol>
+        <div class="cover-toc-foot">A small church, a wide table.</div>
+      </aside>
+    </div>
+
+    <!-- Tear-off marquee that runs at the bottom of the cover -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Coffee&apos;s on. Doors are open. </span>
+        <span class="marquee-dot">&#10070;</span>
+        <span>Real faith, real people. </span>
+        <span class="marquee-dot">&#10070;</span>
+        <span>Tattoos and theology degrees welcome. </span>
+        <span class="marquee-dot">&#10070;</span>
+        <span>Coders &middot; Carpenters &middot; Gamers &middot; Grandparents &middot; Bikers &middot; Baristas. </span>
+        <span class="marquee-dot">&#10070;</span>
+        <span>Sundays at 10:30am, Athens TN. </span>
+        <span class="marquee-dot">&#10070;</span>
+        <!-- Duplicate for seamless looping scroll -->
+        <span>Coffee&apos;s on. Doors are open. </span>
+        <span class="marquee-dot">&#10070;</span>
+        <span>Real faith, real people. </span>
+        <span class="marquee-dot">&#10070;</span>
+        <span>Tattoos and theology degrees welcome. </span>
+        <span class="marquee-dot">&#10070;</span>
+        <span>Coders &middot; Carpenters &middot; Gamers &middot; Grandparents &middot; Bikers &middot; Baristas. </span>
+        <span class="marquee-dot">&#10070;</span>
+        <span>Sundays at 10:30am, Athens TN. </span>
+        <span class="marquee-dot">&#10070;</span>
       </div>
     </div>
-  </section>
+  </header>
 
   <!-- ═══════════════════════════════════════════════════════
-       ABOUT
+       FEATURE: WHO WE ARE
+       Editorial article layout - byline kicker, big serif
+       headline, two-column body with drop cap and pull quote,
+       sidebar of values to the right.
        ═══════════════════════════════════════════════════════ -->
-  <section id="about" class="section section--about">
+  <section id="about" class="feature">
     <div class="container">
-      <div class="section-label">// who we are</div>
-      <h2 class="section-title">We're Not Your<br><span class="highlight">Typical Church</span></h2>
+      <div class="dept">
+        <span class="dept-num">01 /</span>
+        <span class="dept-name">Editorial</span>
+      </div>
+      <h2 class="feature-title">
+        We&rsquo;re not your <em>typical</em> church.
+      </h2>
+      <div class="feature-byline">
+        <span class="feature-byline-rule"></span>
+        <span>A note from the family at The Vine</span>
+      </div>
 
-      <div class="about-grid">
-        <div class="about-main">
-          <p class="about-lead">
-            Let's be honest &mdash; a lot of people have been burned by church. Maybe you
-            were told you didn't look right, believe right, or fit the mold. Maybe you just
-            never felt welcome walking through those doors.
+      <div class="feature-body">
+        <article class="feature-prose">
+          <p class="feature-lead">
+            Let&rsquo;s be honest &mdash; a lot of people have been burned by church.
+            Maybe you were told you didn&rsquo;t look right, believe right, or fit
+            the mold. Maybe you just never felt welcome walking through those doors.
           </p>
+
           <p>
             The Vine exists because we believe the church was never meant to be a
-            country club for the "good people." It was meant to be a hospital for
-            the broken, a family for the lonely, and a launchpad for the called.
+            country club for the &ldquo;good people.&rdquo; It was meant to be a hospital
+            for the broken, a family for the lonely, and a launchpad for the called.
           </p>
+
+          <aside class="pullquote" data-reveal>
+            <p>&ldquo;The early church wasn&rsquo;t polished. It was honest. We&rsquo;re trying to remember that.&rdquo;</p>
+          </aside>
+
           <p>
-            We're coders and carpenters, gamers and grandparents, bikers and baristas.
-            We've got tattoos and theology degrees (sometimes both). We argue about
-            tabs vs. spaces <em>and</em> predestination vs. free will. And we think
-            that's exactly what the early church looked like.
+            We&rsquo;re coders and carpenters, gamers and grandparents, bikers and
+            baristas. We&rsquo;ve got tattoos and theology degrees (sometimes both).
+            We argue about tabs vs. spaces <em>and</em> predestination vs. free will.
+            And we think that&rsquo;s exactly what the early church looked like.
           </p>
-        </div>
+        </article>
 
-        <div class="about-values">
-          <div class="value-card" data-reveal>
-            <div class="value-icon">
-              <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
-                <circle cx="24" cy="14" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
-                <path d="M8,42 C8,30 16,24 24,24 C32,24 40,30 40,42" fill="none" stroke="currentColor" stroke-width="2"/>
-                <path d="M24,24 L24,38" stroke="#d6a35a" stroke-width="1.8" opacity="0.7"/>
-              </svg>
+        <aside class="feature-sidebar" aria-label="What we value">
+          <div class="sidebar-label">What we value</div>
+
+          <div class="value-item" data-reveal>
+            <div class="value-num">i.</div>
+            <div>
+              <h3>Real Over Religious</h3>
+              <p>Authenticity beats performance. Come as you are &mdash; seriously.</p>
             </div>
-            <h3>Real Over Religious</h3>
-            <p>Authenticity beats performance. Come as you are &mdash; seriously.</p>
           </div>
 
-          <div class="value-card" data-reveal>
-            <div class="value-icon">
-              <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
-                <path d="M12,36 L12,20 L24,12 L36,20 L36,36" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                <rect x="20" y="28" width="8" height="8" fill="none" stroke="currentColor" stroke-width="2"/>
-                <circle cx="24" cy="22" r="2" fill="#d6a35a"/>
-              </svg>
+          <div class="value-item" data-reveal>
+            <div class="value-num">ii.</div>
+            <div>
+              <h3>Depth Over Width</h3>
+              <p>We&rsquo;d rather have 50 people going deep than 5,000 going through the motions.</p>
             </div>
-            <h3>Depth Over Width</h3>
-            <p>We'd rather have 50 people going deep than 5,000 going through the motions.</p>
           </div>
 
-          <div class="value-card" data-reveal>
-            <div class="value-icon">
-              <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
-                <path d="M8,24 L16,16 L24,24 L32,16 L40,24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <path d="M8,32 L16,24 L24,32 L32,24 L40,32" fill="none" stroke="#d6a35a" stroke-width="1.5" opacity="0.6" stroke-linecap="round"/>
-                <circle cx="24" cy="40" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
-              </svg>
+          <div class="value-item" data-reveal>
+            <div class="value-num">iii.</div>
+            <div>
+              <h3>Your Calling Matters</h3>
+              <p>We exist to help you discover and develop your gifts &mdash; not fill a seat.</p>
             </div>
-            <h3>Your Calling Matters</h3>
-            <p>We exist to help you discover and develop your gifts &mdash; not fill a seat.</p>
           </div>
 
-          <div class="value-card" data-reveal>
-            <div class="value-icon">
-              <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
-                <circle cx="16" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
-                <circle cx="32" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
-                <path d="M16,26 C16,34 32,34 32,26" fill="none" stroke="#d6a35a" stroke-width="1.6"/>
-                <circle cx="24" cy="36" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
-              </svg>
+          <div class="value-item" data-reveal>
+            <div class="value-num">iv.</div>
+            <div>
+              <h3>Relationship-Driven</h3>
+              <p>No programs or productions. Just real people doing life and faith together.</p>
             </div>
-            <h3>Relationship-Driven</h3>
-            <p>No programs or productions. Just real people doing life and faith together.</p>
           </div>
-        </div>
+        </aside>
       </div>
 
-      <div class="about-quote" data-reveal>
+      <figure class="epigraph" data-reveal>
         <blockquote>
-          <p>&ldquo;I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.&rdquo;</p>
-          <cite>&mdash; Jesus (John 15:5)</cite>
+          <p>I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.</p>
         </blockquote>
-      </div>
+        <figcaption>&mdash; Jesus, John 15:5</figcaption>
+      </figure>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       BELIEFS
+       MANIFESTO: WHAT WE BELIEVE
+       Beliefs presented as an editorial index - numbered
+       entries with hairline rules between, like a magazine
+       table of contents. Each entry expands across the page.
        ═══════════════════════════════════════════════════════ -->
-  <section id="beliefs" class="section section--beliefs">
+  <section id="beliefs" class="manifesto">
     <div class="container">
-      <div class="section-label">// what we believe</div>
-      <h2 class="section-title">What We're <span class="highlight">Built On</span></h2>
-      <p class="section-intro">
+      <div class="dept dept--inverse">
+        <span class="dept-num">02 /</span>
+        <span class="dept-name">Manifesto</span>
+      </div>
+
+      <h2 class="manifesto-title">
+        What we&rsquo;re <em>built on.</em>
+      </h2>
+
+      <p class="manifesto-intro">
         Our roots go deep. We draw from a rich background of churches and
         movements that emphasize the Kingdom of God, Spirit-empowered worship,
-        and the strong doctrinal foundation of the Assemblies of God's
-        &ldquo;<a href="https://ag.org/Beliefs/Statement-of-Fundamental-Truths" target="_blank" rel="noopener"><strong>16 Fundamental Truths</strong></a>&rdquo;.
-        Here's what that looks like in plain language:
+        and the strong doctrinal foundation of the Assemblies of God&rsquo;s
+        &ldquo;<a href="https://ag.org/Beliefs/Statement-of-Fundamental-Truths" target="_blank" rel="noopener"><strong>16 Fundamental Truths</strong></a>.&rdquo;
+        Here&rsquo;s what that looks like in plain language.
       </p>
 
-      <div class="beliefs-grid">
-        <div class="belief-card" data-reveal>
-          <div class="belief-num">01</div>
-          <h3>The Bible Is Our Foundation</h3>
-          <p>Scripture is inspired, authoritative, and the foundation for everything we do and believe. It's the ultimate guide.</p>
-        </div>
+      <ol class="creed">
+        <li class="creed-item" data-reveal>
+          <div class="creed-num">01</div>
+          <div class="creed-body">
+            <h3>The Bible is our foundation</h3>
+            <p>Scripture is inspired, authoritative, and the foundation for everything we do and believe. It&rsquo;s the ultimate guide.</p>
+          </div>
+        </li>
+        <li class="creed-item" data-reveal>
+          <div class="creed-num">02</div>
+          <div class="creed-body">
+            <h3>One God, three persons</h3>
+            <p>Father, Son, and Holy Spirit &mdash; one God in three persons. Not a committee. A community of perfect love.</p>
+          </div>
+        </li>
+        <li class="creed-item" data-reveal>
+          <div class="creed-num">03</div>
+          <div class="creed-body">
+            <h3>Jesus is the center</h3>
+            <p>Fully God, fully human. Born, crucified, risen, coming back. He&rsquo;s the vine. We&rsquo;re the branches. That&rsquo;s not metaphor &mdash; that&rsquo;s reality.</p>
+          </div>
+        </li>
+        <li class="creed-item" data-reveal>
+          <div class="creed-num">04</div>
+          <div class="creed-body">
+            <h3>We&rsquo;re all broken</h3>
+            <p>Every human is created with dignity and value, and every human is broken by sin. No exceptions. No hierarchy of mess.</p>
+          </div>
+        </li>
+        <li class="creed-item" data-reveal>
+          <div class="creed-num">05</div>
+          <div class="creed-body">
+            <h3>Salvation changes everything</h3>
+            <p>Through faith in Jesus, anyone &mdash; <em>anyone</em> &mdash; can be forgiven, restored, and made new. No prerequisites. No entrance exam.</p>
+          </div>
+        </li>
+        <li class="creed-item" data-reveal>
+          <div class="creed-num">06</div>
+          <div class="creed-body">
+            <h3>The Spirit is active</h3>
+            <p>The Holy Spirit isn&rsquo;t retired. Baptism in the Spirit, speaking in tongues, prophecy, healing &mdash; the gifts are alive and available today.</p>
+          </div>
+        </li>
+        <li class="creed-item" data-reveal>
+          <div class="creed-num">07</div>
+          <div class="creed-body">
+            <h3>The Kingdom is now</h3>
+            <p>God&rsquo;s Kingdom isn&rsquo;t just a future hope &mdash; it&rsquo;s breaking in right now. We worship, serve, and live as Kingdom people today.</p>
+          </div>
+        </li>
+        <li class="creed-item" data-reveal>
+          <div class="creed-num">08</div>
+          <div class="creed-body">
+            <h3>Everyone has a calling</h3>
+            <p>Every believer is gifted and called. Not just pastors. You. Your gifts matter. Your voice matters. Your purpose is real.</p>
+          </div>
+        </li>
+      </ol>
 
-        <div class="belief-card" data-reveal>
-          <div class="belief-num">02</div>
-          <h3>One God, Three Persons</h3>
-          <p>Father, Son, and Holy Spirit &mdash; one God in three persons. Not a committee. A community of perfect love.</p>
-        </div>
+      <p class="manifesto-foot" data-reveal>
+        Want to go deeper? We&rsquo;re grounded in
+        <a href="https://en.wikipedia.org/wiki/Kingdom_theology" target="_blank" rel="noopener">Kingdom Theology</a>
+        and the
+        <a href="https://ag.org/Beliefs/Statement-of-Fundamental-Truths" target="_blank" rel="noopener">AG 16 Fundamental Truths</a>.
+        We&rsquo;re happy to talk theology over coffee anytime.
+      </p>
+    </div>
+  </section>
 
-        <div class="belief-card" data-reveal>
-          <div class="belief-num">03</div>
-          <h3>Jesus Is the Center</h3>
-          <p>Fully God, fully human. Born, crucified, risen, coming back. He's the vine. We're the branches. That's not metaphor &mdash; that's reality.</p>
-        </div>
-
-        <div class="belief-card" data-reveal>
-          <div class="belief-num">04</div>
-          <h3>We're All Broken</h3>
-          <p>Every human is created with dignity and value, and every human is broken by sin. No exceptions. No hierarchy of mess.</p>
-        </div>
-
-        <div class="belief-card" data-reveal>
-          <div class="belief-num">05</div>
-          <h3>Salvation Changes Everything</h3>
-          <p>Through faith in Jesus, anyone &mdash; <em>anyone</em> &mdash; can be forgiven, restored, and made new. No prerequisites. No entrance exam.</p>
-        </div>
-
-        <div class="belief-card" data-reveal>
-          <div class="belief-num">06</div>
-          <h3>The Spirit Is Active</h3>
-          <p>The Holy Spirit isn't retired. Baptism in the Spirit, speaking in tongues, prophecy, healing &mdash; the gifts are alive and available today.</p>
-        </div>
-
-        <div class="belief-card" data-reveal>
-          <div class="belief-num">07</div>
-          <h3>The Kingdom Is Now</h3>
-          <p>God's Kingdom isn't just a future hope &mdash; it's breaking in right now. We worship, serve, and live as Kingdom people today.</p>
-        </div>
-
-        <div class="belief-card" data-reveal>
-          <div class="belief-num">08</div>
-          <h3>Everyone Has a Calling</h3>
-          <p>Every believer is gifted and called. Not just pastors. You. Your gifts matter. Your voice matters. Your purpose is real.</p>
-        </div>
+  <!-- ═══════════════════════════════════════════════════════
+       FIELD GUIDE: FIND YOUR PEOPLE
+       Six community groups laid out like dispatches /
+       sidebar features in a magazine. Each card has an
+       editorial flag (the day-of-week tag), an index
+       number, and an icon.
+       ═══════════════════════════════════════════════════════ -->
+  <section id="community" class="dispatches">
+    <div class="container">
+      <div class="dept">
+        <span class="dept-num">03 /</span>
+        <span class="dept-name">Field Guide</span>
       </div>
 
-      <div class="beliefs-footer" data-reveal>
-        <p>
-          Want to go deeper? We're grounded in
-          <a href="https://en.wikipedia.org/wiki/Kingdom_theology" target="_blank" rel="noopener">Kingdom Theology</a>
-          and the
-          <a href="https://ag.org/Beliefs/Statement-of-Fundamental-Truths" target="_blank" rel="noopener">AG 16 Fundamental Truths</a>.
-          We're happy to talk theology over coffee anytime.
+      <div class="dispatches-head">
+        <h2 class="dispatches-title">Find your <em>people.</em></h2>
+        <p class="dispatches-intro">
+          Church isn&rsquo;t just Sunday. It&rsquo;s Tuesday night gaming, Saturday
+          morning rides, Wednesday coffee, and Thursday jams. A field guide
+          to where the family meets.
         </p>
       </div>
-    </div>
-  </section>
 
-  <!-- ═══════════════════════════════════════════════════════
-       COMMUNITY
-       ═══════════════════════════════════════════════════════ -->
-  <section id="community" class="section section--community">
-    <div class="container">
-      <div class="section-label">// find your people</div>
-      <h2 class="section-title">Your <span class="highlight">Crew Awaits</span></h2>
-      <p class="section-intro">
-        Church isn't just Sunday. It's Tuesday night gaming, Saturday morning rides,
-        Wednesday coffee, and Thursday jams. Find your people.
-      </p>
+      <div class="dispatch-grid">
 
-      <div class="community-grid">
-        <div class="group-card" data-reveal>
-          <div class="group-icon">
-            <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
-              <rect x="10" y="18" width="28" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
-              <circle cx="18" cy="27" r="3.5" fill="none" stroke="#d6a35a" stroke-width="1.6"/>
-              <rect x="28" y="23" width="6" height="3" rx="1" fill="none" stroke="#d6a35a" stroke-width="1.6"/>
-              <rect x="28" y="28" width="6" height="3" rx="1" fill="none" stroke="#d6a35a" stroke-width="1.6"/>
-              <line x1="18" y1="36" x2="18" y2="40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="30" y1="36" x2="30" y2="40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <article class="dispatch" data-reveal>
+          <div class="dispatch-meta">
+            <span class="dispatch-num">N&deg; 01</span>
+            <span class="dispatch-flag">Friday Nights</span>
+          </div>
+          <div class="dispatch-icon">
+            <svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true">
+              <rect x="8" y="18" width="32" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="2.5"/>
+              <circle cx="17" cy="28" r="3.5" fill="currentColor"/>
+              <rect x="28" y="24" width="6" height="3" rx="1" fill="currentColor"/>
+              <rect x="28" y="29" width="6" height="3" rx="1" fill="currentColor"/>
+              <line x1="17" y1="38" x2="17" y2="42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="31" y1="38" x2="31" y2="42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
-          <div class="group-tag">Friday Nights</div>
           <h3>Respawn</h3>
           <p>Gaming community. Console tournaments, tabletop RPGs, board games, LAN parties. All skill levels. Snacks provided, trash talk encouraged.</p>
-        </div>
+        </article>
 
-        <div class="group-card" data-reveal>
-          <div class="group-icon">
-            <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
-              <rect x="4" y="14" width="40" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
-              <text x="10" y="32" font-family="ui-monospace, 'Menlo', monospace" font-size="13" font-weight="700" fill="#d6a35a">&gt;_</text>
-              <path d="M12,38 C12,42 18,42 24,42 C30,42 36,42 36,38" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <article class="dispatch" data-reveal>
+          <div class="dispatch-meta">
+            <span class="dispatch-num">N&deg; 02</span>
+            <span class="dispatch-flag">Wednesday Mornings</span>
+          </div>
+          <div class="dispatch-icon">
+            <svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true">
+              <rect x="4" y="14" width="40" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="2.5"/>
+              <text x="11" y="32" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="currentColor">&gt;_</text>
+              <path d="M12,38 C12,42 18,42 24,42 C30,42 36,42 36,38" fill="none" stroke="currentColor" stroke-width="2"/>
             </svg>
           </div>
-          <div class="group-tag">Wednesday Mornings</div>
           <h3>Terminal</h3>
           <p>Code &amp; Coffee. Devs, sysadmins, IT pros, and aspiring techies. Bring your laptop, grab some brew, and hack on projects together.</p>
-        </div>
+        </article>
 
-        <div class="group-card" data-reveal>
-          <div class="group-icon">
-            <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
-              <circle cx="16" cy="30" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
-              <circle cx="32" cy="30" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
-              <path d="M22,30 L28,18 L34,14" fill="none" stroke="#d6a35a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="16" cy="30" r="2" fill="currentColor"/>
-              <circle cx="32" cy="30" r="2" fill="currentColor"/>
+        <article class="dispatch" data-reveal>
+          <div class="dispatch-meta">
+            <span class="dispatch-num">N&deg; 03</span>
+            <span class="dispatch-flag">Saturday Mornings</span>
+          </div>
+          <div class="dispatch-icon">
+            <svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true">
+              <circle cx="14" cy="32" r="7" fill="none" stroke="currentColor" stroke-width="2.5"/>
+              <circle cx="34" cy="32" r="7" fill="none" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M21,32 L28,18 L36,12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="14" cy="32" r="2" fill="currentColor"/>
+              <circle cx="34" cy="32" r="2" fill="currentColor"/>
             </svg>
           </div>
-          <div class="group-tag">Saturday Mornings</div>
           <h3>Iron Horse</h3>
           <p>Motorcycle fellowship. Weekend rides through the Ocoee and Hiwassee river valleys. All bikes welcome. Chrome optional, community required.</p>
-        </div>
+        </article>
 
-        <div class="group-card" data-reveal>
-          <div class="group-icon">
-            <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
-              <path d="M24,6 L28,18 L40,18 L30,26 L34,38 L24,30 L14,38 L18,26 L8,18 L20,18 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <circle cx="24" cy="22" r="3.5" fill="#d6a35a" opacity="0.7"/>
+        <article class="dispatch" data-reveal>
+          <div class="dispatch-meta">
+            <span class="dispatch-num">N&deg; 04</span>
+            <span class="dispatch-flag">Monthly Adventures</span>
+          </div>
+          <div class="dispatch-icon">
+            <svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true">
+              <path d="M6,40 L18,20 L24,28 L32,14 L42,40 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+              <circle cx="32" cy="12" r="3" fill="currentColor"/>
+              <line x1="4" y1="42" x2="44" y2="42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
-          <div class="group-tag">Monthly Adventures</div>
           <h3>Basecamp</h3>
           <p>Outdoor adventures in the Ocoee region. Kayaking, hiking, climbing, camping. Because God built these mountains and we should probably explore them.</p>
-        </div>
+        </article>
 
-        <div class="group-card" data-reveal>
-          <div class="group-icon">
-            <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
-              <path d="M24,8 L24,40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M24,14 C18,12 12,16 10,20" fill="none" stroke="#d6a35a" stroke-width="1.7" stroke-linecap="round"/>
-              <path d="M24,22 C30,20 36,24 38,28" fill="none" stroke="#d6a35a" stroke-width="1.7" stroke-linecap="round"/>
-              <path d="M24,30 C18,28 12,32 10,36" fill="none" stroke="#d6a35a" stroke-width="1.7" stroke-linecap="round"/>
-              <ellipse cx="11" cy="20" rx="3" ry="1.6" fill="#6b9163" opacity="0.85" transform="rotate(-30 11 20)"/>
-              <ellipse cx="38" cy="28" rx="3" ry="1.6" fill="#6b9163" opacity="0.85" transform="rotate(30 38 28)"/>
-              <ellipse cx="11" cy="36" rx="3" ry="1.6" fill="#6b9163" opacity="0.85" transform="rotate(-30 11 36)"/>
+        <article class="dispatch" data-reveal>
+          <div class="dispatch-meta">
+            <span class="dispatch-num">N&deg; 05</span>
+            <span class="dispatch-flag">Throughout the Week</span>
+          </div>
+          <div class="dispatch-icon">
+            <svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true">
+              <path d="M24,8 L24,42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M24,14 C18,12 12,16 10,20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M24,22 C30,20 36,24 38,28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M24,30 C18,28 12,32 10,36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <ellipse cx="11" cy="20" rx="3" ry="1.6" fill="currentColor" transform="rotate(-30 11 20)"/>
+              <ellipse cx="38" cy="28" rx="3" ry="1.6" fill="currentColor" transform="rotate(30 38 28)"/>
+              <ellipse cx="11" cy="36" rx="3" ry="1.6" fill="currentColor" transform="rotate(-30 11 36)"/>
             </svg>
           </div>
-          <div class="group-tag">Throughout the Week</div>
           <h3>Branches</h3>
           <p>Discipleship groups of 3-5 people. Go deep in Scripture, prayer, and real life. This is where transformation happens.</p>
-        </div>
+        </article>
 
-        <div class="group-card" data-reveal>
-          <div class="group-icon">
-            <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
-              <path d="M14,34 C14,18 24,14 24,14 C24,14 34,18 34,34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <line x1="24" y1="14" x2="24" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="24" cy="6" r="2" fill="#d6a35a"/>
-              <path d="M18,28 L30,28" stroke="#d6a35a" stroke-width="1.5"/>
-              <path d="M16,34 L32,34" stroke="currentColor" stroke-width="2"/>
+        <article class="dispatch" data-reveal>
+          <div class="dispatch-meta">
+            <span class="dispatch-num">N&deg; 06</span>
+            <span class="dispatch-flag">Thursday Evenings</span>
+          </div>
+          <div class="dispatch-icon">
+            <svg viewBox="0 0 48 48" width="44" height="44" aria-hidden="true">
+              <path d="M14,34 C14,18 24,14 24,14 C24,14 34,18 34,34" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="24" y1="14" x2="24" y2="8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="24" cy="6" r="2.5" fill="currentColor"/>
+              <path d="M18,28 C20,30 28,30 30,28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
             </svg>
           </div>
-          <div class="group-tag">Thursday Evenings</div>
           <h3>Amplified</h3>
           <p>Music &amp; worship nights. Acoustic, electric, whatever moves you. Come play, sing, or just soak it in. All genres, all levels.</p>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       VISIT
+       COORDINATES: VISIT US
+       "Where to find us" treated as a travel-feature spread.
+       Big editorial coordinates left, an inline letterpress-
+       style map illustration right.
        ═══════════════════════════════════════════════════════ -->
-  <section id="visit" class="section section--visit">
+  <section id="visit" class="coordinates">
     <div class="container">
-      <div class="section-label">// visit us</div>
-      <h2 class="section-title">Join the <span class="highlight">Adventure</span></h2>
+      <div class="dept">
+        <span class="dept-num">04 /</span>
+        <span class="dept-name">Coordinates</span>
+      </div>
 
-      <div class="visit-grid">
-        <div class="visit-info">
-          <div class="visit-card" data-reveal>
-            <h3>Sundays at 10:30am</h3>
-            <p>
-              Worship, teaching, and community. Usually wraps up around noon.
-              Coffee is always on. Dress code: wear clothes. That's it.
-            </p>
-          </div>
+      <h2 class="coord-title">
+        Join the <em>adventure.</em>
+      </h2>
 
-          <div class="visit-card" data-reveal>
-            <h3>Athens, Tennessee</h3>
-            <p>
-              Located in the Athens metro area, in the heart of Southeast Tennessee's
-              Ocoee River region. Surrounded by mountains, rivers, and adventure.
-            </p>
-          </div>
+      <div class="coord-grid">
 
-          <div class="visit-card" data-reveal>
-            <h3>What to Expect</h3>
-            <ul class="expect-list">
-              <li>
-                <span class="expect-icon" aria-hidden="true">&#9749;</span>
-                <span>Good coffee. Like, actually good.</span>
-              </li>
-              <li>
-                <span class="expect-icon" aria-hidden="true">&#9835;</span>
-                <span>Worship that ranges from intimate acoustic to full-band energy.</span>
-              </li>
-              <li>
-                <span class="expect-icon" aria-hidden="true">&#10070;</span>
-                <span>Teaching that's real, applicable, and never boring.</span>
-              </li>
-              <li>
-                <span class="expect-icon" aria-hidden="true">&#10084;</span>
-                <span>People who are genuinely glad you showed up.</span>
-              </li>
-              <li>
-                <span class="expect-icon" aria-hidden="true">&#10003;</span>
-                <span>Zero pressure. No guilt trips. No passing the plate five times.</span>
-              </li>
-            </ul>
-          </div>
+        <div class="coord-info">
+          <dl class="coord-list" data-reveal>
+            <div class="coord-row">
+              <dt>When</dt>
+              <dd>
+                <strong>Sundays at 10:30am</strong><br>
+                Worship, teaching, and community. Usually wraps up around noon.
+                Coffee is always on. Dress code: wear clothes. That&rsquo;s it.
+              </dd>
+            </div>
+
+            <div class="coord-row">
+              <dt>Where</dt>
+              <dd>
+                <strong>Athens, Tennessee</strong><br>
+                In the Athens metro area, in the heart of Southeast Tennessee&rsquo;s
+                Ocoee River region. Surrounded by mountains, rivers, and adventure.
+              </dd>
+            </div>
+
+            <div class="coord-row">
+              <dt>What to expect</dt>
+              <dd>
+                <ul class="expect-list">
+                  <li>Good coffee. Like, actually good.</li>
+                  <li>Worship that ranges from intimate acoustic to full-band energy.</li>
+                  <li>Teaching that&rsquo;s real, applicable, and never boring.</li>
+                  <li>People who are genuinely glad you showed up.</li>
+                  <li>Zero pressure. No guilt trips. No passing the plate five times.</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
         </div>
 
-        <!-- Light Ocoee River illustration in cream/sage/honey -->
-        <div class="visit-aside" data-reveal>
-          <svg class="visit-illustration" viewBox="0 0 400 500" width="100%" aria-hidden="true">
-            <defs>
-              <linearGradient id="map-bg" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#fdf9f1"/>
-                <stop offset="60%" stop-color="#f6efde"/>
-                <stop offset="100%" stop-color="#efe6cf"/>
-              </linearGradient>
-              <linearGradient id="river-light" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#7aa6bf" stop-opacity="0.85"/>
-                <stop offset="100%" stop-color="#5a86a0" stop-opacity="0.5"/>
-              </linearGradient>
-              <linearGradient id="mtn-light" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#a8bda0"/>
-                <stop offset="100%" stop-color="#7d9676"/>
-              </linearGradient>
-            </defs>
+        <!--
+          Letterpress-feeling Ocoee map. Two-tone (rust + ink on
+          cream), with editorial labels and a minimal pin marker.
+        -->
+        <figure class="coord-map" data-reveal>
+          <svg class="coord-map-svg" viewBox="0 0 400 540" width="100%" aria-hidden="true">
+            <!-- Cream background panel with thin ink border -->
+            <rect width="400" height="540" fill="#f4ede0"/>
+            <rect x="6" y="6" width="388" height="528" fill="none" stroke="#1f1d18" stroke-width="1.5"/>
+            <rect x="14" y="14" width="372" height="512" fill="none" stroke="#1f1d18" stroke-width="0.5" opacity="0.5"/>
 
-            <!-- Cream background -->
-            <rect width="400" height="500" fill="url(#map-bg)" rx="14"/>
+            <!-- Editorial header -->
+            <text x="200" y="46" text-anchor="middle" fill="#1f1d18" font-family="'JetBrains Mono', monospace" font-size="10" letter-spacing="3">PLATE I</text>
+            <text x="200" y="72" text-anchor="middle" fill="#1f1d18" font-family="'Playfair Display', serif" font-size="22" font-weight="700" font-style="italic">The Ocoee Region</text>
+            <line x1="140" y1="86" x2="260" y2="86" stroke="#c8553d" stroke-width="1.5"/>
 
-            <!-- Warm sun in the upper area -->
-            <circle cx="320" cy="80" r="22" fill="#f3e0bb" opacity="0.85"/>
-            <circle cx="320" cy="80" r="14" fill="#d6a35a" opacity="0.55"/>
-
-            <!-- Tiny birds -->
-            <path d="M70,110 q5,-4 10,0 q5,-4 10,0" fill="none" stroke="#5a7a52" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M110,135 q4,-3 8,0 q4,-3 8,0" fill="none" stroke="#5a7a52" stroke-width="1.2" stroke-linecap="round"/>
-
-            <!-- Two-layer mountain silhouettes -->
-            <path d="M0,250 L60,150 L120,200 L200,110 L280,170 L340,90 L400,160 L400,360 L0,360 Z" fill="url(#mtn-light)" opacity="0.6"/>
-            <path d="M0,310 L80,220 L160,260 L240,180 L320,240 L400,200 L400,360 L0,360 Z" fill="url(#mtn-light)" opacity="0.85"/>
-
-            <!-- Pine tree silhouettes (back to spiky) -->
-            <g opacity="0.5" fill="#3d5836">
-              <polygon points="90,250 85,220 80,250"/>
-              <polygon points="110,260 105,225 100,260"/>
-              <polygon points="300,240 295,210 290,240"/>
-              <polygon points="320,250 315,215 310,250"/>
-              <polygon points="180,220 175,190 170,220"/>
+            <!-- Ridgelines (engraved-style hatching) -->
+            <g stroke="#1f1d18" stroke-width="1.2" fill="none" opacity="0.85">
+              <path d="M30,250 L80,180 L130,210 L190,140 L260,200 L320,150 L380,200"/>
+              <path d="M30,290 L90,230 L150,260 L220,200 L290,250 L360,210"/>
+            </g>
+            <!-- Hatched mountain shading -->
+            <g stroke="#1f1d18" stroke-width="0.6" opacity="0.4">
+              <line x1="80" y1="190" x2="100" y2="220"/>
+              <line x1="90" y1="190" x2="110" y2="220"/>
+              <line x1="190" y1="150" x2="220" y2="200"/>
+              <line x1="200" y1="150" x2="230" y2="200"/>
+              <line x1="320" y1="160" x2="340" y2="210"/>
+              <line x1="330" y1="160" x2="350" y2="210"/>
             </g>
 
-            <!-- Ocoee River -->
-            <path d="M-20,330 C60,318 100,348 160,332 C220,316 260,344 320,328 C380,312 400,328 420,322" fill="none" stroke="url(#river-light)" stroke-width="20" stroke-linecap="round" opacity="0.85"/>
-            <path d="M-20,330 C60,318 100,348 160,332 C220,316 260,344 320,328 C380,312 400,328 420,322" fill="none" stroke="#5a86a0" stroke-width="1.5" opacity="0.45"/>
+            <!-- Pine glyphs -->
+            <g fill="#1f1d18" opacity="0.7">
+              <polygon points="60,260 56,234 52,260"/>
+              <polygon points="68,266 64,240 60,266"/>
+              <polygon points="305,250 301,225 297,250"/>
+              <polygon points="313,256 309,232 305,256"/>
+              <polygon points="180,238 176,212 172,238"/>
+            </g>
 
-            <!-- Animated location pin in honey/sage -->
-            <g transform="translate(200, 268)">
-              <circle r="20" fill="#5a7a52" opacity="0.25">
-                <animate attributeName="r" values="20;26;20" dur="3s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.25;0.05;0.25" dur="3s" repeatCount="indefinite"/>
+            <!-- Ocoee River - rust ribbon -->
+            <path d="M-10,360 C60,350 100,378 160,360 C220,342 260,372 320,358 C380,344 410,360 410,356" fill="none" stroke="#c8553d" stroke-width="3"/>
+            <path d="M-10,360 C60,350 100,378 160,360 C220,342 260,372 320,358 C380,344 410,360 410,356" fill="none" stroke="#c8553d" stroke-width="9" opacity="0.18"/>
+
+            <!-- Compass rose (top right) -->
+            <g transform="translate(346,118)">
+              <circle r="20" fill="none" stroke="#1f1d18" stroke-width="1"/>
+              <path d="M0,-18 L4,0 L0,18 L-4,0 Z" fill="#1f1d18"/>
+              <path d="M-18,0 L0,-4 L18,0 L0,4 Z" fill="#1f1d18" opacity="0.5"/>
+              <text y="-26" text-anchor="middle" fill="#1f1d18" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700">N</text>
+            </g>
+
+            <!-- Pin marker - editorial cross-mark -->
+            <g transform="translate(200,300)">
+              <circle r="22" fill="none" stroke="#c8553d" stroke-width="1.5" opacity="0.4">
+                <animate attributeName="r" values="22;28;22" dur="3s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.4;0.05;0.4" dur="3s" repeatCount="indefinite"/>
               </circle>
-              <circle r="10" fill="#5a7a52"/>
-              <path d="M0,-4 L0,4" stroke="#fdf9f1" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M-3,-1 L3,-1" stroke="#fdf9f1" stroke-width="1.8" stroke-linecap="round"/>
+              <circle r="10" fill="#c8553d"/>
+              <circle r="4" fill="#f4ede0"/>
+              <line x1="-16" y1="0" x2="-26" y2="0" stroke="#c8553d" stroke-width="1.5"/>
+              <line x1="16" y1="0" x2="26" y2="0" stroke="#c8553d" stroke-width="1.5"/>
+              <line x1="0" y1="-16" x2="0" y2="-26" stroke="#c8553d" stroke-width="1.5"/>
+              <line x1="0" y1="16" x2="0" y2="26" stroke="#c8553d" stroke-width="1.5"/>
             </g>
 
-            <!-- Text labels -->
-            <text x="200" y="305" text-anchor="middle" fill="#3d5836" font-family="'Fraunces', serif" font-size="14" font-weight="600">THE VINE</text>
-            <text x="200" y="320" text-anchor="middle" fill="#7a705f" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" letter-spacing="1">ATHENS, TN</text>
+            <!-- Editorial labels for the pin -->
+            <text x="200" y="346" text-anchor="middle" fill="#1f1d18" font-family="'Playfair Display', serif" font-size="14" font-weight="700">THE VINE</text>
+            <text x="200" y="362" text-anchor="middle" fill="#3a362d" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="2">35.45° N · 84.59° W</text>
 
-            <text x="180" y="355" text-anchor="middle" fill="#5a86a0" font-family="'Fraunces', serif" font-size="11" font-style="italic">Ocoee River</text>
+            <!-- River label -->
+            <text x="178" y="384" text-anchor="middle" fill="#a44427" font-family="'Playfair Display', serif" font-size="13" font-style="italic">Ocoee River</text>
 
-            <!-- Info card -->
-            <rect x="30" y="390" width="340" height="90" rx="12" fill="#fdf9f1" opacity="0.92"/>
-            <rect x="30" y="390" width="340" height="90" rx="12" fill="none" stroke="#cdd9c5" stroke-width="1"/>
-            <text x="200" y="415" text-anchor="middle" fill="#2d2620" font-family="'Fraunces', serif" font-size="17" font-weight="600">Sundays at 10:30am</text>
-            <text x="200" y="435" text-anchor="middle" fill="#5a5044" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">Athens, Tennessee</text>
-            <text x="200" y="455" text-anchor="middle" fill="#5a7a52" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" letter-spacing="1.5">OCOEE RIVER REGION</text>
-            <text x="200" y="470" text-anchor="middle" fill="#8a7e6e" font-family="'Plus Jakarta Sans', sans-serif" font-size="9">Southeast Tennessee</text>
+            <!-- Editorial footer card -->
+            <g>
+              <line x1="40" y1="430" x2="360" y2="430" stroke="#1f1d18" stroke-width="0.6"/>
+              <text x="200" y="458" text-anchor="middle" fill="#1f1d18" font-family="'Playfair Display', serif" font-size="20" font-weight="700">Sundays at 10:30am</text>
+              <text x="200" y="478" text-anchor="middle" fill="#3a362d" font-family="'Lora', serif" font-size="12" font-style="italic">Athens, Tennessee</text>
+              <line x1="120" y1="490" x2="280" y2="490" stroke="#c8553d" stroke-width="0.8"/>
+              <text x="200" y="510" text-anchor="middle" fill="#1f1d18" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="3">OCOEE RIVER REGION</text>
+              <text x="200" y="522" text-anchor="middle" fill="#6b6556" font-family="'JetBrains Mono', monospace" font-size="8" letter-spacing="1.5">SOUTHEAST TENNESSEE</text>
+            </g>
           </svg>
-        </div>
+          <figcaption>Plate I &mdash; The Ocoee Region, surveyed.</figcaption>
+        </figure>
+
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       CONNECT
+       LETTERS: CONNECT
+       Letters-to-the-editor framing. The form is the letter,
+       the side panel is the masthead's contact information.
        ═══════════════════════════════════════════════════════ -->
-  <section id="connect" class="section section--connect">
+  <section id="connect" class="letters">
     <div class="container">
-      <div class="section-label">// connect</div>
-      <h2 class="section-title">Say <span class="highlight">Hello</span></h2>
-      <p class="section-intro">
-        Got questions? Want to know more? Just want to say hi? We'd love to hear from you.
-        No automated responses &mdash; a real human will get back to you.
+      <div class="dept dept--inverse">
+        <span class="dept-num">05 /</span>
+        <span class="dept-name">Letters &amp; Hellos</span>
+      </div>
+
+      <h2 class="letters-title">Say <em>hello.</em></h2>
+      <p class="letters-intro">
+        Got questions? Want to know more? Just want to say hi? We&rsquo;d
+        love to hear from you. No automated responses &mdash; a real human
+        will get back to you.
       </p>
 
-      <div class="connect-grid">
-        <form class="contact-form" id="contact-form" data-reveal>
+      <div class="letters-grid">
+
+        <form class="letter-form" id="contact-form" data-reveal>
+          <div class="letter-form-head">
+            <span class="letter-form-stamp">Postmark</span>
+            <span class="letter-form-route">Athens, TN &rarr; you</span>
+          </div>
+
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="What should we call you?" required>
           </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="interest">I&rsquo;m interested in</label>
+              <select id="interest" name="interest">
+                <option value="">Pick one (or don&rsquo;t)</option>
+                <option value="visiting">Visiting this Sunday</option>
+                <option value="groups">Finding a group</option>
+                <option value="serving">Serving / volunteering</option>
+                <option value="questions">I have questions about faith</option>
+                <option value="prayer">Prayer request</option>
+                <option value="other">Something else entirely</option>
+              </select>
+            </div>
           </div>
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell us what's on your mind..."></textarea>
-          </div>
-          <div class="form-group">
-            <label for="interest">I'm interested in...</label>
-            <select id="interest" name="interest">
-              <option value="">Pick one (or don't)</option>
-              <option value="visiting">Visiting this Sunday</option>
-              <option value="groups">Finding a group</option>
-              <option value="serving">Serving / volunteering</option>
-              <option value="questions">I have questions about faith</option>
-              <option value="prayer">Prayer request</option>
-              <option value="other">Something else entirely</option>
-            </select>
+            <label for="message">Your message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell us what's on your mind..."></textarea>
           </div>
           <button type="submit" class="btn btn--primary btn--full">
-            <span>Send It</span>
+            <span>Send the Letter</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -632,21 +699,21 @@
           </p>
         </form>
 
-        <div class="connect-aside" data-reveal>
-          <div class="connect-card">
-            <h3>Direct Line</h3>
-            <p class="connect-detail">
-              <span class="connect-label">Email:</span>
+        <aside class="letters-aside" data-reveal>
+          <div class="letter-card">
+            <div class="letter-card-label">Direct Line</div>
+            <p class="letter-card-row">
+              <span>Email</span>
               <a href="mailto:hello@thevineathens.church">hello@thevineathens.church</a>
             </p>
-            <p class="connect-detail">
-              <span class="connect-label">Phone:</span>
+            <p class="letter-card-row">
+              <span>Phone</span>
               <a href="tel:+14232164433">(423) 216-4433</a>
             </p>
           </div>
 
-          <div class="connect-card">
-            <h3>Hang Out Online</h3>
+          <div class="letter-card">
+            <div class="letter-card-label">Hang Out Online</div>
             <div class="social-links">
               <a href="https://discord.gg/Qq8H3bdw" class="social-link" aria-label="Discord" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
@@ -675,65 +742,69 @@
             </div>
           </div>
 
-          <div class="connect-card connect-card--highlight">
-            <h3>First-Timer?</h3>
+          <div class="letter-card letter-card--feature">
+            <div class="letter-card-label">First-Timer?</div>
             <p>
-              Just show up Sunday at 10:30am. We'll have coffee ready and someone
+              Just show up Sunday at 10:30am. We&rsquo;ll have coffee ready and someone
               to show you around. No ambush. No awkward visitor card. Just a
               warm welcome.
             </p>
           </div>
-        </div>
+        </aside>
+
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       FOOTER
+       COLOPHON / FOOTER
+       Newspaper masthead at the top - the publication's name
+       set very large - and a colophon strip at the bottom
+       with credits, location, and the verse.
        ═══════════════════════════════════════════════════════ -->
-  <footer class="footer">
+  <footer class="colophon">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <svg class="footer-logo" viewBox="0 0 200 200" width="44" height="44" aria-hidden="true">
-            <defs>
-              <linearGradient id="footer-leaf" x1="0" y1="0" x2="0.4" y2="1">
-                <stop offset="0%" stop-color="#8caf83"/>
-                <stop offset="50%" stop-color="#5a7a52"/>
-                <stop offset="100%" stop-color="#3d5836"/>
-              </linearGradient>
-            </defs>
-            <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z" fill="none" stroke="url(#footer-leaf)" stroke-width="6" stroke-linejoin="round"/>
-            <line x1="100" y1="38" x2="100" y2="155" stroke="#5a7a52" stroke-width="4" stroke-linecap="round"/>
-            <path d="M100 62 C86 56 74 58 64 66" fill="none" stroke="#5a7a52" stroke-width="3.5" stroke-linecap="round"/>
-            <path d="M100 92 C114 86 126 88 136 96" fill="none" stroke="#5a7a52" stroke-width="3.5" stroke-linecap="round"/>
-            <path d="M100 122 C86 116 74 118 66 128" fill="none" stroke="#5a7a52" stroke-width="3.5" stroke-linecap="round"/>
-            <circle cx="100" cy="62" r="5" fill="#5a7a52" opacity="0.7"/>
-            <circle cx="100" cy="92" r="5" fill="#5a7a52" opacity="0.7"/>
-            <circle cx="100" cy="122" r="5" fill="#5a7a52" opacity="0.7"/>
-            <circle cx="100" cy="150" r="6.5" fill="#d6a35a"/>
-          </svg>
-          <p class="footer-tagline">The Vine &mdash; Where Misfits Find Family</p>
-          <p class="footer-location">Athens, Tennessee &bull; Ocoee River Region</p>
+      <div class="colophon-mast">
+        <div class="colophon-mast-the">The</div>
+        <div class="colophon-mast-vine">Vine</div>
+        <div class="colophon-mast-sub">A Gathering &middot; Athens, Tennessee &middot; Est. 2025</div>
+      </div>
+
+      <div class="colophon-grid">
+        <div class="colophon-block">
+          <div class="colophon-label">Sections</div>
+          <ul class="colophon-list">
+            <li><a href="#about">01 / Who We Are</a></li>
+            <li><a href="#beliefs">02 / What We Believe</a></li>
+            <li><a href="#community">03 / Find Your People</a></li>
+            <li><a href="#visit">04 / Visit Us</a></li>
+            <li><a href="#connect">05 / Connect</a></li>
+          </ul>
         </div>
-        <div class="footer-links">
-          <a href="#about">Who We Are</a>
-          <a href="#beliefs">What We Believe</a>
-          <a href="#community">Find Your People</a>
-          <a href="#visit">Visit Us</a>
-          <a href="#connect">Connect</a>
+
+        <div class="colophon-block">
+          <div class="colophon-label">Direct Line</div>
+          <ul class="colophon-list">
+            <li><a href="mailto:hello@thevineathens.church">hello@thevineathens.church</a></li>
+            <li><a href="tel:+14232164433">(423) 216-4433</a></li>
+            <li>Athens, TN &middot; Ocoee River Region</li>
+          </ul>
         </div>
-        <div class="footer-meta">
-          <p class="footer-verse">
-            &ldquo;I am the vine; you are the branches.&rdquo;<br>
-            <span>John 15:5</span>
-          </p>
+
+        <div class="colophon-block colophon-block--verse">
+          <blockquote>
+            <p>&ldquo;I am the vine; you are the branches.&rdquo;</p>
+            <cite>John 15:5</cite>
+          </blockquote>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025&ndash;2026 The Vine Church &bull; Athens, TN</p>
-        <p class="footer-easter-egg">
-          <code>// built with faith, caffeine, and a mass quantity of parentheses</code>
+
+      <div class="colophon-bottom">
+        <p>&copy; 2025&ndash;2026 The Vine Church &middot; Athens, TN</p>
+        <p class="colophon-credit">
+          <span class="colophon-credit-label">Set in</span>
+          Playfair Display, Lora &amp; JetBrains Mono &middot;
+          <span class="colophon-credit-label">Printed on</span> the open web
         </p>
       </div>
     </div>

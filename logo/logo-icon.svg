@@ -1,44 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="The Vine logo">
-  <defs>
-    <linearGradient id="leaf-gradient" x1="0" y1="0" x2="0.4" y2="1">
-      <stop offset="0%" stop-color="#8caf83"/>
-      <stop offset="50%" stop-color="#5a7a52"/>
-      <stop offset="100%" stop-color="#3d5836"/>
-    </linearGradient>
-    <linearGradient id="stem-gradient" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#6b9163"/>
-      <stop offset="100%" stop-color="#4d7548"/>
-    </linearGradient>
-    <radialGradient id="bloom-gradient" cx="0.5" cy="0.5" r="0.6">
-      <stop offset="0%" stop-color="#f0d49a"/>
-      <stop offset="60%" stop-color="#d6a35a"/>
-      <stop offset="100%" stop-color="#a87a3c"/>
-    </radialGradient>
-  </defs>
+  <!--
+    Block-print / woodcut treatment of the vine leaf mark.
+    Flat fills, no gradients, deliberately graphic - meant to read
+    like a printer's mark from an indie magazine masthead.
+  -->
 
-  <!-- Outer teardrop leaf shape, sage gradient -->
-  <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z"
-        fill="none" stroke="url(#leaf-gradient)" stroke-width="5.5" stroke-linejoin="round"/>
+  <!-- Solid leaf body (teal) with thick ink outline -->
+  <path d="M100 188 C100 188 38 138 38 82 C38 40 64 12 100 4 C136 12 162 40 162 82 C162 138 100 188 100 188Z"
+        fill="#2a5f5b" stroke="#1f1d18" stroke-width="6" stroke-linejoin="round"/>
 
-  <!-- Central stem -->
-  <line x1="100" y1="38" x2="100" y2="155" stroke="url(#stem-gradient)" stroke-width="4" stroke-linecap="round"/>
+  <!-- Inner highlight stripe to add print-block depth -->
+  <path d="M100 178 C100 178 50 132 50 82 C50 48 70 22 100 16 L100 178Z"
+        fill="#357b76" opacity="0.6"/>
 
-  <!-- Three branches -->
-  <path d="M100 62 C86 56 74 58 64 66 C60 70 58 74 58 78" fill="none" stroke="#5a7a52" stroke-width="3.2" stroke-linecap="round"/>
-  <path d="M100 92 C114 86 126 88 136 96 C140 100 142 104 142 108" fill="none" stroke="#5a7a52" stroke-width="3.2" stroke-linecap="round"/>
-  <path d="M100 122 C86 116 74 118 66 128 C62 132 60 136 60 140" fill="none" stroke="#5a7a52" stroke-width="3.2" stroke-linecap="round"/>
+  <!-- Central trunk in cream/paper -->
+  <path d="M100 32 L100 162" stroke="#f4ede0" stroke-width="6" stroke-linecap="round"/>
 
-  <!-- Small leaf accents at branch tips -->
-  <ellipse cx="58" cy="78" rx="5" ry="3" fill="#6b9163" opacity="0.85" transform="rotate(-30 58 78)"/>
-  <ellipse cx="142" cy="108" rx="5" ry="3" fill="#6b9163" opacity="0.85" transform="rotate(30 142 108)"/>
-  <ellipse cx="60" cy="140" rx="5" ry="3" fill="#6b9163" opacity="0.85" transform="rotate(-30 60 140)"/>
+  <!-- Three branches, cream -->
+  <path d="M100 60 C84 52 70 56 60 64" fill="none" stroke="#f4ede0" stroke-width="5" stroke-linecap="round"/>
+  <path d="M100 92 C116 84 130 88 140 96" fill="none" stroke="#f4ede0" stroke-width="5" stroke-linecap="round"/>
+  <path d="M100 124 C84 116 70 120 60 132" fill="none" stroke="#f4ede0" stroke-width="5" stroke-linecap="round"/>
 
-  <!-- Junction nodes -->
-  <circle cx="100" cy="62" r="5" fill="#5a7a52" opacity="0.7"/>
-  <circle cx="100" cy="92" r="5" fill="#5a7a52" opacity="0.7"/>
-  <circle cx="100" cy="122" r="5" fill="#5a7a52" opacity="0.7"/>
+  <!-- Leaf shapes at branch tips - flat block fills -->
+  <ellipse cx="56" cy="64" rx="8" ry="4.5" fill="#f4ede0" transform="rotate(-30 56 64)"/>
+  <ellipse cx="144" cy="96" rx="8" ry="4.5" fill="#f4ede0" transform="rotate(30 144 96)"/>
+  <ellipse cx="56" cy="132" rx="8" ry="4.5" fill="#f4ede0" transform="rotate(-30 56 132)"/>
 
-  <!-- Warm honey "fruit" at the base -->
-  <circle cx="100" cy="150" r="7" fill="url(#bloom-gradient)"/>
-  <circle cx="100" cy="150" r="2.5" fill="#a87a3c" opacity="0.6"/>
+  <!-- Junction nodes in rust to anchor the eye -->
+  <circle cx="100" cy="60" r="6" fill="#c8553d"/>
+  <circle cx="100" cy="92" r="6" fill="#c8553d"/>
+  <circle cx="100" cy="124" r="6" fill="#c8553d"/>
+
+  <!-- Antique gold "fruit" at the base -->
+  <circle cx="100" cy="156" r="8" fill="#b88828"/>
+  <circle cx="100" cy="156" r="3" fill="#1f1d18" opacity="0.45"/>
 </svg>

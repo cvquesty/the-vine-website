@@ -4,130 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ─── Page title and search-engine metadata ─────────────────
-       The title appears in browser tabs and search-result headings.
-       The description meta tag provides the snippet that Google and
-       other search engines display below the page title. Keywords
-       help associate the page with relevant local search terms.
-       ──────────────────────────────────────────────────────────── -->
   <title>The Vine | Where Misfits Find Family</title>
   <meta name="description" content="A church in Athens, TN for the rest of us. Real faith, real people, no dress code. Located near the Ocoee River in Southeast Tennessee.">
   <meta name="keywords" content="church, Athens TN, Cleveland TN, Ocoee, non-traditional church, inclusive church, vineyard, assembly of god">
 
-  <!-- ─── Open Graph metadata for link previews ─────────────────
-       When someone shares this URL on Facebook, Twitter/X, Slack,
-       iMessage, or any other platform that generates link previews,
-       these tags control the title, description, image, and URL
-       that appear in the preview card. Without og:image, most
-       platforms show a blank gray box.
-       ──────────────────────────────────────────────────────────── -->
   <meta property="og:title" content="The Vine | Where Misfits Find Family">
-  <meta property="og:description" content="Not your typical church. A community for gamers, coders, bikers, and everyone who's ever felt like they don't belong.">
+  <meta property="og:description" content="Not your typical church. A community for gamers, coders, bikers, and everyone who has ever felt like they don't belong.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thevineathens.church/">
-  <meta property="og:image" content="https://thevineathens.church/logo/social/general/og-image-1200x630.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
 
-  <!-- ─── Font preconnects and stylesheet ───────────────────────
-       We preconnect to the Google Fonts servers so the browser can
-       start the DNS lookup and TLS handshake before it even sees
-       the stylesheet request. This shaves time off font loading.
-       Three font families are loaded:
-         - Space Grotesk (body/headline)
-         - JetBrains Mono (code-flavored UI)
-         - Caveat (handwritten tagline and quotes)
-       ──────────────────────────────────────────────────────────── -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- ─── Main stylesheet ───────────────────────────────────────
-       All of the site's CSS lives in a single file. No build step,
-       no preprocessor — just plain CSS with custom properties.
-       ──────────────────────────────────────────────────────────── -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- ─── Favicons and touch icons ──────────────────────────────
-       Browsers use these icons in tabs, bookmarks, home-screen
-       shortcuts, and PWA manifests. We provide:
-         1. An SVG favicon for modern browsers (scales perfectly).
-         2. PNG fallbacks at standard sizes for older browsers and
-            platforms that do not support SVG favicons.
-         3. An Apple Touch Icon for iOS home-screen bookmarks.
-       The PNG files live in logo/social/general/ and are generated
-       from the source SVGs using the generate-social-pngs.sh script.
-       ──────────────────────────────────────────────────────────── -->
   <link rel="icon" href="logo/logo-icon.svg" type="image/svg+xml">
-  <link rel="icon" href="logo/social/general/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="logo/social/general/favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="apple-touch-icon" href="logo/social/general/apple-touch-icon-180x180.png">
 </head>
 <body>
 
   <!-- ═══════════════════════════════════════════════════════
        NAVIGATION
-
-       Fixed nav bar pinned to the top of the viewport. Contains
-       the inline SVG logo, the "the vine" wordmark, and a
-       horizontal row of section links (plus a "connect" CTA).
-
-       On screens narrower than 650px, the links collapse into a
-       dropdown menu controlled by the hamburger toggle button.
-       JavaScript adds/removes the "scrolled" class on .nav to
-       darken the background once the visitor scrolls past 50px.
-
-       The inline SVG for the logo is duplicated here (rather
-       than referenced from an external file) to avoid an
-       extra HTTP request and ensure the logo renders instantly
-       on first paint without a flash of missing content.
        ═══════════════════════════════════════════════════════ -->
   <nav id="nav" class="nav">
     <div class="nav-inner">
-      <!-- Logo: links back to the hero / top of the page -->
       <a href="#hero" class="nav-logo">
-        <!-- Inline SVG of the vine leaf/circuit logo mark (32×32px). -->
-        <svg class="nav-logo-icon" viewBox="0 0 200 200" width="32" height="32">
+        <svg class="nav-logo-icon" viewBox="0 0 200 200" width="36" height="36" aria-hidden="true">
           <defs>
-            <linearGradient id="nav-leaf" x1="0" y1="0" x2="0.3" y2="1">
-              <stop offset="0%" stop-color="#8cd98c"/>
-              <stop offset="50%" stop-color="#5cb85c"/>
-              <stop offset="100%" stop-color="#3a8a3a"/>
+            <linearGradient id="nav-leaf" x1="0" y1="0" x2="0.4" y2="1">
+              <stop offset="0%" stop-color="#8caf83"/>
+              <stop offset="50%" stop-color="#5a7a52"/>
+              <stop offset="100%" stop-color="#3d5836"/>
             </linearGradient>
           </defs>
-          <!-- Leaf/teardrop outline -->
           <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z" fill="none" stroke="url(#nav-leaf)" stroke-width="6" stroke-linejoin="round"/>
-          <!-- Central stem -->
-          <line x1="100" y1="38" x2="100" y2="155" stroke="#5cb85c" stroke-width="4.5" stroke-linecap="round"/>
-          <!-- Three organic branches alternating left–right–left -->
-          <path d="M100 62 C88 56 76 60 68 68" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
-          <path d="M100 92 C112 86 124 90 132 98" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
-          <path d="M100 122 C88 116 76 120 70 130" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
-          <!-- Circuit traces extending from branch tips -->
-          <path d="M68 68 L62 68 L62 58" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
-          <path d="M132 98 L138 98 L138 108" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
-          <path d="M70 130 L64 130 L64 140" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
-          <!-- Junction nodes where branches meet the stem -->
-          <circle cx="100" cy="62" r="5" fill="#5cb85c" opacity="0.6"/>
-          <circle cx="100" cy="92" r="5" fill="#5cb85c" opacity="0.6"/>
-          <circle cx="100" cy="122" r="5" fill="#5cb85c" opacity="0.6"/>
-          <!-- Amber "fruit" accent node at the base -->
-          <circle cx="100" cy="148" r="6" fill="#d4a843" opacity="0.9"/>
+          <line x1="100" y1="38" x2="100" y2="155" stroke="#5a7a52" stroke-width="4" stroke-linecap="round"/>
+          <path d="M100 62 C86 56 74 58 64 66" fill="none" stroke="#5a7a52" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M100 92 C114 86 126 88 136 96" fill="none" stroke="#5a7a52" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M100 122 C86 116 74 118 66 128" fill="none" stroke="#5a7a52" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="100" cy="62" r="5" fill="#5a7a52" opacity="0.7"/>
+          <circle cx="100" cy="92" r="5" fill="#5a7a52" opacity="0.7"/>
+          <circle cx="100" cy="122" r="5" fill="#5a7a52" opacity="0.7"/>
+          <circle cx="100" cy="150" r="6.5" fill="#d6a35a"/>
         </svg>
         <span class="nav-logo-text">the vine</span>
       </a>
 
-      <!--
-        Mobile hamburger toggle. Hidden on desktop via CSS. The
-        aria-label tells screen readers what the button does, and
-        aria-expanded (managed by JavaScript) announces whether
-        the menu is currently open or closed.
-      -->
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
-      <!-- Navigation links. On mobile, this becomes a dropdown panel. -->
       <div class="nav-links" id="nav-links">
         <a href="#about" class="nav-link">who we are</a>
         <a href="#beliefs" class="nav-link">what we believe</a>
@@ -140,12 +66,6 @@
 
   <!-- ═══════════════════════════════════════════════════════
        ANNOUNCEMENT BANNER
-
-       A site-wide announcement bar positioned between the fixed
-       navigation and the hero section. Styled to match the site's
-       dark/green aesthetic with a subtle left-accent border and
-       the same card treatment used throughout the page. The phone
-       number is a clickable tel: link for mobile visitors.
        ═══════════════════════════════════════════════════════ -->
   <div class="announcement">
     <div class="announcement-inner">
@@ -165,79 +85,74 @@
 
   <!-- ═══════════════════════════════════════════════════════
        HERO
-
-       Full-viewport landing section. Three visual layers:
-         1. Background (.hero-bg): decorative vine/circuit SVG
-            paths that animate on load using a CSS stroke-
-            dashoffset technique, plus a mountain silhouette
-            along the bottom edge representing the Ocoee region.
-         2. Content (.hero-content): centered badge, headline,
-            tagline, CTA buttons, and a scroll-hint icon.
-         3. The fixed nav bar sits above both via z-index.
-
-       JavaScript applies a subtle parallax effect to the vine
-       SVG as the visitor scrolls, giving the hero depth.
        ═══════════════════════════════════════════════════════ -->
   <section id="hero" class="hero">
     <div class="hero-bg">
 
-      <!--
-        Animated vine/circuit SVG background. The "xMidYMid slice"
-        preserveAspectRatio ensures this SVG covers the entire hero
-        area on all screen sizes without leaving empty space (it
-        behaves similarly to CSS background-size: cover).
-
-        The vine paths use the CSS class .vine-path along with
-        stroke-dasharray / stroke-dashoffset to create an animated
-        "drawing" effect on page load. Branch paths are staggered
-        with increasing animation-delay values. Junction nodes
-        (.vine-node) fade in after their parent branch finishes
-        drawing. Tiny circuit traces and rectangles at the branch
-        tips reinforce the tech/code aesthetic.
-      -->
-      <svg class="hero-vines" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+      <!-- Soft, sparse background washes - sage and honey, no pink -->
+      <svg class="hero-blooms" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs>
-          <linearGradient id="vine-glow" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#5cb85c" stop-opacity="0.6"/>
-            <stop offset="100%" stop-color="#2d8a2d" stop-opacity="0.2"/>
-          </linearGradient>
+          <radialGradient id="wash-sage" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0%" stop-color="#cfdfc7" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#cfdfc7" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="wash-honey" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0%" stop-color="#f3e0bb" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#f3e0bb" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="wash-stone" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0%" stop-color="#e8dfd0" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#e8dfd0" stop-opacity="0"/>
+          </radialGradient>
         </defs>
-        <!-- Main vine trunk: sweeps from left to right across the hero -->
-        <path class="vine-path vine-path--1" d="M-50,450 C100,430 200,380 350,400 C500,420 550,350 720,300 C890,250 1000,320 1150,280 C1300,240 1400,200 1500,220" fill="none" stroke="url(#vine-glow)" stroke-width="3"/>
-        <!-- Branch 1: grows upward from the left junction node -->
-        <path class="vine-path vine-path--2" d="M350,400 C330,320 280,260 250,200 C220,140 240,80 300,40" fill="none" stroke="#5cb85c" stroke-width="1.5" opacity="0.3"/>
-        <!-- Branch 2: grows upward from the center junction node -->
-        <path class="vine-path vine-path--3" d="M720,300 C750,220 800,180 780,100" fill="none" stroke="#5cb85c" stroke-width="1.5" opacity="0.3"/>
-        <!-- Branch 3: grows downward from the center junction node -->
-        <path class="vine-path vine-path--4" d="M720,300 C700,380 650,440 680,520 C710,600 670,700 700,800" fill="none" stroke="#5cb85c" stroke-width="1.5" opacity="0.3"/>
-        <!-- Branch 4: grows downward from the right junction node -->
-        <path class="vine-path vine-path--5" d="M1150,280 C1180,350 1220,400 1200,480" fill="none" stroke="#5cb85c" stroke-width="1.5" opacity="0.3"/>
-        <!-- Junction nodes: small circles that fade in at branch intersections -->
-        <circle class="vine-node" cx="350" cy="400" r="4" fill="#5cb85c" opacity="0.4"/>
-        <circle class="vine-node" cx="720" cy="300" r="5" fill="#5cb85c" opacity="0.5"/>
-        <circle class="vine-node" cx="1150" cy="280" r="4" fill="#5cb85c" opacity="0.4"/>
-        <circle class="vine-node" cx="250" cy="200" r="3" fill="#5cb85c" opacity="0.3"/>
-        <circle class="vine-node" cx="780" cy="100" r="3" fill="#5cb85c" opacity="0.3"/>
-        <circle class="vine-node" cx="680" cy="520" r="3" fill="#5cb85c" opacity="0.3"/>
-        <!-- Circuit traces: right-angle lines with terminal rectangles -->
-        <line class="circuit-line" x1="350" y1="400" x2="390" y2="400" stroke="#5cb85c" stroke-width="1" opacity="0.15"/>
-        <line class="circuit-line" x1="390" y1="400" x2="390" y2="370" stroke="#5cb85c" stroke-width="1" opacity="0.15"/>
-        <line class="circuit-line" x1="720" y1="300" x2="760" y2="300" stroke="#5cb85c" stroke-width="1" opacity="0.15"/>
-        <line class="circuit-line" x1="760" y1="300" x2="760" y2="330" stroke="#5cb85c" stroke-width="1" opacity="0.15"/>
-        <rect x="386" y="366" width="8" height="8" fill="none" stroke="#5cb85c" stroke-width="0.5" opacity="0.15"/>
-        <rect x="756" y="326" width="8" height="8" fill="none" stroke="#5cb85c" stroke-width="0.5" opacity="0.15"/>
+        <circle cx="180" cy="240" r="320" fill="url(#wash-sage)"/>
+        <circle cx="1260" cy="200" r="300" fill="url(#wash-honey)"/>
+        <circle cx="1320" cy="720" r="280" fill="url(#wash-sage)"/>
+        <circle cx="220" cy="700" r="260" fill="url(#wash-stone)"/>
       </svg>
 
-      <!--
-        Mountain silhouette at the bottom of the hero. Represents
-        the ridgeline of the Ocoee / Hiwassee region. Two layered
-        paths create a sense of depth (foreground + background
-        ridges). preserveAspectRatio="none" stretches the SVG to
-        the full viewport width regardless of aspect ratio.
-      -->
-      <svg class="hero-mountains" viewBox="0 0 1440 200" preserveAspectRatio="none">
-        <path d="M0,200 L0,120 C100,80 200,100 300,70 C400,40 450,90 550,50 C650,10 700,60 800,30 C900,0 950,40 1050,20 C1150,0 1200,30 1300,10 C1400,-10 1440,20 1440,20 L1440,200 Z" fill="#0f0f15"/>
-        <path d="M0,200 L0,150 C150,120 250,140 400,130 C550,120 600,160 750,140 C900,120 1000,150 1150,130 C1300,110 1440,140 1440,140 L1440,200 Z" fill="#0a0a10"/>
+      <!-- Decorative botanical vines drawing on load -->
+      <svg class="hero-vines" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="vine-stem" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#6b9163" stop-opacity="0.75"/>
+            <stop offset="100%" stop-color="#4d7548" stop-opacity="0.4"/>
+          </linearGradient>
+        </defs>
+
+        <path class="vine-path vine-path--1" d="M-50,460 C100,440 200,380 350,400 C500,420 560,340 720,300 C890,250 1000,320 1150,280 C1300,240 1400,200 1500,220" fill="none" stroke="url(#vine-stem)" stroke-width="2.5"/>
+        <path class="vine-path vine-path--2" d="M350,400 C330,320 280,260 250,200 C220,140 240,80 300,40" fill="none" stroke="#6b9163" stroke-width="1.5" opacity="0.45"/>
+        <path class="vine-path vine-path--3" d="M720,300 C750,220 800,180 780,100" fill="none" stroke="#6b9163" stroke-width="1.5" opacity="0.45"/>
+        <path class="vine-path vine-path--4" d="M720,300 C700,380 650,440 680,520 C710,600 670,700 700,800" fill="none" stroke="#6b9163" stroke-width="1.5" opacity="0.45"/>
+        <path class="vine-path vine-path--5" d="M1150,280 C1180,350 1220,400 1200,480" fill="none" stroke="#6b9163" stroke-width="1.5" opacity="0.45"/>
+
+        <g class="vine-leaves" fill="#6b9163" opacity="0.6">
+          <ellipse cx="250" cy="200" rx="8" ry="4" transform="rotate(-30 250 200)"/>
+          <ellipse cx="780" cy="100" rx="9" ry="4.5" transform="rotate(20 780 100)"/>
+          <ellipse cx="680" cy="520" rx="9" ry="4.5" transform="rotate(-20 680 520)"/>
+          <ellipse cx="1200" cy="480" rx="8" ry="4" transform="rotate(40 1200 480)"/>
+          <ellipse cx="300" cy="40" rx="7" ry="3.5" transform="rotate(60 300 40)"/>
+        </g>
+
+        <g class="vine-blossoms">
+          <circle cx="350" cy="400" r="5" fill="#5a7a52" opacity="0.7"/>
+          <circle cx="720" cy="300" r="6.5" fill="#d6a35a" opacity="0.85"/>
+          <circle cx="1150" cy="280" r="5" fill="#5a7a52" opacity="0.7"/>
+        </g>
+
+        <!-- Subtle right-angle accent strokes - hint of the original tech motif -->
+        <g opacity="0.18">
+          <line x1="350" y1="400" x2="385" y2="400" stroke="#5a7a52" stroke-width="1"/>
+          <line x1="385" y1="400" x2="385" y2="372" stroke="#5a7a52" stroke-width="1"/>
+          <line x1="1150" y1="280" x2="1185" y2="280" stroke="#5a7a52" stroke-width="1"/>
+          <line x1="1185" y1="280" x2="1185" y2="252" stroke="#5a7a52" stroke-width="1"/>
+        </g>
+      </svg>
+
+      <!-- Mountain silhouette in muted sage/stone -->
+      <svg class="hero-hills" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,200 L0,120 C100,80 200,100 300,70 C400,40 450,90 550,50 C650,10 700,60 800,30 C900,0 950,40 1050,20 C1150,0 1200,30 1300,10 C1400,-10 1440,20 1440,20 L1440,200 Z" fill="#cdd9c5" opacity="0.55"/>
+        <path d="M0,200 L0,150 C150,120 250,140 400,130 C550,120 600,160 750,140 C900,120 1000,150 1150,130 C1300,110 1440,140 1440,140 L1440,200 Z" fill="#a8bda0" opacity="0.65"/>
       </svg>
     </div>
 
@@ -260,7 +175,7 @@
       </div>
       <div class="hero-scroll-hint">
         <span>scroll</span>
-        <svg width="16" height="24" viewBox="0 0 16 24" fill="none">
+        <svg width="16" height="24" viewBox="0 0 16 24" fill="none" aria-hidden="true">
           <rect x="1" y="1" width="14" height="22" rx="7" stroke="currentColor" stroke-width="1.5"/>
           <circle class="scroll-dot" cx="8" cy="8" r="2" fill="currentColor"/>
         </svg>
@@ -269,13 +184,7 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       ABOUT — "We're Not Your Typical Church"
-
-       Two-column layout: narrative paragraphs on the left and
-       a 2×2 grid of value cards on the right. Concludes with a
-       full-width blockquote from John 15:5. All cards and the
-       quote have data-reveal attributes so they fade in as the
-       visitor scrolls this section into view.
+       ABOUT
        ═══════════════════════════════════════════════════════ -->
   <section id="about" class="section section--about">
     <div class="container">
@@ -305,10 +214,10 @@
         <div class="about-values">
           <div class="value-card" data-reveal>
             <div class="value-icon">
-              <svg viewBox="0 0 48 48" width="48" height="48">
+              <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
                 <circle cx="24" cy="14" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
                 <path d="M8,42 C8,30 16,24 24,24 C32,24 40,30 40,42" fill="none" stroke="currentColor" stroke-width="2"/>
-                <path d="M24,24 L24,38" stroke="#5cb85c" stroke-width="1.5" opacity="0.5"/>
+                <path d="M24,24 L24,38" stroke="#d6a35a" stroke-width="1.8" opacity="0.7"/>
               </svg>
             </div>
             <h3>Real Over Religious</h3>
@@ -317,10 +226,10 @@
 
           <div class="value-card" data-reveal>
             <div class="value-icon">
-              <svg viewBox="0 0 48 48" width="48" height="48">
-                <path d="M12,36 L12,20 L24,12 L36,20 L36,36" fill="none" stroke="currentColor" stroke-width="2"/>
+              <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+                <path d="M12,36 L12,20 L24,12 L36,20 L36,36" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                 <rect x="20" y="28" width="8" height="8" fill="none" stroke="currentColor" stroke-width="2"/>
-                <circle cx="24" cy="22" r="2" fill="#5cb85c"/>
+                <circle cx="24" cy="22" r="2" fill="#d6a35a"/>
               </svg>
             </div>
             <h3>Depth Over Width</h3>
@@ -329,9 +238,9 @@
 
           <div class="value-card" data-reveal>
             <div class="value-icon">
-              <svg viewBox="0 0 48 48" width="48" height="48">
+              <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
                 <path d="M8,24 L16,16 L24,24 L32,16 L40,24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <path d="M8,32 L16,24 L24,32 L32,24 L40,32" fill="none" stroke="#5cb85c" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
+                <path d="M8,32 L16,24 L24,32 L32,24 L40,32" fill="none" stroke="#d6a35a" stroke-width="1.5" opacity="0.6" stroke-linecap="round"/>
                 <circle cx="24" cy="40" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
               </svg>
             </div>
@@ -341,10 +250,10 @@
 
           <div class="value-card" data-reveal>
             <div class="value-icon">
-              <svg viewBox="0 0 48 48" width="48" height="48">
+              <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
                 <circle cx="16" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
                 <circle cx="32" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
-                <path d="M16,26 C16,34 32,34 32,26" fill="none" stroke="#5cb85c" stroke-width="1.5"/>
+                <path d="M16,26 C16,34 32,34 32,26" fill="none" stroke="#d6a35a" stroke-width="1.6"/>
                 <circle cx="24" cy="36" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
               </svg>
             </div>
@@ -364,13 +273,7 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       BELIEFS — "What We're Built On"
-
-       Eight numbered cards presenting the church's core doctrinal
-       beliefs in plain language. Each card has data-reveal for a
-       staggered entrance animation. The section concludes with a
-       footer card linking to the AG 16 Fundamental Truths and
-       Kingdom Theology resources for visitors who want more depth.
+       BELIEFS
        ═══════════════════════════════════════════════════════ -->
   <section id="beliefs" class="section section--beliefs">
     <div class="container">
@@ -387,8 +290,8 @@
       <div class="beliefs-grid">
         <div class="belief-card" data-reveal>
           <div class="belief-num">01</div>
-          <h3>The Bible Is Our Source Code</h3>
-          <p>Scripture is inspired, authoritative, and the foundation for everything we do and believe. It's the ultimate documentation.</p>
+          <h3>The Bible Is Our Foundation</h3>
+          <p>Scripture is inspired, authoritative, and the foundation for everything we do and believe. It's the ultimate guide.</p>
         </div>
 
         <div class="belief-card" data-reveal>
@@ -447,33 +350,27 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       COMMUNITY — "Find Your People"
-
-       Six group cards showcasing The Vine's community ministries:
-       Respawn (gaming), Terminal (code & coffee), Iron Horse
-       (motorcycle rides), Basecamp (outdoor adventures), Branches
-       (discipleship), and Amplified (music/worship). Each card
-       includes an SVG icon, a meeting-time tag, and a description.
+       COMMUNITY
        ═══════════════════════════════════════════════════════ -->
   <section id="community" class="section section--community">
     <div class="container">
       <div class="section-label">// find your people</div>
-      <h2 class="section-title">Your <span class="highlight">Party Awaits</span></h2>
+      <h2 class="section-title">Your <span class="highlight">Crew Awaits</span></h2>
       <p class="section-intro">
         Church isn't just Sunday. It's Tuesday night gaming, Saturday morning rides,
-        Wednesday coffee, and Thursday jams. Find your crew.
+        Wednesday coffee, and Thursday jams. Find your people.
       </p>
 
       <div class="community-grid">
         <div class="group-card" data-reveal>
           <div class="group-icon">
-            <svg viewBox="0 0 48 48" width="48" height="48">
-              <rect x="10" y="18" width="28" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
-              <circle cx="18" cy="27" r="4" fill="none" stroke="#5cb85c" stroke-width="1.5"/>
-              <rect x="28" y="23" width="6" height="3" rx="1" fill="none" stroke="#5cb85c" stroke-width="1.5"/>
-              <rect x="28" y="28" width="6" height="3" rx="1" fill="none" stroke="#5cb85c" stroke-width="1.5"/>
-              <line x1="18" y1="36" x2="18" y2="40" stroke="currentColor" stroke-width="1.5"/>
-              <line x1="30" y1="36" x2="30" y2="40" stroke="currentColor" stroke-width="1.5"/>
+            <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+              <rect x="10" y="18" width="28" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="18" cy="27" r="3.5" fill="none" stroke="#d6a35a" stroke-width="1.6"/>
+              <rect x="28" y="23" width="6" height="3" rx="1" fill="none" stroke="#d6a35a" stroke-width="1.6"/>
+              <rect x="28" y="28" width="6" height="3" rx="1" fill="none" stroke="#d6a35a" stroke-width="1.6"/>
+              <line x1="18" y1="36" x2="18" y2="40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="30" y1="36" x2="30" y2="40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
           </div>
           <div class="group-tag">Friday Nights</div>
@@ -483,9 +380,9 @@
 
         <div class="group-card" data-reveal>
           <div class="group-icon">
-            <svg viewBox="0 0 48 48" width="48" height="48">
-              <text x="8" y="32" font-family="monospace" font-size="14" fill="currentColor">&gt;_</text>
+            <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
               <rect x="4" y="14" width="40" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+              <text x="10" y="32" font-family="ui-monospace, 'Menlo', monospace" font-size="13" font-weight="700" fill="#d6a35a">&gt;_</text>
               <path d="M12,38 C12,42 18,42 24,42 C30,42 36,42 36,38" fill="none" stroke="currentColor" stroke-width="1.5"/>
             </svg>
           </div>
@@ -496,10 +393,10 @@
 
         <div class="group-card" data-reveal>
           <div class="group-icon">
-            <svg viewBox="0 0 48 48" width="48" height="48">
-              <circle cx="16" cy="30" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
-              <circle cx="32" cy="30" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
-              <path d="M24,30 L28,18 L32,14 L26,16 L24,22" fill="none" stroke="#5cb85c" stroke-width="1.5" stroke-linejoin="round"/>
+            <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+              <circle cx="16" cy="30" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="32" cy="30" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path d="M22,30 L28,18 L34,14" fill="none" stroke="#d6a35a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <circle cx="16" cy="30" r="2" fill="currentColor"/>
               <circle cx="32" cy="30" r="2" fill="currentColor"/>
             </svg>
@@ -511,9 +408,9 @@
 
         <div class="group-card" data-reveal>
           <div class="group-icon">
-            <svg viewBox="0 0 48 48" width="48" height="48">
-              <path d="M24,6 L28,18 L40,18 L30,26 L34,38 L24,30 L14,38 L18,26 L8,18 L20,18 Z" fill="none" stroke="currentColor" stroke-width="2"/>
-              <circle cx="24" cy="22" r="4" fill="none" stroke="#5cb85c" stroke-width="1.5"/>
+            <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+              <path d="M24,6 L28,18 L40,18 L30,26 L34,38 L24,30 L14,38 L18,26 L8,18 L20,18 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="24" cy="22" r="3.5" fill="#d6a35a" opacity="0.7"/>
             </svg>
           </div>
           <div class="group-tag">Monthly Adventures</div>
@@ -523,12 +420,14 @@
 
         <div class="group-card" data-reveal>
           <div class="group-icon">
-            <svg viewBox="0 0 48 48" width="48" height="48">
-              <path d="M24,8 L24,32" stroke="currentColor" stroke-width="2"/>
-              <path d="M24,14 C18,10 12,14 12,18" stroke="#5cb85c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              <path d="M24,20 C30,16 36,20 36,24" stroke="#5cb85c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              <path d="M24,26 C18,22 12,26 12,30" stroke="#5cb85c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              <circle cx="24" cy="38" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+            <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+              <path d="M24,8 L24,40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M24,14 C18,12 12,16 10,20" fill="none" stroke="#d6a35a" stroke-width="1.7" stroke-linecap="round"/>
+              <path d="M24,22 C30,20 36,24 38,28" fill="none" stroke="#d6a35a" stroke-width="1.7" stroke-linecap="round"/>
+              <path d="M24,30 C18,28 12,32 10,36" fill="none" stroke="#d6a35a" stroke-width="1.7" stroke-linecap="round"/>
+              <ellipse cx="11" cy="20" rx="3" ry="1.6" fill="#6b9163" opacity="0.85" transform="rotate(-30 11 20)"/>
+              <ellipse cx="38" cy="28" rx="3" ry="1.6" fill="#6b9163" opacity="0.85" transform="rotate(30 38 28)"/>
+              <ellipse cx="11" cy="36" rx="3" ry="1.6" fill="#6b9163" opacity="0.85" transform="rotate(-30 11 36)"/>
             </svg>
           </div>
           <div class="group-tag">Throughout the Week</div>
@@ -538,11 +437,11 @@
 
         <div class="group-card" data-reveal>
           <div class="group-icon">
-            <svg viewBox="0 0 48 48" width="48" height="48">
-              <path d="M14,34 C14,18 24,14 24,14 C24,14 34,18 34,34" fill="none" stroke="currentColor" stroke-width="2"/>
-              <line x1="24" y1="14" x2="24" y2="8" stroke="currentColor" stroke-width="2"/>
-              <circle cx="24" cy="6" r="2" fill="#5cb85c"/>
-              <path d="M18,28 L30,28" stroke="#5cb85c" stroke-width="1.5"/>
+            <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+              <path d="M14,34 C14,18 24,14 24,14 C24,14 34,18 34,34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="24" y1="14" x2="24" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="6" r="2" fill="#d6a35a"/>
+              <path d="M18,28 L30,28" stroke="#d6a35a" stroke-width="1.5"/>
               <path d="M16,34 L32,34" stroke="currentColor" stroke-width="2"/>
             </svg>
           </div>
@@ -555,13 +454,7 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       VISIT — "Join the Adventure"
-
-       Two-column layout. The left column stacks three info cards:
-       service time, location, and a "What to Expect" list with
-       emoji icons. The right column displays an SVG illustration
-       of the Ocoee River region with an animated church-pin marker
-       and labels for Athens, TN and the Ocoee River.
+       VISIT
        ═══════════════════════════════════════════════════════ -->
   <section id="visit" class="section section--visit">
     <div class="container">
@@ -571,7 +464,7 @@
       <div class="visit-grid">
         <div class="visit-info">
           <div class="visit-card" data-reveal>
-            <h3>🗓️ Sundays at 10:30am</h3>
+            <h3>Sundays at 10:30am</h3>
             <p>
               Worship, teaching, and community. Usually wraps up around noon.
               Coffee is always on. Dress code: wear clothes. That's it.
@@ -579,7 +472,7 @@
           </div>
 
           <div class="visit-card" data-reveal>
-            <h3>📍 Athens, Tennessee</h3>
+            <h3>Athens, Tennessee</h3>
             <p>
               Located in the Athens metro area, in the heart of Southeast Tennessee's
               Ocoee River region. Surrounded by mountains, rivers, and adventure.
@@ -587,116 +480,103 @@
           </div>
 
           <div class="visit-card" data-reveal>
-            <h3>🤔 What to Expect</h3>
+            <h3>What to Expect</h3>
             <ul class="expect-list">
               <li>
-                <span class="expect-icon">☕</span>
+                <span class="expect-icon" aria-hidden="true">&#9749;</span>
                 <span>Good coffee. Like, actually good.</span>
               </li>
               <li>
-                <span class="expect-icon">🎵</span>
+                <span class="expect-icon" aria-hidden="true">&#9835;</span>
                 <span>Worship that ranges from intimate acoustic to full-band energy.</span>
               </li>
               <li>
-                <span class="expect-icon">📖</span>
+                <span class="expect-icon" aria-hidden="true">&#10070;</span>
                 <span>Teaching that's real, applicable, and never boring.</span>
               </li>
               <li>
-                <span class="expect-icon">🤝</span>
+                <span class="expect-icon" aria-hidden="true">&#10084;</span>
                 <span>People who are genuinely glad you showed up.</span>
               </li>
               <li>
-                <span class="expect-icon">🚫</span>
+                <span class="expect-icon" aria-hidden="true">&#10003;</span>
                 <span>Zero pressure. No guilt trips. No passing the plate five times.</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <!--
-          Stylized illustration of the Ocoee River region. This is a
-          self-contained inline SVG that renders a night-sky scene with
-          stars, layered mountain ridges, pine-tree silhouettes, the
-          Ocoee River, and an animated pulsing church-pin marker showing
-          The Vine's location. A small info box at the bottom repeats
-          the service time and location text for visual emphasis.
-
-          The SVG uses its own inline gradients and does not depend on
-          any external images, so it loads instantly with the HTML.
-        -->
+        <!-- Light Ocoee River illustration in cream/sage/honey -->
         <div class="visit-aside" data-reveal>
-          <svg class="visit-illustration" viewBox="0 0 400 500" width="100%">
+          <svg class="visit-illustration" viewBox="0 0 400 500" width="100%" aria-hidden="true">
             <defs>
-              <!-- Gradient for the river: blue fading from opaque to translucent. -->
-              <linearGradient id="river" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#2a5a8a" stop-opacity="0.8"/>
-                <stop offset="100%" stop-color="#1a3a5a" stop-opacity="0.4"/>
+              <linearGradient id="map-bg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#fdf9f1"/>
+                <stop offset="60%" stop-color="#f6efde"/>
+                <stop offset="100%" stop-color="#efe6cf"/>
               </linearGradient>
-              <!-- Gradient for the mountain silhouettes: dark green fade. -->
-              <linearGradient id="mtn-grad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#2a3a2a"/>
-                <stop offset="100%" stop-color="#1a2a1a"/>
+              <linearGradient id="river-light" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#7aa6bf" stop-opacity="0.85"/>
+                <stop offset="100%" stop-color="#5a86a0" stop-opacity="0.5"/>
+              </linearGradient>
+              <linearGradient id="mtn-light" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#a8bda0"/>
+                <stop offset="100%" stop-color="#7d9676"/>
               </linearGradient>
             </defs>
 
-            <!-- Dark background rectangle with rounded corners. -->
-            <rect width="400" height="500" fill="#0a0f0a" rx="12"/>
+            <!-- Cream background -->
+            <rect width="400" height="500" fill="url(#map-bg)" rx="14"/>
 
-            <!-- Scattered star dots in the night sky above the mountains. -->
-            <circle cx="50" cy="30" r="1.5" fill="#fff" opacity="0.3"/>
-            <circle cx="150" cy="50" r="1" fill="#fff" opacity="0.4"/>
-            <circle cx="280" cy="25" r="1.5" fill="#fff" opacity="0.3"/>
-            <circle cx="350" cy="60" r="1" fill="#fff" opacity="0.5"/>
-            <circle cx="100" cy="70" r="0.8" fill="#fff" opacity="0.2"/>
-            <circle cx="320" cy="40" r="1.2" fill="#fff" opacity="0.3"/>
+            <!-- Warm sun in the upper area -->
+            <circle cx="320" cy="80" r="22" fill="#f3e0bb" opacity="0.85"/>
+            <circle cx="320" cy="80" r="14" fill="#d6a35a" opacity="0.55"/>
 
-            <!-- Two-layer mountain ridgeline creating a depth parallax look. -->
-            <path d="M0,250 L60,140 L120,190 L200,100 L280,160 L340,90 L400,150 L400,350 L0,350 Z" fill="url(#mtn-grad)" opacity="0.6"/>
-            <path d="M0,300 L80,210 L160,250 L240,180 L320,230 L400,190 L400,350 L0,350 Z" fill="url(#mtn-grad)" opacity="0.8"/>
+            <!-- Tiny birds -->
+            <path d="M70,110 q5,-4 10,0 q5,-4 10,0" fill="none" stroke="#5a7a52" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M110,135 q4,-3 8,0 q4,-3 8,0" fill="none" stroke="#5a7a52" stroke-width="1.2" stroke-linecap="round"/>
 
-            <!-- Pine-tree silhouettes dotted along the ridgeline. -->
-            <g opacity="0.4">
-              <polygon points="90,250 85,220 80,250" fill="#2a4a2a"/>
-              <polygon points="110,260 105,225 100,260" fill="#2a4a2a"/>
-              <polygon points="300,240 295,210 290,240" fill="#2a4a2a"/>
-              <polygon points="320,250 315,215 310,250" fill="#2a4a2a"/>
-              <polygon points="180,220 175,190 170,220" fill="#2a4a2a"/>
+            <!-- Two-layer mountain silhouettes -->
+            <path d="M0,250 L60,150 L120,200 L200,110 L280,170 L340,90 L400,160 L400,360 L0,360 Z" fill="url(#mtn-light)" opacity="0.6"/>
+            <path d="M0,310 L80,220 L160,260 L240,180 L320,240 L400,200 L400,360 L0,360 Z" fill="url(#mtn-light)" opacity="0.85"/>
+
+            <!-- Pine tree silhouettes (back to spiky) -->
+            <g opacity="0.5" fill="#3d5836">
+              <polygon points="90,250 85,220 80,250"/>
+              <polygon points="110,260 105,225 100,260"/>
+              <polygon points="300,240 295,210 290,240"/>
+              <polygon points="320,250 315,215 310,250"/>
+              <polygon points="180,220 175,190 170,220"/>
             </g>
 
-            <!--
-              The Ocoee River: a wide translucent stroke for the water
-              body, overlaid with a thin bright stroke for the bank edge.
-            -->
-            <path d="M-20,320 C60,310 100,340 160,325 C220,310 260,335 320,320 C380,305 400,320 420,315" fill="none" stroke="url(#river)" stroke-width="20" stroke-linecap="round" opacity="0.6"/>
-            <path d="M-20,320 C60,310 100,340 160,325 C220,310 260,335 320,320 C380,305 400,320 420,315" fill="none" stroke="#4a8abf" stroke-width="2" opacity="0.3"/>
+            <!-- Ocoee River -->
+            <path d="M-20,330 C60,318 100,348 160,332 C220,316 260,344 320,328 C380,312 400,328 420,322" fill="none" stroke="url(#river-light)" stroke-width="20" stroke-linecap="round" opacity="0.85"/>
+            <path d="M-20,330 C60,318 100,348 160,332 C220,316 260,344 320,328 C380,312 400,328 420,322" fill="none" stroke="#5a86a0" stroke-width="1.5" opacity="0.45"/>
 
-            <!--
-              Animated church location pin. An outer ring pulses (grows
-              and fades) on a 3-second loop to draw the visitor's eye.
-              The inner circle and small cross icon mark the exact spot.
-            -->
-            <g transform="translate(200, 260)">
-              <circle r="18" fill="#5cb85c" opacity="0.2">
-                <animate attributeName="r" values="18;24;18" dur="3s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.2;0.05;0.2" dur="3s" repeatCount="indefinite"/>
+            <!-- Animated location pin in honey/sage -->
+            <g transform="translate(200, 268)">
+              <circle r="20" fill="#5a7a52" opacity="0.25">
+                <animate attributeName="r" values="20;26;20" dur="3s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.25;0.05;0.25" dur="3s" repeatCount="indefinite"/>
               </circle>
-              <circle r="8" fill="#5cb85c" opacity="0.8"/>
-              <path d="M0,-4 L0,4" stroke="white" stroke-width="1.5"/>
-              <path d="M-3,-1 L3,-1" stroke="white" stroke-width="1.5"/>
+              <circle r="10" fill="#5a7a52"/>
+              <path d="M0,-4 L0,4" stroke="#fdf9f1" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M-3,-1 L3,-1" stroke="#fdf9f1" stroke-width="1.8" stroke-linecap="round"/>
             </g>
 
-            <!-- Text labels identifying the church location and the river. -->
-            <text x="200" y="295" text-anchor="middle" fill="#5cb85c" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500">THE VINE</text>
-            <text x="200" y="310" text-anchor="middle" fill="#888" font-family="'JetBrains Mono', monospace" font-size="9">Athens, TN</text>
+            <!-- Text labels -->
+            <text x="200" y="305" text-anchor="middle" fill="#3d5836" font-family="'Fraunces', serif" font-size="14" font-weight="600">THE VINE</text>
+            <text x="200" y="320" text-anchor="middle" fill="#7a705f" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" letter-spacing="1">ATHENS, TN</text>
 
-            <text x="180" y="345" text-anchor="middle" fill="#4a8abf" font-family="'JetBrains Mono', monospace" font-size="9" opacity="0.6">Ocoee River</text>
+            <text x="180" y="355" text-anchor="middle" fill="#5a86a0" font-family="'Fraunces', serif" font-size="11" font-style="italic">Ocoee River</text>
 
-            <!-- Info box at the bottom summarizing service time and location. -->
-            <rect x="30" y="380" width="340" height="90" rx="8" fill="#12121a" opacity="0.8"/>
-            <text x="200" y="405" text-anchor="middle" fill="#e0e0e0" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="600">Sundays at 10:30am</text>
-            <text x="200" y="425" text-anchor="middle" fill="#a0a0b0" font-family="'Space Grotesk', sans-serif" font-size="11">Athens, Tennessee</text>
-            <text x="200" y="445" text-anchor="middle" fill="#5cb85c" font-family="'JetBrains Mono', monospace" font-size="10">Ocoee River Region</text>
-            <text x="200" y="460" text-anchor="middle" fill="#666" font-family="'JetBrains Mono', monospace" font-size="9">Southeast Tennessee</text>
+            <!-- Info card -->
+            <rect x="30" y="390" width="340" height="90" rx="12" fill="#fdf9f1" opacity="0.92"/>
+            <rect x="30" y="390" width="340" height="90" rx="12" fill="none" stroke="#cdd9c5" stroke-width="1"/>
+            <text x="200" y="415" text-anchor="middle" fill="#2d2620" font-family="'Fraunces', serif" font-size="17" font-weight="600">Sundays at 10:30am</text>
+            <text x="200" y="435" text-anchor="middle" fill="#5a5044" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">Athens, Tennessee</text>
+            <text x="200" y="455" text-anchor="middle" fill="#5a7a52" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" letter-spacing="1.5">OCOEE RIVER REGION</text>
+            <text x="200" y="470" text-anchor="middle" fill="#8a7e6e" font-family="'Plus Jakarta Sans', sans-serif" font-size="9">Southeast Tennessee</text>
           </svg>
         </div>
       </div>
@@ -704,18 +584,7 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       CONNECT — "Say Hello"
-
-       Two-column layout. The left column contains the contact form
-       (name, email, message, and interest dropdown). The form does
-       not currently submit to a real backend — JavaScript handles
-       it with a client-side confirmation and console log. In
-       production, wire it up to Netlify Forms, Formspree, or a
-       custom API.
-
-       The right column stacks three info cards: direct contact
-       details (email + phone), social media links (Discord,
-       Instagram, Facebook, YouTube), and a "First-Timer?" welcome callout.
+       CONNECT
        ═══════════════════════════════════════════════════════ -->
   <section id="connect" class="section section--connect">
     <div class="container">
@@ -754,8 +623,8 @@
           </div>
           <button type="submit" class="btn btn--primary btn--full">
             <span>Send It</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
           <p class="form-note">
@@ -780,25 +649,25 @@
             <h3>Hang Out Online</h3>
             <div class="social-links">
               <a href="https://discord.gg/Qq8H3bdw" class="social-link" aria-label="Discord" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
                   <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
                 </svg>
                 <span>Discord</span>
               </a>
               <a href="https://www.instagram.com/thevineathens/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
                 </svg>
                 <span>Instagram</span>
               </a>
               <a href="https://facebook.com/TheVineAthens" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
                   <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 1.092.042 1.375.084v3.199h-1.77c-1.543 0-2.021.583-2.021 2.098v2.177h3.632l-.624 3.667h-3.008v8.007A12.013 12.013 0 0 0 24 12 12 12 0 0 0 0 12a12.013 12.013 0 0 0 8.179 11.691z"/>
                 </svg>
                 <span>Facebook</span>
               </a>
               <a href="https://www.youtube.com/@TheVineAthens" class="social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                 </svg>
                 <span>YouTube</span>
@@ -821,41 +690,28 @@
 
   <!-- ═══════════════════════════════════════════════════════
        FOOTER
-
-       Three-column layout (stacks on mobile): the brand column
-       with the inline SVG logo, tagline, and location; a column
-       of quick-links mirroring the navigation; and a column with
-       the John 15:5 verse. Below the grid, a bottom bar shows
-       the copyright notice and a developer Easter-egg comment.
-
-       The logo SVG here is identical to the one in the nav bar.
-       It is intentionally duplicated inline to avoid an extra
-       network request and to ensure it renders immediately.
        ═══════════════════════════════════════════════════════ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <svg class="footer-logo" viewBox="0 0 200 200" width="40" height="40">
+          <svg class="footer-logo" viewBox="0 0 200 200" width="44" height="44" aria-hidden="true">
             <defs>
-              <linearGradient id="footer-leaf" x1="0" y1="0" x2="0.3" y2="1">
-                <stop offset="0%" stop-color="#8cd98c"/>
-                <stop offset="50%" stop-color="#5cb85c"/>
-                <stop offset="100%" stop-color="#3a8a3a"/>
+              <linearGradient id="footer-leaf" x1="0" y1="0" x2="0.4" y2="1">
+                <stop offset="0%" stop-color="#8caf83"/>
+                <stop offset="50%" stop-color="#5a7a52"/>
+                <stop offset="100%" stop-color="#3d5836"/>
               </linearGradient>
             </defs>
             <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z" fill="none" stroke="url(#footer-leaf)" stroke-width="6" stroke-linejoin="round"/>
-            <line x1="100" y1="38" x2="100" y2="155" stroke="#5cb85c" stroke-width="4.5" stroke-linecap="round"/>
-            <path d="M100 62 C88 56 76 60 68 68" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
-            <path d="M100 92 C112 86 124 90 132 98" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
-            <path d="M100 122 C88 116 76 120 70 130" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
-            <path d="M68 68 L62 68 L62 58" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
-            <path d="M132 98 L138 98 L138 108" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
-            <path d="M70 130 L64 130 L64 140" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
-            <circle cx="100" cy="62" r="5" fill="#5cb85c" opacity="0.6"/>
-            <circle cx="100" cy="92" r="5" fill="#5cb85c" opacity="0.6"/>
-            <circle cx="100" cy="122" r="5" fill="#5cb85c" opacity="0.6"/>
-            <circle cx="100" cy="148" r="6" fill="#d4a843" opacity="0.9"/>
+            <line x1="100" y1="38" x2="100" y2="155" stroke="#5a7a52" stroke-width="4" stroke-linecap="round"/>
+            <path d="M100 62 C86 56 74 58 64 66" fill="none" stroke="#5a7a52" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M100 92 C114 86 126 88 136 96" fill="none" stroke="#5a7a52" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M100 122 C86 116 74 118 66 128" fill="none" stroke="#5a7a52" stroke-width="3.5" stroke-linecap="round"/>
+            <circle cx="100" cy="62" r="5" fill="#5a7a52" opacity="0.7"/>
+            <circle cx="100" cy="92" r="5" fill="#5a7a52" opacity="0.7"/>
+            <circle cx="100" cy="122" r="5" fill="#5a7a52" opacity="0.7"/>
+            <circle cx="100" cy="150" r="6.5" fill="#d6a35a"/>
           </svg>
           <p class="footer-tagline">The Vine &mdash; Where Misfits Find Family</p>
           <p class="footer-location">Athens, Tennessee &bull; Ocoee River Region</p>
@@ -883,13 +739,6 @@
     </div>
   </footer>
 
-  <!--
-    Main JavaScript file. Handles navigation scroll behavior,
-    mobile menu toggling, scroll-reveal animations, contact form
-    submission, parallax on the hero, and Easter eggs. Loaded at
-    the end of the body and wrapped in a DOMContentLoaded listener
-    so it runs safely regardless of load order.
-  -->
   <script src="js/main.js"></script>
 </body>
 </html>

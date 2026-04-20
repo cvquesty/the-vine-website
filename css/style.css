@@ -1,1274 +1,1190 @@
 /* ═══════════════════════════════════════════════════════════
-   THE VINE — Design System & Stylesheet
+   THE VINE - vine2 stylesheet (balanced edition)
 
-   This is the sole stylesheet for The Vine church website. It
-   is organized into clearly delineated sections: custom properties
-   (design tokens), reset/base, navigation, hero, buttons, generic
-   section layouts, per-section styles, scroll-reveal animations,
-   and responsive breakpoints.
-
-   The design targets a dark, tech-forward aesthetic with organic
-   green accents — a "vine growing through a circuit board" vibe.
-   All colors, fonts, and spacing values are defined as CSS custom
-   properties on :root so they can be referenced consistently
-   throughout the file without duplication or drift.
+   Splits the difference between the original dark/tech site and
+   the first airy vine2 pass. Warm linen canvas, grounded sage as
+   the primary accent, honey/amber as the secondary, and a touch
+   of dusty terracotta only where it earns its keep. Typography
+   pairs Fraunces (a warm modern serif with real character) with
+   Plus Jakarta Sans for body and Caveat for the handwritten
+   tagline -- echoing the original site without leaning saccharine.
    ═══════════════════════════════════════════════════════════ */
 
+/* ─────────────────────────────────────────────────────────
+   DESIGN TOKENS
+   ───────────────────────────────────────────────────────── */
 :root {
-  /*
-   * COLOR TOKENS
-   *
-   * The palette is built around a near-black base with layered
-   * surface shades for depth, vine-green as the primary accent,
-   * warm amber for highlights, and a range of grays for text
-   * hierarchy. Every card, section, and interactive element
-   * references these variables so that a brand-wide palette
-   * change can be made in one place.
-   */
-  --bg-deep:     #0a0a0f;     /* Deepest background — body and alternating sections */
-  --bg-surface:  #12121a;     /* Slightly lighter surface for alternating sections */
-  --bg-card:     #1a1a24;     /* Card and panel backgrounds */
-  --bg-card-alt: #1e1e2a;     /* Alternate card shade (reserved for future use) */
-  --border:      #2a2a3a;     /* Default border for cards, inputs, dividers */
-  --border-light:#3a3a4a;     /* Lighter border for outline buttons and subtle separators */
+  /* Warm, neutral canvas */
+  --linen:         #faf6ee;
+  --linen-2:       #f3ecde;
+  --paper:         #fffbf3;
+  --paper-soft:    #f7f1e4;
 
-  --green:       #5cb85c;     /* Primary brand green — buttons, links, highlights */
-  --green-dark:  #3a8a3a;     /* Dark green for gradients, pressed/active states */
-  --green-light: #8cd98c;     /* Light green for hover states and gradient endpoints */
-  --green-glow:  rgba(92, 184, 92, 0.15); /* Translucent green used for focus rings and hover glows */
+  /* Sage / forest green - primary */
+  --sage-50:       #eef3e9;
+  --sage-100:      #dce7d5;
+  --sage-200:      #bfd2b5;
+  --sage-300:      #a3bf97;
+  --sage-400:      #8caf83;
+  --sage-500:      #6b9163;
+  --sage-600:      #5a7a52;
+  --sage-700:      #46623f;
+  --sage-800:      #3d5836;
 
-  --amber:       #d4a843;     /* Warm amber accent — taglines, emphasis, fruit node */
-  --amber-dark:  #a07a20;     /* Darker amber (reserved for future emphasis states) */
-  --blue:        #4a8abf;     /* River blue — used in the visit section illustration */
+  /* Honey / amber - secondary */
+  --honey-100:     #f7e9c6;
+  --honey-300:     #f0d49a;
+  --honey-400:     #e2b872;
+  --honey-500:     #d6a35a;
+  --honey-600:     #b88442;
+  --honey-700:     #8c6330;
 
-  --text:        #e0e0e8;     /* Primary body text color */
-  --text-secondary: #a0a0b0;  /* Secondary text — descriptions, subtitles */
-  --text-muted:  #666680;     /* Muted text — labels, metadata, placeholders */
-  --text-dim:    #444455;     /* Dimmest text — timestamps, fine print, Easter eggs */
+  /* Dusty terracotta - tertiary, used sparingly */
+  --clay-200:      #e7cbb8;
+  --clay-400:      #c89277;
+  --clay-500:      #a9744f;
 
-  /*
-   * FONT STACKS
-   *
-   * Three typefaces define the brand voice:
-   *   - Space Grotesk for body/headline text (modern, geometric sans-serif)
-   *   - JetBrains Mono for code-flavored UI elements (nav, labels, tags)
-   *   - Caveat for the handwritten tagline and scripture quotes
-   *
-   * Each stack includes system-font fallbacks so text renders
-   * immediately even if Google Fonts loads slowly or fails.
-   */
-  --font-body:  'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono:  'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
-  --font-hand:  'Caveat', cursive;
+  /* Stone / ink - warm neutrals for text */
+  --ink-900:       #2a2620;
+  --ink-800:       #3a342c;
+  --ink-700:       #4a4238;
+  --ink-500:       #5a5044;
+  --ink-400:       #7a705f;
+  --ink-300:       #9a9082;
+  --ink-200:       #c9c0b0;
+  --ink-100:       #e6ddc9;
+  --ink-50:        #f3ecdb;
 
-  /*
-   * SPACING TOKENS
-   *
-   * --section-pad uses clamp() to fluidly scale vertical section
-   * padding from 60px on small screens up to 120px on wide screens,
-   * with 10vw as the preferred middle value.
-   *
-   * --container uses min() to cap the content width at 1200px
-   * while giving narrower viewports 90% of the screen width.
-   */
-  --section-pad: clamp(60px, 10vw, 120px);
-  --container:   min(1200px, 90vw);
+  /* Typography */
+  --serif:         'Fraunces', 'Cormorant Garamond', Georgia, serif;
+  --sans:          'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --script:        'Caveat', cursive;
+  --mono:          ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
 
-  /*
-   * EASING CURVES
-   *
-   * --ease is a gentle ease-in-out for standard interactions
-   * (hover, focus, color transitions).
-   *
-   * --ease-out is a strong deceleration curve used for entrance
-   * animations (fade-ups, scroll reveals) where elements should
-   * arrive quickly and then settle into place.
-   */
-  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  /* Effects */
+  --shadow-soft:   0 2px 8px rgba(61, 88, 54, 0.06), 0 1px 3px rgba(61, 88, 54, 0.05);
+  --shadow:        0 6px 20px rgba(61, 88, 54, 0.10), 0 2px 6px rgba(61, 88, 54, 0.07);
+  --shadow-lift:   0 14px 34px rgba(61, 88, 54, 0.14), 0 4px 10px rgba(61, 88, 54, 0.08);
+  --shadow-honey:  0 6px 20px rgba(184, 132, 66, 0.18), 0 2px 6px rgba(184, 132, 66, 0.10);
+
+  --radius-sm:     6px;
+  --radius:        12px;
+  --radius-lg:     18px;
+  --radius-xl:     24px;
+
+  --container:     1180px;
+  --gutter:        clamp(1.25rem, 4vw, 2.5rem);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   RESET & BASE
-
-   A minimal CSS reset followed by base styles for the document.
-   We use the universal selector to enforce border-box sizing on
-   every element, then set sensible defaults on html and body.
-   ═══════════════════════════════════════════════════════════ */
-
-/*
- * Apply border-box sizing universally so that padding and borders
- * are included in an element's declared width/height. Also zero
- * out all default margins and padding to give us a clean slate.
- */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ─────────────────────────────────────────────────────────
+   RESET / BASE
+   ───────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
-  /* Enable native smooth scrolling for all anchor-link navigation. */
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  -webkit-text-size-adjust: 100%;
+}
 
-  /*
-   * Offset the scroll-snap destination by 80px to account for the
-   * fixed navigation bar. Without this, clicking an anchor link
-   * would scroll the target section underneath the navbar.
-   */
-  scroll-padding-top: 80px;
-
-  /* Improve font rendering on macOS and iOS (Webkit and Firefox). */
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink-700);
+  background: var(--linen);
+  background-image:
+    radial-gradient(circle at 10% 8%,  rgba(220, 231, 213, 0.55), transparent 42%),
+    radial-gradient(circle at 92% 20%, rgba(247, 233, 198, 0.50), transparent 48%),
+    radial-gradient(circle at 80% 92%, rgba(220, 231, 213, 0.45), transparent 45%);
+  background-attachment: fixed;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  font-family: var(--font-body);
-  background: var(--bg-deep);
-  color: var(--text);
-  line-height: 1.7;
-
-  /*
-   * Prevent any horizontal scrollbar from appearing. Some of our
-   * decorative SVG elements (hero vines, mountains) extend to the
-   * full viewport width and can occasionally trigger a tiny
-   * horizontal overflow on certain browsers.
-   */
-  overflow-x: hidden;
+img,
+svg {
+  display: block;
+  max-width: 100%;
 }
 
-/* Default link styling: brand green with a smooth color transition on hover. */
-a { color: var(--green); text-decoration: none; transition: color 0.2s; }
-a:hover { color: var(--green-light); }
+a {
+  color: var(--sage-700);
+  text-decoration: none;
+  transition: color .25s ease;
+}
 
-/* Responsive images: prevent overflow and remove the inline gap below images. */
-img { max-width: 100%; display: block; }
+a:hover {
+  color: var(--honey-700);
+}
 
-/* Text selection highlight: green background with dark text for readability. */
-::selection { background: var(--green); color: var(--bg-deep); }
+::selection {
+  background: var(--honey-300);
+  color: var(--ink-900);
+}
 
-/*
- * The centered content container. Uses the --container custom
- * property (min(1200px, 90vw)) so it maxes out at 1200px on wide
- * screens and shrinks to 90% of the viewport on narrow ones.
- */
-.container { width: var(--container); margin: 0 auto; }
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
 
-/* ═══════════════════════════════════════════════════════════
+/* ─────────────────────────────────────────────────────────
    NAVIGATION
-
-   The navbar is fixed to the top of the viewport and sits above
-   all other content (z-index: 1000). It starts with a semi-
-   transparent blurred background so the hero section shows through.
-   Once the visitor scrolls past the top 50 pixels of the page,
-   JavaScript adds a "scrolled" class that makes the background
-   more opaque and reveals a subtle bottom border — providing a
-   clear visual separation from the page content beneath it.
-   ═══════════════════════════════════════════════════════════ */
-
+   ───────────────────────────────────────────────────────── */
 .nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  padding: 0 5vw;
-
-  /*
-   * The semi-transparent background combined with backdrop-filter
-   * gives the nav a frosted-glass look. We include the -webkit-
-   * prefix for Safari compatibility, which still requires it as
-   * of early 2026.
-   */
-  background: rgba(10, 10, 15, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
-  /*
-   * The border starts transparent and is colored in by the
-   * .nav.scrolled rule once the visitor scrolls down. This avoids
-   * a visible layout shift when the border appears.
-   */
+  inset: 0 0 auto 0;
+  z-index: 100;
+  background: rgba(250, 246, 238, 0.70);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
   border-bottom: 1px solid transparent;
-  transition: border-color 0.3s, background 0.3s;
+  transition: background .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
 
-/*
- * Applied by JavaScript when the page is scrolled more than 50px.
- * Increases the background opacity and reveals the bottom border
- * to differentiate the navbar from the content below.
- */
 .nav.scrolled {
-  border-bottom-color: var(--border);
-  background: rgba(10, 10, 15, 0.95);
+  background: rgba(250, 246, 238, 0.94);
+  border-bottom-color: var(--ink-100);
+  box-shadow: var(--shadow-soft);
 }
 
-/*
- * Inner flex container for the nav. Caps at 1200px wide and
- * vertically centers the logo and links within the 70px-tall bar.
- */
 .nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding: 14px var(--gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
+  gap: 20px;
 }
 
-/* The logo lockup: inline SVG icon + "the vine" text, side by side. */
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: var(--text);
-  text-decoration: none;
+  gap: 12px;
+  color: var(--ink-900);
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 0.2px;
 }
 
-.nav-logo-text {
-  font-family: var(--font-mono);
-  font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
+.nav-logo:hover {
+  color: var(--sage-700);
 }
 
-/* Horizontal link row on desktop. Becomes a vertical dropdown on mobile. */
+.nav-logo-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
 }
 
-/*
- * Individual navigation links, styled in monospace to reinforce
- * the "code" aesthetic. Each has a subtle rounded-rectangle hover
- * state with a translucent green background.
- */
 .nav-link {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  padding: 6px 14px;
-  border-radius: 6px;
-  transition: color 0.2s, background 0.2s;
+  position: relative;
+  padding: 10px 14px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-500);
+  text-transform: lowercase;
+  letter-spacing: 0.3px;
+  border-radius: 8px;
+  transition: color .25s ease, background .25s ease;
 }
 
-.nav-link:hover {
-  color: var(--text);
-  background: var(--green-glow);
-}
-
-/*
- * ACTIVE NAV LINK HIGHLIGHTING
- *
- * JavaScript toggles the "active" class on the nav link whose
- * href matches the currently visible section. This provides a
- * persistent visual cue so the visitor always knows where they
- * are on the page. The style is intentionally identical to the
- * hover state for visual consistency.
- *
- * NOTE: The CTA link ("connect") has its own green-background
- * styling via .nav-link--cta which takes precedence when both
- * .active and --cta classes are present, so the active state
- * does not override the CTA button appearance.
- */
+.nav-link:hover,
 .nav-link.active {
-  color: var(--text);
-  background: var(--green-glow);
+  color: var(--sage-800);
+  background: var(--sage-50);
 }
 
-/*
- * The call-to-action nav link ("connect") gets a solid green
- * background to make it stand out from the other links. Its
- * hover state lightens the green for feedback.
- */
 .nav-link--cta {
-  background: var(--green);
-  color: var(--bg-deep);
-  font-weight: 600;
+  margin-left: 8px;
+  padding: 10px 22px;
+  color: var(--paper);
+  background: var(--sage-600);
+  border-radius: 999px;
+  box-shadow: var(--shadow-soft);
 }
 
-.nav-link--cta:hover {
-  background: var(--green-light);
-  color: var(--bg-deep);
+.nav-link--cta:hover,
+.nav-link--cta.active {
+  color: var(--paper);
+  background: var(--sage-700);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
 }
 
-/*
- * MOBILE HAMBURGER TOGGLE BUTTON
- *
- * Hidden on desktop (display: none). On screens 650px and below,
- * the media query switches it to display: flex, revealing three
- * horizontal bars. When JavaScript adds the "active" class, the
- * bars animate into an "X" via CSS transforms.
- */
 .nav-toggle {
   display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
+  width: 42px;
+  height: 42px;
+  background: transparent;
+  border: 1px solid var(--ink-200);
+  border-radius: 10px;
   cursor: pointer;
-  padding: 8px;
+  position: relative;
 }
 
-/* Each bar is a 24×2px horizontal line in the hamburger icon. */
 .nav-toggle span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--text);
-  transition: transform 0.3s, opacity 0.3s;
+  position: absolute;
+  left: 50%;
+  width: 18px;
+  height: 1.6px;
+  background: var(--sage-700);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: all .3s ease;
 }
 
-/*
- * When the menu is open, the three bars transform into an "X":
- *   - Top bar slides down 7px and rotates 45°
- *   - Middle bar fades out completely
- *   - Bottom bar slides up 7px and rotates -45°
- */
-.nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle span:nth-child(1) { top: 14px; }
+.nav-toggle span:nth-child(2) { top: 50%; transform: translate(-50%, -50%); }
+.nav-toggle span:nth-child(3) { bottom: 14px; }
+
+.nav-toggle.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
 .nav-toggle.active span:nth-child(2) { opacity: 0; }
-.nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-toggle.active span:nth-child(3) {
+  bottom: 50%;
+  transform: translate(-50%, 50%) rotate(-45deg);
+}
 
-/* ═══════════════════════════════════════════════════════════
+@media (max-width: 760px) {
+  .nav-toggle {
+    display: block;
+  }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: var(--gutter);
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 220px;
+    padding: 14px;
+    gap: 4px;
+    background: var(--paper);
+    border: 1px solid var(--ink-100);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lift);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-12px);
+    transition: opacity .25s ease, transform .25s ease;
+  }
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .nav-link {
+    text-align: center;
+  }
+  .nav-link--cta {
+    margin: 6px 0 0;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────
    ANNOUNCEMENT BANNER
-
-   A full-width announcement bar that sits between the fixed
-   navbar and the hero section. It uses the same card background,
-   border treatment, and font stack as the rest of the site. The
-   top padding accounts for the 70px fixed nav so the banner is
-   not hidden beneath it. A green left-accent border and the
-   pulsing dot badge tie it into the vine/tech aesthetic.
-   ═══════════════════════════════════════════════════════════ */
-
+   ───────────────────────────────────────────────────────── */
 .announcement {
-  padding-top: 90px;
-  padding-bottom: 0;
-  background: var(--bg-deep);
+  margin-top: 78px;
+  padding: 18px var(--gutter) 0;
 }
 
 .announcement-inner {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 24px 32px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--green);
-  border-radius: 12px;
-  text-align: center;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding: 18px 22px;
+  background: var(--paper);
+  border: 1px solid var(--ink-100);
+  border-left: 4px solid var(--honey-500);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-soft);
 }
 
 .announcement-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--green);
+  padding: 6px 14px;
+  background: var(--honey-100);
+  color: var(--honey-700);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  background: rgba(92, 184, 92, 0.08);
-  border: 1px solid rgba(92, 184, 92, 0.2);
-  padding: 4px 14px;
-  border-radius: 30px;
-  margin-bottom: 16px;
+  flex-shrink: 0;
 }
 
 .announcement-dot {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: var(--green);
-  animation: pulse 2s infinite;
+  background: var(--honey-600);
+  box-shadow: 0 0 0 4px var(--honey-100);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.25); }
 }
 
 .announcement-text {
-  font-family: var(--font-body);
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
+  flex: 1;
+  min-width: 240px;
+  font-size: 15px;
+  color: var(--ink-700);
+  line-height: 1.6;
 }
 
 .announcement-text strong {
-  color: var(--amber);
+  color: var(--sage-800);
   font-weight: 600;
 }
 
 .announcement-phone {
-  font-family: var(--font-mono);
   font-weight: 600;
-  color: var(--green) !important;
-  border-bottom: 1px solid rgba(92, 184, 92, 0.3);
-  transition: border-color 0.2s;
+  border-bottom: 1px dashed var(--sage-500);
 }
 
-.announcement-phone:hover {
-  color: var(--green-light) !important;
-  border-bottom-color: var(--green-light);
-}
-
-/* ═══════════════════════════════════════════════════════════
+/* ─────────────────────────────────────────────────────────
    HERO
-
-   The hero section spans the full viewport height and serves as
-   the initial visual impact when a visitor loads the page. It has
-   three visual layers stacked with z-index:
-
-     1. The background layer (.hero-bg, z-index: 0) — contains
-        the animated vine/circuit SVG paths and the mountain
-        silhouette SVG at the bottom.
-     2. The content layer (.hero-content, z-index: 1) — the
-        headline, tagline, CTA buttons, and scroll hint, all
-        centered in the viewport.
-     3. The fixed nav bar (z-index: 1000) — sits above everything.
-
-   A subtle radial gradient behind the content adds a warm glow
-   effect to the center of the hero section.
-   ═══════════════════════════════════════════════════════════ */
-
+   ───────────────────────────────────────────────────────── */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - 78px);
+  padding: 80px var(--gutter) 120px;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   overflow: hidden;
-
-  /*
-   * A soft radial gradient emanating from the upper-center gives
-   * the hero a subtle spotlight effect. It transitions from a
-   * slightly warmer dark shade (#141428) into the deep background.
-   */
-  background: radial-gradient(ellipse at 50% 40%, #141428 0%, var(--bg-deep) 70%);
 }
 
-/*
- * The full-bleed background container for the hero's decorative
- * SVG artwork. It sits behind the hero content at z-index: 0.
- * The "inset: 0" shorthand stretches it to fill the hero entirely.
- */
 .hero-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
+  pointer-events: none;
 }
 
-/*
- * The animated vine/circuit SVG background that fills the hero.
- * Starts at 50% opacity and is further faded by JavaScript as
- * the visitor scrolls down (parallax effect).
- */
+.hero-blooms,
 .hero-vines {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.5;
 }
 
-/*
- * The mountain silhouette SVG pinned to the bottom of the hero.
- * It represents the Ocoee region mountains and provides a natural
- * visual transition from the hero into the first content section.
- */
-.hero-mountains {
+.hero-blooms { z-index: 0; }
+.hero-vines  { z-index: 1; opacity: 0.6; }
+
+.hero-hills {
   position: absolute;
-  bottom: 0; left: 0;
+  inset: auto 0 0 0;
   width: 100%;
-  height: 30vh;
+  height: 180px;
+  z-index: 2;
 }
 
-/*
- * VINE PATH DRAWING ANIMATION
- *
- * Each SVG vine path uses the classic stroke-dasharray /
- * stroke-dashoffset technique to create a "drawing" effect on
- * page load. The stroke is initially offset by its full dash
- * length (making it invisible), then the drawVine keyframe
- * animates the offset to zero, causing the stroke to appear
- * as if it is being drawn in real time.
- *
- * The main trunk (vine-path--1) draws first over 4 seconds.
- * Branch paths (--2 through --5) have staggered delays and
- * shorter dash lengths to match their shorter path distances.
- */
+/* Vine "draw on" animation */
 .vine-path {
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 2000;
-  animation: drawVine 4s var(--ease-out) forwards;
+  stroke-dasharray: 2400;
+  stroke-dashoffset: 2400;
+  animation: draw 3.6s ease-out forwards;
 }
+.vine-path--2 { animation-delay: .6s; }
+.vine-path--3 { animation-delay: 1.0s; }
+.vine-path--4 { animation-delay: 1.3s; }
+.vine-path--5 { animation-delay: 1.6s; }
 
-.vine-path--2 { animation-delay: 1s; stroke-dasharray: 800; stroke-dashoffset: 800; }
-.vine-path--3 { animation-delay: 1.5s; stroke-dasharray: 500; stroke-dashoffset: 500; }
-.vine-path--4 { animation-delay: 2s; stroke-dasharray: 800; stroke-dashoffset: 800; }
-.vine-path--5 { animation-delay: 2.5s; stroke-dasharray: 500; stroke-dashoffset: 500; }
-
-@keyframes drawVine {
+@keyframes draw {
   to { stroke-dashoffset: 0; }
 }
 
-/*
- * VINE NODE FADE-IN
- *
- * The small circular "junction nodes" along the vine paths start
- * fully transparent and fade in on a stagger after their parent
- * branch has finished drawing. The nth-child selectors target
- * specific nodes within the hero SVG to create a cascading
- * appearance from left to right.
- */
-.vine-node {
+.vine-leaves ellipse,
+.vine-blossoms circle {
   opacity: 0;
-  animation: fadeInNode 0.5s ease forwards;
+  animation: bloomIn 1s ease-out forwards;
+  animation-delay: 2.2s;
+}
+.vine-blossoms circle:nth-child(2) { animation-delay: 2.5s; }
+.vine-blossoms circle:nth-child(3) { animation-delay: 2.8s; }
+
+@keyframes bloomIn {
+  from { opacity: 0; transform: scale(.5); transform-origin: center; }
+  to   { opacity: var(--vine-opacity, 0.75); transform: scale(1); }
 }
 
-.vine-node:nth-child(4) { animation-delay: 1.2s; }
-.vine-node:nth-child(5) { animation-delay: 1.8s; }
-.vine-node:nth-child(6) { animation-delay: 2.2s; }
-.vine-node:nth-child(7) { animation-delay: 2.8s; }
-.vine-node:nth-child(8) { animation-delay: 3.2s; }
-.vine-node:nth-child(9) { animation-delay: 3.8s; }
-
-@keyframes fadeInNode {
-  to { opacity: 0.5; }
-}
-
-/*
- * HERO CONTENT
- *
- * The text and buttons layer. Positioned at z-index: 1 to sit
- * above the background artwork. Centered both vertically and
- * horizontally via the parent's flexbox. Horizontal padding
- * prevents text from touching screen edges on very small phones.
- */
 .hero-content {
   position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 0 20px;
+  z-index: 3;
+  max-width: 780px;
 }
 
-/*
- * HERO BADGE
- *
- * The small pill-shaped badge that reads "Athens, TN • Ocoee Region"
- * above the headline. It has a pulsing green dot to the left that
- * suggests "live" or "active" status, adding a tech aesthetic.
- * The entire badge fades up into view on a 0.5-second delay.
- */
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  background: rgba(92, 184, 92, 0.08);
-  border: 1px solid rgba(92, 184, 92, 0.2);
-  padding: 6px 18px;
-  border-radius: 30px;
-  margin-bottom: 30px;
-  opacity: 0;
-  animation: fadeUp 0.8s var(--ease-out) 0.5s forwards;
+  gap: 10px;
+  padding: 8px 18px;
+  background: var(--paper);
+  border: 1px solid var(--sage-100);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-500);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-soft);
 }
 
-/* The pulsing green status dot inside the location badge. */
 .hero-badge-dot {
-  width: 6px; height: 6px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: var(--green);
-  animation: pulse 2s infinite;
+  background: var(--sage-500);
+  box-shadow: 0 0 0 3px var(--sage-100);
+  animation: pulse 2.4s ease-in-out infinite;
 }
 
-/* Pulsing animation: expands a green glow ring then contracts it. */
-@keyframes pulse {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(92, 184, 92, 0.4); }
-  50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(92, 184, 92, 0); }
-}
-
-/*
- * HERO TITLE
- *
- * The title is split into two stacked spans:
- *   - .hero-title-the — small monospace "the" with wide letter-spacing
- *   - .hero-title-vine — massive gradient-filled "vine" as the visual anchor
- *
- * The whole title block fades up on a 0.7-second delay (after the badge).
- */
 .hero-title {
-  margin-bottom: 16px;
-  line-height: 0.9;
-  opacity: 0;
-  animation: fadeUp 0.8s var(--ease-out) 0.7s forwards;
+  margin-top: 26px;
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 1.0;
+  color: var(--ink-900);
+  font-variation-settings: "SOFT" 50, "WONK" 0;
 }
 
 .hero-title-the {
   display: block;
-  font-family: var(--font-mono);
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-  font-weight: 300;
-  color: var(--text-secondary);
-  letter-spacing: 0.3em;
-  text-transform: lowercase;
-  margin-bottom: 8px;
+  font-style: italic;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 400;
+  color: var(--sage-700);
+  letter-spacing: 0.5px;
+  opacity: 0;
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: .2s;
 }
 
-/*
- * The "vine" text uses a three-stop green gradient as its fill
- * color (via background-clip: text). A soft drop-shadow provides
- * a green glow halo behind the text. The clamp() sizing scales
- * the text fluidly from 5rem on phones to 12rem on wide screens.
- */
 .hero-title-vine {
   display: block;
-  font-family: var(--font-body);
-  font-size: clamp(5rem, 15vw, 12rem);
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  background: linear-gradient(135deg, var(--green-light) 0%, var(--green) 50%, var(--green-dark) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 0 40px rgba(92, 184, 92, 0.15));
+  font-size: clamp(5rem, 15vw, 10.5rem);
+  font-weight: 600;
+  letter-spacing: -2px;
+  color: var(--ink-900);
+  position: relative;
+  opacity: 0;
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: .4s;
 }
 
-/*
- * The handwritten tagline "Where Misfits Find Family" in Caveat
- * (the hand-drawn script font). Amber-colored for warmth and
- * contrast against the green headline above it.
- */
+/* Subtle honey underline flourish on "vine" */
+.hero-title-vine::after {
+  content: '';
+  position: absolute;
+  inset: auto 15% -8px 15%;
+  height: 6px;
+  background: var(--honey-400);
+  border-radius: 999px;
+  opacity: 0.55;
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: underline 1s ease-out forwards;
+  animation-delay: 1.3s;
+}
+
+@keyframes underline {
+  to { transform: scaleX(1); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .hero-tagline {
-  font-family: var(--font-hand);
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  color: var(--amber);
-  margin-bottom: 16px;
+  margin-top: 26px;
+  font-family: var(--script);
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 600;
+  color: var(--honey-700);
+  line-height: 1.15;
   opacity: 0;
-  animation: fadeUp 0.8s var(--ease-out) 0.9s forwards;
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: .7s;
 }
 
-/* Supporting text beneath the tagline. Capped at 500px wide for readability. */
 .hero-sub {
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  color: var(--text-secondary);
-  max-width: 500px;
-  margin: 0 auto 40px;
+  margin: 14px auto 0;
+  max-width: 560px;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  color: var(--ink-500);
   opacity: 0;
-  animation: fadeUp 0.8s var(--ease-out) 1.1s forwards;
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: .9s;
 }
 
-/* The two CTA buttons ("Learn More" and "Visit This Sunday"). Wraps on narrow screens. */
 .hero-ctas {
+  margin-top: 40px;
   display: flex;
-  gap: 16px;
+  gap: 14px;
   justify-content: center;
   flex-wrap: wrap;
   opacity: 0;
-  animation: fadeUp 0.8s var(--ease-out) 1.3s forwards;
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 1.1s;
 }
 
-/*
- * SCROLL HINT
- *
- * A small "scroll" label and mouse icon pinned to the bottom
- * center of the hero. Fades in last (2-second delay) so it
- * doesn't compete with the title entrance sequence. Hidden on
- * small screens via the 650px media query since phone users
- * intuitively swipe to scroll.
- */
 .hero-scroll-hint {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  color: var(--text-dim);
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
+  color: var(--ink-300);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
   opacity: 0;
-  animation: fadeUp 0.8s var(--ease-out) 2s forwards;
+  animation: fadeUp 1s ease-out forwards, breathe 3s ease-in-out infinite;
+  animation-delay: 1.5s;
 }
 
-/*
- * The small dot inside the mouse icon bounces up and down to
- * simulate a scroll-wheel motion. Uses the SVG cy attribute
- * to move the circle center from y=8 to y=16 and back.
- */
+@keyframes breathe {
+  0%, 100% { transform: translateY(0); opacity: .6; }
+  50%      { transform: translateY(6px); opacity: 1; }
+}
+
 .scroll-dot {
-  animation: scrollBounce 2s infinite;
+  animation: scrollDot 2s ease-in-out infinite;
 }
 
-@keyframes scrollBounce {
-  0%, 100% { cy: 8; opacity: 1; }
-  50% { cy: 16; opacity: 0.3; }
+@keyframes scrollDot {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50%      { transform: translateY(8px); opacity: 0.4; }
 }
 
-/*
- * FADE-UP ENTRANCE ANIMATION
- *
- * Shared by most hero elements. Each starts 20px below its final
- * position and fully transparent, then slides up and fades in.
- * Different animation-delay values on each element create a
- * staggered cascade: badge → title → tagline → subtitle → buttons
- * → scroll hint.
- */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ═══════════════════════════════════════════════════════════
+/* ─────────────────────────────────────────────────────────
    BUTTONS
-
-   Reusable button styles used for CTAs throughout the page.
-   All buttons share the same base (.btn) with monospace text,
-   generous padding, and a rounded shape. Variants control color:
-     - .btn--primary — solid green fill (for primary actions)
-     - .btn--outline — transparent with a subtle border (secondary actions)
-     - .btn--full — forces full-width (used inside the contact form)
-   ═══════════════════════════════════════════════════════════ */
-
+   ───────────────────────────────────────────────────────── */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-family: var(--sans);
+  font-size: 15px;
   font-weight: 600;
-  padding: 14px 32px;
+  letter-spacing: 0.3px;
+  border: none;
   border-radius: 8px;
-  border: 2px solid transparent;
   cursor: pointer;
-  transition: all 0.25s var(--ease);
-  text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+  white-space: nowrap;
 }
 
-/* Solid green button. Lifts up 2px on hover with a green shadow. */
 .btn--primary {
-  background: var(--green);
-  color: var(--bg-deep);
-  border-color: var(--green);
+  color: var(--paper);
+  background: var(--sage-600);
+  box-shadow: var(--shadow);
 }
 
 .btn--primary:hover {
-  background: var(--green-light);
-  border-color: var(--green-light);
-  color: var(--bg-deep);
+  color: var(--paper);
+  background: var(--sage-700);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(92, 184, 92, 0.25);
+  box-shadow: var(--shadow-lift);
 }
 
-/* Ghost/outline button. Border turns green on hover. */
 .btn--outline {
-  background: transparent;
-  color: var(--text);
-  border-color: var(--border-light);
+  color: var(--sage-800);
+  background: var(--paper);
+  border: 1.5px solid var(--sage-300);
+  box-shadow: var(--shadow-soft);
 }
 
 .btn--outline:hover {
-  border-color: var(--green);
-  color: var(--green);
+  background: var(--sage-50);
+  border-color: var(--sage-500);
+  color: var(--sage-800);
   transform: translateY(-2px);
 }
 
-/* Full-width variant used for the contact form submit button. */
-.btn--full { width: 100%; justify-content: center; }
+.btn--full {
+  width: 100%;
+}
 
-/* ═══════════════════════════════════════════════════════════
-   SECTIONS — SHARED LAYOUT
-
-   Every major content section below the hero shares these base
-   styles. Sections alternate between --bg-deep and --bg-surface
-   backgrounds to create a subtle visual rhythm as the visitor
-   scrolls. Each section uses fluid vertical padding
-   (--section-pad) that scales with the viewport.
-   ═══════════════════════════════════════════════════════════ */
-
+/* ─────────────────────────────────────────────────────────
+   SECTIONS - common
+   ───────────────────────────────────────────────────────── */
 .section {
-  padding: var(--section-pad) 0;
   position: relative;
+  padding: clamp(80px, 12vw, 130px) 0;
 }
 
-/*
- * Alternating background colors for visual separation.
- * The pattern is: surface → deep → surface → deep → surface.
- */
-.section--about { background: var(--bg-surface); }
-.section--beliefs { background: var(--bg-deep); }
-.section--community { background: var(--bg-surface); }
-.section--visit { background: var(--bg-deep); }
-.section--connect { background: var(--bg-surface); }
+.section--about    { background: var(--paper-soft); }
 
-/*
- * The "// who we are" code-comment-style label that appears above
- * each section title. Monospace font + green color + slight opacity
- * makes it look like a developer comment in the markup.
- */
+.section--beliefs  {
+  background: var(--linen);
+  background-image:
+    radial-gradient(circle at 8% 20%, rgba(220, 231, 213, 0.55), transparent 40%),
+    radial-gradient(circle at 95% 80%, rgba(247, 233, 198, 0.45), transparent 40%);
+}
+
+.section--community {
+  background: var(--linen-2);
+}
+
+.section--visit {
+  background: var(--paper-soft);
+}
+
+.section--connect {
+  background: var(--linen);
+}
+
 .section-label {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--green);
-  opacity: 0.7;
-  margin-bottom: 12px;
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--honey-700);
+  letter-spacing: 1.5px;
+  text-transform: lowercase;
 }
 
-/* Section headline. Uses clamp() for fluid sizing from 2rem to 3.5rem. */
 .section-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
+  margin-top: 12px;
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  font-weight: 500;
   line-height: 1.1;
-  margin-bottom: 20px;
-  letter-spacing: -0.02em;
+  color: var(--ink-900);
+  letter-spacing: -0.5px;
 }
 
-/*
- * Green gradient text used on emphasized words within section
- * titles (e.g., "Typical Church", "Built On", "Party Awaits").
- * Uses the same background-clip: text technique as the hero "vine."
- */
-.highlight {
-  background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.section-title .highlight {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--sage-700);
+  position: relative;
+  white-space: nowrap;
 }
 
-/*
- * Introductory paragraph below the section title. Capped at
- * 700px wide to maintain a comfortable reading line length.
- */
+.section-title .highlight::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 -4px 0;
+  height: 4px;
+  background: var(--honey-400);
+  border-radius: 999px;
+  opacity: 0.55;
+}
+
 .section-intro {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  max-width: 700px;
-  margin-bottom: 48px;
-  line-height: 1.8;
+  margin-top: 22px;
+  max-width: 720px;
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  color: var(--ink-500);
+  line-height: 1.75;
 }
 
-/* Strengthen inline <strong> text in section intros for emphasis. */
-.section-intro strong { color: var(--text); }
+.section-intro a {
+  font-weight: 600;
+  color: var(--sage-800);
+  border-bottom: 1px solid var(--sage-200);
+}
 
-/* Underline links inside section intros for visibility on dark backgrounds. */
-.section-intro a { border-bottom: 1px solid var(--green); }
+.section-intro a:hover {
+  color: var(--honey-700);
+  border-bottom-color: var(--honey-400);
+}
 
-/* ═══════════════════════════════════════════════════════════
-   ABOUT SECTION — "Who We Are"
-
-   The about section uses a two-column grid: long-form narrative
-   text on the left, and a 2×2 grid of value cards on the right.
-   Below both, a full-width blockquote displays the John 15:5
-   scripture. On screens narrower than 900px, everything stacks
-   into a single column.
-   ═══════════════════════════════════════════════════════════ */
-
-/* Two equal columns with generous spacing between them. */
+/* ─────────────────────────────────────────────────────────
+   ABOUT SECTION
+   ───────────────────────────────────────────────────────── */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  margin-bottom: 60px;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  margin-top: 60px;
+  align-items: start;
 }
 
-/* Default paragraph style in the about narrative column. */
 .about-main p {
-  color: var(--text-secondary);
-  margin-bottom: 20px;
-  font-size: 1.05rem;
+  margin-bottom: 18px;
+  color: var(--ink-700);
 }
 
-/*
- * The lead (first) paragraph gets larger, brighter text to draw
- * attention. The !important overrides the generic .about-main p
- * rules above so this paragraph stands out from the rest.
- */
 .about-lead {
-  font-size: 1.2rem !important;
-  color: var(--text) !important;
-  line-height: 1.8;
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--ink-900);
 }
 
-/* Emphasized text in the about section renders in amber (not italic). */
-.about-main em { color: var(--amber); font-style: normal; font-weight: 600; }
-
-/* The 2×2 grid of core-value cards on the right side. */
 .about-values {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 16px;
 }
 
-/*
- * Individual value cards. Each has an icon, title, and description.
- * Hover state lifts the card up and highlights the border in green.
- */
 .value-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 24px;
-  transition: border-color 0.3s, transform 0.3s;
+  padding: 28px 22px;
+  background: var(--paper);
+  border-radius: var(--radius);
+  border: 1px solid var(--ink-100);
+  box-shadow: var(--shadow-soft);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
 }
 
 .value-card:hover {
-  border-color: var(--green);
   transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--sage-200);
 }
 
 .value-icon {
-  color: var(--text-muted);
-  margin-bottom: 12px;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  background: var(--sage-50);
+  color: var(--sage-700);
+  border-radius: 10px;
+  margin-bottom: 14px;
 }
 
 .value-card h3 {
-  font-size: 1rem;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink-900);
   margin-bottom: 6px;
-  color: var(--text);
 }
 
 .value-card p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.5;
+  font-size: 14.5px;
+  color: var(--ink-500);
+  line-height: 1.6;
 }
 
-/*
- * The scripture blockquote card at the bottom of the about section.
- * A thick green left border provides visual distinction from the
- * value cards above. The quote itself uses the handwritten font
- * and the citation is in monospace green.
- */
 .about-quote {
+  margin-top: 80px;
+  padding: 46px clamp(24px, 5vw, 56px);
+  background: var(--paper);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--ink-100);
+  border-left: 4px solid var(--sage-500);
+  box-shadow: var(--shadow);
   text-align: center;
-  padding: 40px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  border-left: 4px solid var(--green);
 }
 
 .about-quote blockquote p {
-  font-family: var(--font-hand);
-  font-size: 1.6rem;
-  color: var(--text);
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 2.3vw, 1.7rem);
+  font-style: italic;
+  font-weight: 500;
   line-height: 1.5;
-  margin-bottom: 12px;
+  color: var(--ink-900);
 }
 
 .about-quote cite {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: var(--green);
+  display: block;
+  margin-top: 16px;
+  font-style: normal;
+  font-family: var(--script);
+  font-size: 1.3rem;
+  color: var(--honey-700);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   BELIEFS SECTION — "What We Believe"
+@media (max-width: 860px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-values {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
-   Eight numbered belief cards arranged in a responsive grid.
-   The auto-fit / minmax pattern ensures 2–3 columns on desktop
-   that automatically collapse to fewer columns (and eventually
-   a single column on phones) without a separate media query.
-   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 520px) {
+  .about-values {
+    grid-template-columns: 1fr;
+  }
+}
 
-/*
- * The beliefs grid uses auto-fit with a minimum card width of
- * 280px. This lets the browser decide the number of columns
- * based on available width — no explicit breakpoint needed.
- */
+/* ─────────────────────────────────────────────────────────
+   BELIEFS SECTION
+   ───────────────────────────────────────────────────────── */
 .beliefs-grid {
+  margin-top: 60px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
-  margin-bottom: 40px;
 }
 
-/*
- * Individual belief cards. Each contains a numbered label (01–08),
- * a title, and a description. Hover lifts the card and highlights
- * the border — same interaction pattern as the value cards.
- */
 .belief-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 28px;
   position: relative;
-  transition: border-color 0.3s, transform 0.3s;
+  padding: 32px 26px 26px;
+  background: var(--paper);
+  border-radius: var(--radius);
+  border: 1px solid var(--ink-100);
+  box-shadow: var(--shadow-soft);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  overflow: hidden;
+}
+
+.belief-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--sage-400);
+  transition: background .3s ease;
 }
 
 .belief-card:hover {
-  border-color: var(--green);
   transform: translateY(-4px);
+  border-color: var(--sage-200);
+  box-shadow: var(--shadow);
 }
 
-/* The two-digit number label (e.g., "01") in the top-left of each card. */
+.belief-card:hover::before {
+  background: var(--honey-500);
+}
+
 .belief-num {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--green);
-  opacity: 0.6;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--honey-700);
+  letter-spacing: 1.5px;
   margin-bottom: 12px;
 }
 
 .belief-card h3 {
-  font-size: 1.1rem;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink-900);
   margin-bottom: 8px;
   line-height: 1.3;
 }
 
 .belief-card p {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
+  font-size: 14.5px;
+  color: var(--ink-500);
+  line-height: 1.65;
 }
 
-/* Inline emphasis in belief descriptions renders as amber bold text. */
-.belief-card p em { color: var(--amber); font-style: normal; font-weight: 600; }
-
-/*
- * Footer card below the beliefs grid with links to the AG 16
- * Fundamental Truths and Kingdom Theology resources.
- */
 .beliefs-footer {
+  margin-top: 50px;
+  padding: 24px 28px;
+  background: var(--paper);
+  border-radius: var(--radius);
+  border: 1px dashed var(--sage-300);
   text-align: center;
-  padding: 24px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
 }
 
 .beliefs-footer p {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
+  font-size: 15px;
+  color: var(--ink-500);
 }
 
 .beliefs-footer a {
-  border-bottom: 1px solid var(--green);
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--sage-800);
+  border-bottom: 1px dashed var(--sage-400);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   COMMUNITY SECTION — "Find Your People"
+.beliefs-footer a:hover {
+  color: var(--honey-700);
+  border-bottom-color: var(--honey-500);
+}
 
-   Six community group cards in a responsive auto-fit grid. Each
-   card showcases one of The Vine's small-group ministries: gaming,
-   code & coffee, motorcycles, outdoor adventures, discipleship,
-   and worship music. Same card interaction pattern as beliefs.
-   ═══════════════════════════════════════════════════════════ */
-
-/*
- * Auto-fit grid with a minimum card width of 300px. This
- * naturally produces 2 columns on tablets and 3 on desktops.
- */
+/* ─────────────────────────────────────────────────────────
+   COMMUNITY SECTION
+   ───────────────────────────────────────────────────────── */
 .community-grid {
+  margin-top: 60px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
 
-/*
- * Each group card shows an SVG icon, meeting-time tag, group
- * name, and short description. Hover lifts and highlights.
- */
 .group-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 28px;
-  transition: border-color 0.3s, transform 0.3s;
+  position: relative;
+  padding: 30px 26px;
+  background: var(--paper);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--ink-100);
+  box-shadow: var(--shadow-soft);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
 }
 
 .group-card:hover {
-  border-color: var(--green);
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: var(--sage-200);
 }
 
 .group-icon {
-  color: var(--text-muted);
-  margin-bottom: 12px;
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  background: var(--sage-50);
+  color: var(--sage-700);
+  border-radius: 12px;
+  margin-bottom: 18px;
+  box-shadow: inset 0 0 0 1px var(--sage-100);
 }
 
-/*
- * The meeting-time tag (e.g., "Friday Nights", "Wednesday Mornings")
- * appears in uppercase amber monospace above the group name.
- */
 .group-tag {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--amber);
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 4px 12px;
+  background: var(--honey-100);
+  color: var(--honey-700);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 6px;
 }
 
 .group-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 8px;
-  color: var(--text);
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--ink-900);
+  margin-bottom: 10px;
 }
 
 .group-card p {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
+  font-size: 15px;
+  color: var(--ink-500);
+  line-height: 1.65;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   VISIT SECTION — "Join the Adventure"
-
-   Two-column layout: visit info cards on the left (service time,
-   location, what-to-expect list) and an SVG illustration of the
-   Ocoee River region on the right. Stacks to a single column
-   below 900px.
-   ═══════════════════════════════════════════════════════════ */
-
+/* ─────────────────────────────────────────────────────────
+   VISIT SECTION
+   ───────────────────────────────────────────────────────── */
 .visit-grid {
+  margin-top: 60px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: clamp(32px, 5vw, 64px);
   align-items: start;
 }
 
-/*
- * Visit info cards. Unlike the belief/value cards, these do not
- * lift on hover — just a border highlight. Cards are spaced
- * vertically with margin-bottom so they read like a stack.
- */
-.visit-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 28px;
-  margin-bottom: 20px;
-  transition: border-color 0.3s;
+.visit-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.visit-card:hover { border-color: var(--green); }
+.visit-card {
+  padding: 26px 28px;
+  background: var(--paper);
+  border-radius: var(--radius);
+  border: 1px solid var(--ink-100);
+  box-shadow: var(--shadow-soft);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
 
-.visit-card h3 { font-size: 1.2rem; margin-bottom: 12px; }
+.visit-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--sage-200);
+}
+
+.visit-card h3 {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--sage-800);
+  margin-bottom: 8px;
+}
 
 .visit-card p {
-  color: var(--text-secondary);
+  color: var(--ink-500);
   line-height: 1.7;
 }
 
-/*
- * The "What to Expect" list uses emoji icons alongside each item.
- * Flexbox keeps the icon and text neatly aligned, and flex-shrink: 0
- * on the icon prevents it from compressing on narrow screens.
- */
 .expect-list {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  margin: 0;
+  padding: 0;
 }
 
 .expect-list li {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  color: var(--text-secondary);
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--ink-100);
+  color: var(--ink-700);
+}
+
+.expect-list li:last-child {
+  border-bottom: none;
 }
 
 .expect-icon {
-  font-size: 1.2rem;
   flex-shrink: 0;
-  width: 28px;
-  text-align: center;
-}
-
-/* The SVG illustration card showing the Ocoee region map. */
-.visit-illustration {
-  border-radius: 12px;
-  border: 1px solid var(--border);
-}
-
-/* ═══════════════════════════════════════════════════════════
-   CONNECT SECTION — "Say Hello"
-
-   Two-column layout: the contact form on the left, and a stack
-   of info cards (direct contact, social links, first-timer
-   welcome) on the right. Stacks to a single column below 900px.
-   ═══════════════════════════════════════════════════════════ */
-
-.connect-grid {
+  width: 32px;
+  height: 32px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  place-items: center;
+  font-size: 16px;
+  background: var(--sage-50);
+  color: var(--sage-700);
+  border-radius: 8px;
+}
+
+.visit-aside {
+  position: sticky;
+  top: 100px;
+}
+
+.visit-illustration {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--ink-100);
+}
+
+@media (max-width: 860px) {
+  .visit-grid {
+    grid-template-columns: 1fr;
+  }
+  .visit-aside {
+    position: static;
+    max-width: 480px;
+    margin-inline: auto;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────
+   CONNECT SECTION
+   ───────────────────────────────────────────────────────── */
+.connect-grid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(32px, 5vw, 56px);
   align-items: start;
 }
 
-/* The contact form container card. */
 .contact-form {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 32px;
+  padding: 38px clamp(24px, 4vw, 42px);
+  background: var(--paper);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--ink-100);
+  box-shadow: var(--shadow);
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
-/* Form labels use monospace to match the site's code aesthetic. */
 .form-group label {
   display: block;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--honey-700);
 }
 
-/*
- * All form inputs, textareas, and selects share a consistent dark
- * background with a subtle border. On focus, the border turns
- * green and a translucent green ring appears around the field
- * (box-shadow with --green-glow) to clearly indicate which field
- * is active.
- */
 .form-group input,
 .form-group textarea,
 .form-group select {
   width: 100%;
-  background: var(--bg-deep);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 12px 16px;
-  color: var(--text);
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  transition: border-color 0.2s;
-  outline: none;
+  padding: 13px 16px;
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink-900);
+  background: var(--paper-soft);
+  border: 1.5px solid var(--ink-100);
+  border-radius: var(--radius-sm);
+  transition: border-color .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--ink-300);
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-  border-color: var(--green);
-  box-shadow: 0 0 0 3px var(--green-glow);
+  outline: none;
+  background: var(--paper);
+  border-color: var(--sage-500);
+  box-shadow: 0 0 0 4px var(--sage-50);
 }
 
-/* Placeholder text is dim so it does not compete with actual input. */
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: var(--text-dim);
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
-.form-group select { cursor: pointer; }
+.form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235a7a52' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 18px;
+  padding-right: 44px;
+}
 
-/* Select dropdown options use the card background for consistency. */
-.form-group select option { background: var(--bg-card); }
-
-/*
- * The privacy note below the submit button. Its text content is
- * swapped by JavaScript after a successful submission to show a
- * personalized thank-you message, then reverted after a delay.
- */
 .form-note {
-  font-size: 0.75rem;
-  color: var(--text-dim);
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--ink-300);
   text-align: center;
-  margin-top: 12px;
+  line-height: 1.6;
+  transition: color .3s ease;
 }
 
-/* Right-column info cards stacked vertically. */
 .connect-aside {
   display: flex;
   flex-direction: column;
@@ -1276,336 +1192,286 @@ img { max-width: 100%; display: block; }
 }
 
 .connect-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 24px;
+  padding: 26px 28px;
+  background: var(--paper);
+  border-radius: var(--radius);
+  border: 1px solid var(--ink-100);
+  box-shadow: var(--shadow-soft);
+}
+
+.connect-card--highlight {
+  background: linear-gradient(135deg, var(--sage-50), var(--honey-100));
+  border-color: var(--honey-300);
 }
 
 .connect-card h3 {
-  font-size: 1.1rem;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--ink-900);
   margin-bottom: 12px;
 }
 
 .connect-detail {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
+  margin: 8px 0;
+  font-size: 15px;
+  color: var(--ink-500);
 }
 
-/* The "Email:" / "Phone:" label preceding contact details. */
 .connect-label {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--honey-700);
   margin-right: 8px;
 }
 
-/* Social media link row. Wraps on narrow containers. */
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
+.connect-detail a {
+  color: var(--ink-900);
+  font-weight: 500;
+  border-bottom: 1px dashed var(--sage-400);
 }
 
-/*
- * Each social link is a pill-shaped button with an icon and label.
- * Hover highlights the border and text in green.
- */
+.connect-detail a:hover {
+  color: var(--sage-800);
+  border-bottom-color: var(--honey-500);
+}
+
+.social-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 .social-link {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  background: var(--bg-deep);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  transition: border-color 0.2s, color 0.2s;
+  gap: 10px;
+  padding: 12px 14px;
+  color: var(--ink-700);
+  background: var(--paper-soft);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform .25s ease, color .25s ease, background .25s ease, border-color .25s ease;
 }
 
 .social-link:hover {
-  border-color: var(--green);
-  color: var(--green);
+  color: var(--sage-800);
+  background: var(--sage-50);
+  border-color: var(--sage-300);
+  transform: translateY(-2px);
 }
 
-/*
- * The "First-Timer?" card gets a pre-highlighted green border and
- * a very subtle green gradient background to stand out from the
- * other info cards and draw the visitor's eye.
- */
-.connect-card--highlight {
-  border-color: var(--green);
-  background: linear-gradient(135deg, rgba(92, 184, 92, 0.05) 0%, var(--bg-card) 100%);
+@media (max-width: 860px) {
+  .connect-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* ═══════════════════════════════════════════════════════════
+/* ─────────────────────────────────────────────────────────
    FOOTER
-
-   A three-column footer: brand identity on the left (logo,
-   tagline, location), quick navigation links in the center,
-   and the John 15:5 verse on the right. Below the grid, a
-   horizontal rule separates the copyright line and developer
-   Easter-egg comment. Everything stacks on narrow screens.
-   ═══════════════════════════════════════════════════════════ */
-
+   ───────────────────────────────────────────────────────── */
 .footer {
-  background: var(--bg-deep);
-  border-top: 1px solid var(--border);
-  padding: 60px 0 30px;
+  position: relative;
+  padding: 70px 0 40px;
+  background: var(--linen-2);
+  border-top: 1px solid var(--ink-100);
 }
 
-/*
- * Three-column grid: the brand column gets 2fr (double width)
- * because it contains the logo, tagline, and location text.
- * The links and verse columns share the remaining space equally.
- */
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1fr;
   gap: 40px;
-  margin-bottom: 40px;
+  align-items: start;
 }
 
-.footer-brand { display: flex; flex-direction: column; gap: 12px; }
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-logo {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 4px;
+}
 
 .footer-tagline {
-  font-size: 1rem;
-  color: var(--text);
-  font-weight: 500;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink-900);
 }
 
 .footer-location {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-400);
+  letter-spacing: 0.8px;
 }
 
-/* Vertical list of anchor links mirroring the main navigation. */
 .footer-links {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .footer-links a {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  transition: color 0.2s;
+  font-size: 14px;
+  color: var(--ink-500);
+  font-weight: 500;
+  transition: color .25s ease, padding .25s ease;
 }
 
-.footer-links a:hover { color: var(--green); }
+.footer-links a:hover {
+  color: var(--sage-800);
+  padding-left: 4px;
+}
 
-/* The handwritten John 15:5 verse in the right footer column. */
+.footer-meta {
+  text-align: right;
+}
+
 .footer-verse {
-  font-family: var(--font-hand);
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  line-height: 1.5;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-700);
+  line-height: 1.6;
 }
 
-/* The scripture reference ("John 15:5") below the verse text. */
 .footer-verse span {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-dim);
+  display: block;
+  margin-top: 6px;
+  font-style: normal;
+  font-family: var(--script);
+  font-size: 1.35rem;
+  color: var(--honey-700);
 }
 
-/*
- * The bottom bar with copyright and the developer Easter-egg
- * comment. Uses flex-wrap so the two items stack gracefully on
- * narrow screens instead of overflowing.
- */
 .footer-bottom {
-  border-top: 1px solid var(--border);
-  padding-top: 20px;
+  margin-top: 50px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--sage-200);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--ink-400);
 }
 
-.footer-bottom p {
-  font-size: 0.8rem;
-  color: var(--text-dim);
-}
-
-/*
- * A playful code-style Easter egg visible only to visitors who
- * scroll all the way to the bottom. Very dim so it does not
- * distract from the copyright text.
- */
 .footer-easter-egg code {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--text-dim);
-  opacity: 0.5;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--sage-700);
+  background: var(--sage-50);
+  padding: 3px 8px;
+  border-radius: 4px;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   SCROLL-REVEAL ANIMATIONS
+@media (max-width: 760px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .footer-brand {
+    align-items: center;
+  }
+  .footer-links {
+    align-items: center;
+  }
+  .footer-meta {
+    text-align: center;
+  }
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
+  }
+}
 
-   Any element with the data-reveal attribute starts invisible
-   and offset 30px downward. When JavaScript's IntersectionObserver
-   adds the "revealed" class, the element transitions into its
-   final position with a smooth fade-and-slide.
-
-   Sibling reveal elements are staggered by 0.1 seconds per
-   nth-child index, so a row of cards animates in one after
-   another (a "cascade" or "waterfall" effect) rather than all
-   appearing at the same instant.
-   ═══════════════════════════════════════════════════════════ */
-
-/* Initial hidden state for all reveal elements. */
+/* ─────────────────────────────────────────────────────────
+   SCROLL REVEAL
+   ───────────────────────────────────────────────────────── */
 [data-reveal] {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+  transform: translateY(28px);
+  transition: opacity .85s ease-out, transform .85s ease-out;
 }
 
-/* Final visible state applied by JavaScript when the element scrolls into view. */
 [data-reveal].revealed {
   opacity: 1;
   transform: translateY(0);
 }
 
-/*
- * Staggered transition delays for sibling reveal elements.
- * Each successive sibling waits an additional 0.1 seconds before
- * its reveal begins. This covers up to 8 children, which is
- * enough for the largest card grid (beliefs: 8 cards).
- */
-[data-reveal]:nth-child(2) { transition-delay: 0.1s; }
-[data-reveal]:nth-child(3) { transition-delay: 0.2s; }
-[data-reveal]:nth-child(4) { transition-delay: 0.3s; }
-[data-reveal]:nth-child(5) { transition-delay: 0.4s; }
-[data-reveal]:nth-child(6) { transition-delay: 0.5s; }
-[data-reveal]:nth-child(7) { transition-delay: 0.6s; }
-[data-reveal]:nth-child(8) { transition-delay: 0.7s; }
-
-/* ═══════════════════════════════════════════════════════════
-   RESPONSIVE BREAKPOINTS
-
-   Two breakpoints handle the layout transitions:
-
-     @900px — Collapses all two-column grids (about, visit,
-              connect, footer) into a single-column stack. The
-              auto-fit grids (beliefs, community) naturally
-              handle their own column reduction and don't need
-              explicit rules here.
-
-     @650px — Switches the navigation from a horizontal link
-              row to a dropdown hamburger menu. Also forces the
-              value cards, belief cards, and community cards
-              into single-column stacks to prevent cards from
-              being too narrow on small phones. Hides the hero
-              scroll hint (phone users intuitively swipe) and
-              centers the footer bottom row.
-
-   These two breakpoints were chosen to work well at the three
-   key testing widths noted in AGENTS.md:
-     375px → fully inside the 650px breakpoint
-     768px → inside the 900px breakpoint (tablet)
-     1024px → full desktop layout (no breakpoint active)
-   ═══════════════════════════════════════════════════════════ */
-
-@media (max-width: 900px) {
-  /* Stack the about section's narrative + values into one column. */
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
-
-  /* Keep value cards in a 2-column grid even after the about grid stacks. */
-  .about-values {
-    grid-template-columns: 1fr 1fr;
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
   }
-
-  /* Stack visit info cards above the Ocoee illustration. */
-  .visit-grid {
-    grid-template-columns: 1fr;
+  .vine-path {
+    stroke-dashoffset: 0;
   }
-
-  /* Stack the contact form above the info cards. */
-  .connect-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Stack all three footer columns vertically. */
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .hero-title-vine::after {
+    transform: scaleX(1);
   }
 }
 
-@media (max-width: 650px) {
-  /* Show the hamburger menu button on small screens. */
-  .nav-toggle { display: flex; }
-
-  /*
-   * The nav links become a full-width dropdown panel positioned
-   * directly below the navbar. Hidden by default (display: none)
-   * and shown when JavaScript adds the "open" class. The frosted-
-   * glass backdrop-filter matches the nav bar appearance.
-   */
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0; right: 0;
-    background: rgba(10, 10, 15, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    flex-direction: column;
-    padding: 20px;
-    border-bottom: 1px solid var(--border);
-    gap: 4px;
+/* ─────────────────────────────────────────────────────────
+   RESPONSIVE TWEAKS - small breakpoints
+   ───────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
   }
-
-  /* When open, the nav links panel becomes visible. */
-  .nav-links.open { display: flex; }
-
-  /* Nav links stretch full-width and get larger tap targets. */
-  .nav-link {
-    width: 100%;
-    padding: 12px 16px;
-    font-size: 1rem;
-  }
-
-  /* Value cards drop to a single column on phones. */
-  .about-values {
-    grid-template-columns: 1fr;
-  }
-
-  /* Belief cards drop to a single column on phones. */
-  .beliefs-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Community cards drop to a single column on phones. */
-  .community-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Reduce announcement padding on phones. */
   .announcement-inner {
-    padding: 20px 20px;
-    margin: 0 16px;
+    padding: 16px 18px;
+    gap: 12px;
   }
-
-  .announcement-text {
-    font-size: 0.95rem;
+  .nav-inner {
+    padding: 12px var(--gutter);
   }
-
-  /* Hide the scroll hint on phones — swiping is intuitive on touch devices. */
-  .hero-scroll-hint { display: none; }
-
-  /* Center-align and stack the footer bottom row on small screens. */
+  .nav-logo {
+    font-size: 19px;
+  }
+  .nav-logo-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .hero {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+    margin-inline: auto;
+  }
+  .btn {
+    width: 100%;
+  }
+  .about-quote {
+    padding: 36px 22px;
+  }
+  .social-links {
+    grid-template-columns: 1fr;
+  }
   .footer-bottom {
     flex-direction: column;
-    text-align: center;
   }
 }

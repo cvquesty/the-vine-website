@@ -102,7 +102,7 @@
   <!-- Tagline -->
   <text x="525" y="470" text-anchor="middle"
         font-family="'Caveat', cursive"
-        font-size="36" fill="#d4a843" opacity="0.9">where misfits find family</text>
+        font-size="36" fill="#d4a843" opacity="0.9">where you already belong</text>
 
   <!-- Website (bottom) -->
   <text x="525" y="520" text-anchor="middle"

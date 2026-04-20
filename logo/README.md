@@ -33,7 +33,7 @@
 |---|---|---|---|
 | **"the"** prefix | JetBrains Mono | 300 (Light) | Lowercase, wide letter-spacing (0.35em) |
 | **"vine"** title | Space Grotesk | 700 (Bold) | Lowercase, tight letter-spacing (-0.04em), gradient fill |
-| **Tagline** | Caveat | 400 (Regular) | "where misfits find family", amber color |
+| **Tagline** | Caveat | 400 (Regular) | "where you already belong", amber color |
 | **Location/URL** | JetBrains Mono | 400 (Regular) | Lowercase, muted color |
 
 ### Font Loading (for web/digital use)
@@ -189,7 +189,7 @@ Requires ImageMagick 7+ (`magick` command).
 
 ```
 Brand:     The Vine
-Tagline:   Where Misfits Find Family
+Tagline:   Where You Already Belong
 Location:  Athens, Tennessee
 Website:   thevineathens.church
 Scripture: John 15:5

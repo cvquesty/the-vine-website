@@ -396,7 +396,7 @@ These are relationship-first venues. Don't just drop off flyers — become a reg
 
 **Strategy:**
 - Billboards are expensive for a startup church. Use them sparingly and strategically.
-- **Best use case:** A single, simple billboard for 1–2 months to establish awareness: `the vine // where misfits find family // sundays 10:30am // thevineathens.church`
+- **Best use case:** A single, simple billboard for 1–2 months to establish awareness: `the vine // where you already belong // sundays 10:30am // thevineathens.church`
 - **Placement:** Decatur Pike or Highway 30 — main traffic corridors into Athens.
 - **Design:** Dark background, vine green text, minimal. Match the website. No stock photos. No "Join us this Sunday!" cheese.
 - **Alternative:** A well-placed poster-size board ($560/month) near the high school, TCAT, or TWU.
@@ -479,7 +479,7 @@ Already built. Ensure it includes:
 | **Memes** | 1–2x/week | Faith + nerd culture crossover. Know your audience. |
 | **Ocoee/nature** | 1x/week | Beautiful region photography — positions The Vine as connected to the land |
 
-**Hashtag strategy:** `#thevineathens` `#athenstn` `#mcminncounty` `#ocoeeriver` `#gamersofathens` `#churchfortherestofus` `#wheremisfitsfindfamily`
+**Hashtag strategy:** `#thevineathens` `#athenstn` `#mcminncounty` `#ocoeeriver` `#gamersofathens` `#churchfortherestofus` `#whereyoualreadybelong`
 
 ### YouTube — The Vine Athens
 
@@ -555,7 +555,7 @@ The most powerful channel of all. Research consistently shows that **personal in
   - Location
   - QR code to Discord or Eventbrite
   - Website URL
-  - Tagline: "where misfits find family"
+  - Tagline: "where you already belong"
 - **Normalize invitation.** Talk about it from the platform: "Who are you going to bring next month?" Not as guilt — as excitement.
 - **Personal follow-up.** When someone visits, a Vine member texts them within 24 hours: "It was great meeting you. Hope you had fun. You're always welcome."
 
@@ -599,7 +599,7 @@ Show up at any public event (not just festivals) with a 5-gallon cold brew dispe
 ### 3. "Left Behind" Cards
 Small, tasteful business cards left at coffee shops, restaurants, and tip jars with generous tips:
 
-> Front: `the vine — where misfits find family`
+> Front: `the vine — where you already belong`
 > Back: `thevineathens.church // sundays 10:30am // athens, tn`
 
 Leave one with every tip. Leave one in every library book you return. Leave one on every coffee shop community board.

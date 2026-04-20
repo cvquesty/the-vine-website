@@ -80,7 +80,7 @@ Print-ready designs matching the website's dark tech-forward aesthetic: vine-gre
 - **Highlight:** `#d4a843` (warm amber)
 - **Fonts:** Space Grotesk (headlines/body), JetBrains Mono (labels), Caveat (handwritten tagline)
 
-**Tagline:** "Where Misfits Find Family"
+**Tagline:** "Where You Already Belong"
 
 **Contact:**
 - hello@thevineathens.church

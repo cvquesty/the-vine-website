@@ -6,7 +6,7 @@
   Fonts: Space Grotesk (body), JetBrains Mono (accent)
   
   Designed for The Vine Church — Athens, Tennessee
-  "Where Misfits Find Family"
+  "Where You Already Belong"
 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" width="600" height="120">
   <defs>
@@ -124,7 +124,7 @@
     letter-spacing="-0.03em"
   >vine</text>
 
-  <!-- Tagline: "where misfits find family" — handwritten, amber -->
+  <!-- Tagline: "where you already belong" — handwritten, amber -->
   <text 
     x="150" y="110" 
     font-family="'Caveat', cursive" 
@@ -132,7 +132,7 @@
     font-weight="400" 
     fill="#d4a843" 
     opacity="0.85"
-  >where misfits find family</text>
+  >where you already belong</text>
 
   <!-- Subtle location text -->
   <text 

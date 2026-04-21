@@ -12,7 +12,7 @@ ICON_SVG="$SCRIPT_DIR/logo-icon.svg"
 HORIZ_SVG="$SCRIPT_DIR/logo-horizontal.svg"
 STACK_SVG="$SCRIPT_DIR/logo-stacked.svg"
 
-BG="#0a0a0f"
+BG="#f4ede0"
 DENSITY=300
 
 SOCIAL_DIR="$SCRIPT_DIR/social"

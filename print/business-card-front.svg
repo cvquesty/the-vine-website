@@ -1,123 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  THE VINE — Business Card (Front)
-  Size: 3.5" × 2" (US standard), 300 DPI → 1050 × 600 units
+  THE VINE - Business Card (Front)
+  Size: 3.5" x 2" (US standard), 300 DPI = 1050 x 600 units
   Print: Export as PDF or print directly from browser/Illustrator/Inkscape
   Bleed: None (add 1/8" bleed in printer if needed)
-  
-  Colors:
-    Background: #0a0a0f
-    Green: #5cb85c
-    Amber: #d4a843
-    Text: #e0e0e8 / #a0a0b0 / #666680
+
+  Colors: Editorial palette (matches thevineathens.church)
+    Paper: #f4ede0 (warm newsprint)
+    Ink: #1f1d18 (deep warm black)
+    Rust: #c8553d (primary accent)
+    Teal: #2a5f5b (leaf fill)
+    Gold: #b88828 (fruit/highlight)
 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 600" width="1050" height="600">
-  <defs>
-    <!-- Background gradient (subtle vignette) -->
-    <radialGradient id="card-bg" cx="50%" cy="40%" r="70%">
-      <stop offset="0%" stop-color="#12121a"/>
-      <stop offset="100%" stop-color="#0a0a0f"/>
-    </radialGradient>
+  <!-- Card background (warm newsprint paper) -->
+  <rect width="1050" height="600" fill="#f4ede0"/>
 
-    <!-- Logo gradients (copied from logo-horizontal) -->
-    <linearGradient id="leaf-stroke" x1="0" y1="0" x2="0.3" y2="1">
-      <stop offset="0%" stop-color="#8cd98c"/>
-      <stop offset="50%" stop-color="#5cb85c"/>
-      <stop offset="100%" stop-color="#3a8a3a"/>
-    </linearGradient>
-    <linearGradient id="title-grad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#8cd98c"/>
-      <stop offset="50%" stop-color="#5cb85c"/>
-      <stop offset="100%" stop-color="#3a8a3a"/>
-    </linearGradient>
-    <filter id="leaf-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
-      <feFlood flood-color="#5cb85c" flood-opacity="0.15"/>
-      <feComposite in2="blur" operator="in" result="glow"/>
-      <feMerge>
-        <feMergeNode in="glow"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <filter id="amber-glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
+  <!-- Editorial border frame -->
+  <rect x="20" y="20" width="1010" height="560" fill="none" stroke="#1f1d18" stroke-width="1.5"/>
 
-  <!-- Card background -->
-  <rect width="1050" height="600" fill="url(#card-bg)" rx="24"/>
-
-  <!-- Subtle circuit grid pattern (faint) -->
-  <g opacity="0.06" stroke="#5cb85c" stroke-width="1">
-    <line x1="0" y1="150" x2="1050" y2="150"/>
-    <line x1="0" y1="300" x2="1050" y2="300"/>
-    <line x1="0" y1="450" x2="1050" y2="450"/>
-    <line x1="200" y1="0" x2="200" y2="600"/>
-    <line x1="400" y1="0" x2="400" y2="600"/>
-    <line x1="600" y1="0" x2="600" y2="600"/>
-    <line x1="800" y1="0" x2="800" y2="600"/>
-  </g>
-
-  <!-- Centered logo (scaled for card) -->
-  <!-- Leaf icon sized to fit above text without overlap -->
-  <g transform="translate(557.5, 107.5)">
-    <!-- Leaf outline (~200px tall, fits cleanly above text) -->
-    <g transform="scale(1.0)">
-      <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z"
-            fill="none" stroke="url(#leaf-stroke)" stroke-width="6" stroke-linejoin="round" filter="url(#leaf-glow)"/>
-      <!-- Stem -->
-      <line x1="100" y1="38" x2="100" y2="155" stroke="#5cb85c" stroke-width="4.5" stroke-linecap="round"/>
-      <!-- Branches -->
-      <path d="M100 62 C88 56 76 60 68 68" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
-      <path d="M100 92 C112 86 124 90 132 98" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
-      <path d="M100 122 C88 116 76 120 70 130" fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="round"/>
-      <!-- Circuit traces -->
-      <path d="M68 68 L62 68 L62 58" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
-      <path d="M132 98 L138 98 L138 108" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
-      <path d="M70 130 L64 130 L64 140" fill="none" stroke="#5cb85c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
-      <!-- Junction nodes -->
-      <circle cx="100" cy="62" r="5" fill="#5cb85c" opacity="0.6"/>
-      <circle cx="100" cy="92" r="5" fill="#5cb85c" opacity="0.6"/>
-      <circle cx="100" cy="122" r="5" fill="#5cb85c" opacity="0.6"/>
-      <!-- Amber fruit -->
-      <circle cx="100" cy="148" r="6" fill="#d4a843" filter="url(#amber-glow)" opacity="0.95"/>
+  <!-- Woodcut vine leaf logo (from site logo-icon.svg) -->
+  <g transform="translate(525, 155)">
+    <g transform="scale(0.55) translate(-100, -96)">
+      <path d="M100 188 C100 188 38 138 38 82 C38 40 64 12 100 4 C136 12 162 40 162 82 C162 138 100 188 100 188Z"
+            fill="#2a5f5b" stroke="#1f1d18" stroke-width="6" stroke-linejoin="round"/>
+      <path d="M100 178 C100 178 50 132 50 82 C50 48 70 22 100 16 L100 178Z"
+            fill="#357b76" opacity="0.6"/>
+      <path d="M100 32 L100 162" stroke="#f4ede0" stroke-width="6" stroke-linecap="round"/>
+      <path d="M100 60 C84 52 70 56 60 64" fill="none" stroke="#f4ede0" stroke-width="5" stroke-linecap="round"/>
+      <path d="M100 92 C116 84 130 88 140 96" fill="none" stroke="#f4ede0" stroke-width="5" stroke-linecap="round"/>
+      <path d="M100 124 C84 116 70 120 60 132" fill="none" stroke="#f4ede0" stroke-width="5" stroke-linecap="round"/>
+      <ellipse cx="56" cy="64" rx="8" ry="4.5" fill="#f4ede0" transform="rotate(-30 56 64)"/>
+      <ellipse cx="144" cy="96" rx="8" ry="4.5" fill="#f4ede0" transform="rotate(30 144 96)"/>
+      <ellipse cx="56" cy="132" rx="8" ry="4.5" fill="#f4ede0" transform="rotate(-30 56 132)"/>
+      <circle cx="100" cy="60" r="6" fill="#c8553d"/>
+      <circle cx="100" cy="92" r="6" fill="#c8553d"/>
+      <circle cx="100" cy="124" r="6" fill="#c8553d"/>
+      <circle cx="100" cy="156" r="8" fill="#b88828"/>
+      <circle cx="100" cy="156" r="3" fill="#1f1d18" opacity="0.45"/>
     </g>
   </g>
 
-  <!-- "the" prefix -->
-  <text x="525" y="310" text-anchor="middle"
-        font-family="'JetBrains Mono', 'Fira Code', monospace"
-        font-size="42" font-weight="300" fill="#a0a0b0" letter-spacing="0.4em">the</text>
+  <!-- Decorative rust rule -->
+  <line x1="430" y1="228" x2="620" y2="228" stroke="#c8553d" stroke-width="2"/>
 
-  <!-- "vine" title -->
-  <text x="525" y="400" text-anchor="middle"
-        font-family="'Space Grotesk', sans-serif"
-        font-size="112" font-weight="700" fill="url(#title-grad)"
-        letter-spacing="-0.04em">vine</text>
+  <!-- "The" prefix -->
+  <text x="525" y="272" text-anchor="middle"
+        font-family="'Playfair Display', Georgia, serif"
+        font-size="26" font-weight="500" font-style="italic" fill="#6b6556"
+        letter-spacing="2px">The</text>
+
+  <!-- "Vine" title -->
+  <text x="525" y="362" text-anchor="middle"
+        font-family="'Playfair Display', Georgia, serif"
+        font-size="95" font-weight="900" font-style="italic" fill="#1f1d18"
+        letter-spacing="-2px">Vine</text>
 
   <!-- Tagline -->
-  <text x="525" y="470" text-anchor="middle"
+  <text x="525" y="418" text-anchor="middle"
         font-family="'Caveat', cursive"
-        font-size="36" fill="#d4a843" opacity="0.9">where you already belong</text>
+        font-size="34" font-weight="700" fill="#c8553d">Where You Already Belong</text>
 
-  <!-- Website (bottom) -->
-  <text x="525" y="520" text-anchor="middle"
+  <!-- Decorative rust rule -->
+  <line x1="445" y1="445" x2="605" y2="445" stroke="#c8553d" stroke-width="1.5"/>
+
+  <!-- Website URL -->
+  <text x="525" y="490" text-anchor="middle"
         font-family="'JetBrains Mono', monospace"
-        font-size="22" fill="#666680" letter-spacing="0.08em">thevineathens.church</text>
+        font-size="18" fill="#8e8775" letter-spacing="1.2px">thevineathens.church</text>
 
-  <!-- Corner accent: small leaf icon -->
-  <g transform="translate(60, 50) scale(0.35)" opacity="0.3">
-    <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z"
-          fill="none" stroke="#5cb85c" stroke-width="5" stroke-linejoin="round"/>
-    <circle cx="100" cy="148" r="5" fill="#d4a843" opacity="0.7"/>
+  <!-- Small editorial leaf marks in corners -->
+  <g transform="translate(46, 46) scale(0.12) translate(-100, -96)" opacity="0.2">
+    <path d="M100 188 C100 188 38 138 38 82 C38 40 64 12 100 4 C136 12 162 40 162 82 C162 138 100 188 100 188Z"
+          fill="#2a5f5b" stroke="none"/>
   </g>
-  <g transform="translate(990, 530) scale(0.35)" opacity="0.3">
-    <path d="M100 185 C100 185 40 135 40 82 C40 42 65 15 100 8 C135 15 160 42 160 82 C160 135 100 185 100 185Z"
-          fill="none" stroke="#5cb85c" stroke-width="5" stroke-linejoin="round"/>
-    <circle cx="100" cy="148" r="5" fill="#d4a843" opacity="0.7"/>
+  <g transform="translate(1004, 554) scale(0.12) translate(-100, -96)" opacity="0.2">
+    <path d="M100 188 C100 188 38 138 38 82 C38 40 64 12 100 4 C136 12 162 40 162 82 C162 138 100 188 100 188Z"
+          fill="#2a5f5b" stroke="none"/>
   </g>
 </svg>

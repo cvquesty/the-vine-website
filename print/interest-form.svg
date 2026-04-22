@@ -101,13 +101,13 @@
       <!-- Row 1 -->
       <g transform="translate(140, 65)">
         <g>
-          <rect x="0" y="0" width="990" height="130" rx="0" fill="#f8f1e3" stroke="#1f1d18" stroke-width="1.5"/>
+
           <rect x="26" y="26" width="34" height="34" rx="0" fill="#ffffff" stroke="#c8553d" stroke-width="2.5"/>
           <text x="80" y="48" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="700" fill="#1f1d18">Visiting this Sunday</text>
           <text x="80" y="86" font-family="'Lora', Georgia, serif" font-size="26" font-style="italic" fill="#8e8775">First time or coming back</text>
         </g>
         <g transform="translate(1050, 0)">
-          <rect x="0" y="0" width="990" height="130" rx="0" fill="#f8f1e3" stroke="#1f1d18" stroke-width="1.5"/>
+
           <rect x="26" y="26" width="34" height="34" rx="0" fill="#ffffff" stroke="#c8553d" stroke-width="2.5"/>
           <text x="80" y="48" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="700" fill="#1f1d18">Finding a community group</text>
           <text x="80" y="86" font-family="'Lora', Georgia, serif" font-size="26" font-style="italic" fill="#8e8775">Gaming, coffee, rides, worship, etc.</text>
@@ -117,13 +117,13 @@
       <!-- Row 2 -->
       <g transform="translate(140, 215)">
         <g>
-          <rect x="0" y="0" width="990" height="130" rx="0" fill="#f8f1e3" stroke="#1f1d18" stroke-width="1.5"/>
+
           <rect x="26" y="26" width="34" height="34" rx="0" fill="#ffffff" stroke="#c8553d" stroke-width="2.5"/>
           <text x="80" y="48" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="700" fill="#1f1d18">Serving / volunteering</text>
           <text x="80" y="86" font-family="'Lora', Georgia, serif" font-size="26" font-style="italic" fill="#8e8775">Help with events, tech, outreach</text>
         </g>
         <g transform="translate(1050, 0)">
-          <rect x="0" y="0" width="990" height="130" rx="0" fill="#f8f1e3" stroke="#1f1d18" stroke-width="1.5"/>
+
           <rect x="26" y="26" width="34" height="34" rx="0" fill="#ffffff" stroke="#c8553d" stroke-width="2.5"/>
           <text x="80" y="48" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="700" fill="#1f1d18">Questions about faith</text>
           <text x="80" y="86" font-family="'Lora', Georgia, serif" font-size="26" font-style="italic" fill="#8e8775">Just exploring, no pressure</text>
@@ -133,13 +133,13 @@
       <!-- Row 3 -->
       <g transform="translate(140, 365)">
         <g>
-          <rect x="0" y="0" width="990" height="130" rx="0" fill="#f8f1e3" stroke="#1f1d18" stroke-width="1.5"/>
+
           <rect x="26" y="26" width="34" height="34" rx="0" fill="#ffffff" stroke="#c8553d" stroke-width="2.5"/>
           <text x="80" y="48" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="700" fill="#1f1d18">Prayer request</text>
           <text x="80" y="86" font-family="'Lora', Georgia, serif" font-size="26" font-style="italic" fill="#8e8775">We'd love to pray with you</text>
         </g>
         <g transform="translate(1050, 0)">
-          <rect x="0" y="0" width="990" height="130" rx="0" fill="#f8f1e3" stroke="#1f1d18" stroke-width="1.5"/>
+
           <rect x="26" y="26" width="34" height="34" rx="0" fill="#ffffff" stroke="#c8553d" stroke-width="2.5"/>
           <text x="80" y="48" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="700" fill="#1f1d18">Something else</text>
           <text x="80" y="86" font-family="'Lora', Georgia, serif" font-size="26" font-style="italic" fill="#8e8775">Tell us in the notes below</text>
@@ -168,19 +168,19 @@
       <!-- Branch checkboxes Row 1 -->
       <g transform="translate(140, 70)">
         <g>
-          <rect x="0" y="0" width="650" height="120" rx="0" fill="#f8f1e3" stroke="#1f1d18" stroke-width="1.5"/>
+
           <rect x="24" y="24" width="30" height="30" rx="0" fill="#ffffff" stroke="#c8553d" stroke-width="2.5"/>
           <text x="72" y="44" font-family="'JetBrains Mono', monospace" font-size="22" fill="#c8553d" font-weight="700" letter-spacing="1px">ROOT ACCESS</text>
           <text x="72" y="80" font-family="'Lora', Georgia, serif" font-size="26" fill="#6b6556" font-style="italic">Vine Men</text>
         </g>
         <g transform="translate(700, 0)">
-          <rect x="0" y="0" width="650" height="120" rx="0" fill="#f8f1e3" stroke="#1f1d18" stroke-width="1.5"/>
+
           <rect x="24" y="24" width="30" height="30" rx="0" fill="#ffffff" stroke="#c8553d" stroke-width="2.5"/>
           <text x="72" y="44" font-family="'JetBrains Mono', monospace" font-size="22" fill="#c8553d" font-weight="700" letter-spacing="1px">WILDFLOWERS</text>
           <text x="72" y="80" font-family="'Lora', Georgia, serif" font-size="26" fill="#6b6556" font-style="italic">Vine Women</text>
         </g>
         <g transform="translate(1400, 0)">
-          <rect x="0" y="0" width="650" height="120" rx="0" fill="#f8f1e3" stroke="#1f1d18" stroke-width="1.5"/>
+
           <rect x="24" y="24" width="30" height="30" rx="0" fill="#ffffff" stroke="#c8553d" stroke-width="2.5"/>
           <text x="72" y="44" font-family="'JetBrains Mono', monospace" font-size="22" fill="#c8553d" font-weight="700" letter-spacing="1px">SPROUTS</text>
           <text x="72" y="80" font-family="'Lora', Georgia, serif" font-size="26" fill="#6b6556" font-style="italic">Vine Kids</text>
@@ -190,19 +190,19 @@
       <!-- Row 2 -->
       <g transform="translate(140, 210)">
         <g>
-          <rect x="0" y="0" width="650" height="120" rx="0" fill="#f8f1e3" stroke="#1f1d18" stroke-width="1.5"/>
+
           <rect x="24" y="24" width="30" height="30" rx="0" fill="#ffffff" stroke="#c8553d" stroke-width="2.5"/>
           <text x="72" y="44" font-family="'JetBrains Mono', monospace" font-size="22" fill="#c8553d" font-weight="700" letter-spacing="1px">SERVE</text>
           <text x="72" y="80" font-family="'Lora', Georgia, serif" font-size="26" fill="#6b6556" font-style="italic">Community Outreach</text>
         </g>
         <g transform="translate(700, 0)">
-          <rect x="0" y="0" width="650" height="120" rx="0" fill="#f8f1e3" stroke="#1f1d18" stroke-width="1.5"/>
+
           <rect x="24" y="24" width="30" height="30" rx="0" fill="#ffffff" stroke="#c8553d" stroke-width="2.5"/>
           <text x="72" y="44" font-family="'JetBrains Mono', monospace" font-size="22" fill="#c8553d" font-weight="700" letter-spacing="1px">BASECAMP</text>
           <text x="72" y="80" font-family="'Lora', Georgia, serif" font-size="26" fill="#6b6556" font-style="italic">Outdoor Activities</text>
         </g>
         <g transform="translate(1400, 0)">
-          <rect x="0" y="0" width="650" height="120" rx="0" fill="#f8f1e3" stroke="#1f1d18" stroke-width="1.5"/>
+
           <rect x="24" y="24" width="30" height="30" rx="0" fill="#ffffff" stroke="#c8553d" stroke-width="2.5"/>
           <text x="72" y="44" font-family="'JetBrains Mono', monospace" font-size="22" fill="#c8553d" font-weight="700" letter-spacing="1px">CONFIG</text>
           <text x="72" y="80" font-family="'Lora', Georgia, serif" font-size="26" fill="#6b6556" font-style="italic">Free Tech Help Clinics</text>
@@ -212,19 +212,19 @@
       <!-- Row 3 -->
       <g transform="translate(140, 350)">
         <g>
-          <rect x="0" y="0" width="650" height="120" rx="0" fill="#f8f1e3" stroke="#1f1d18" stroke-width="1.5"/>
+
           <rect x="24" y="24" width="30" height="30" rx="0" fill="#ffffff" stroke="#c8553d" stroke-width="2.5"/>
           <text x="72" y="44" font-family="'JetBrains Mono', monospace" font-size="22" fill="#c8553d" font-weight="700" letter-spacing="1px">AMPLIFIED</text>
           <text x="72" y="80" font-family="'Lora', Georgia, serif" font-size="26" fill="#6b6556" font-style="italic">Open Worship and Jam Night</text>
         </g>
         <g transform="translate(700, 0)">
-          <rect x="0" y="0" width="650" height="120" rx="0" fill="#f8f1e3" stroke="#1f1d18" stroke-width="1.5"/>
+
           <rect x="24" y="24" width="30" height="30" rx="0" fill="#ffffff" stroke="#c8553d" stroke-width="2.5"/>
           <text x="72" y="44" font-family="'JetBrains Mono', monospace" font-size="22" fill="#c8553d" font-weight="700" letter-spacing="1px">CHURCH2U</text>
           <text x="72" y="80" font-family="'Lora', Georgia, serif" font-size="26" fill="#6b6556" font-style="italic">Food Delivery and Cookouts</text>
         </g>
         <g transform="translate(1400, 0)">
-          <rect x="0" y="0" width="650" height="120" rx="0" fill="#f8f1e3" stroke="#1f1d18" stroke-width="1.5"/>
+
           <rect x="24" y="24" width="30" height="30" rx="0" fill="#ffffff" stroke="#c8553d" stroke-width="2.5"/>
           <text x="72" y="44" font-family="'JetBrains Mono', monospace" font-size="22" fill="#c8553d" font-weight="700" letter-spacing="1px">THEOLOGY PIE</text>
           <text x="72" y="80" font-family="'Lora', Georgia, serif" font-size="26" fill="#6b6556" font-style="italic">Quarterly Pizza and Theology</text>
@@ -234,7 +234,7 @@
       <!-- Row 4: Write-in -->
       <g transform="translate(140, 490)">
         <g>
-          <rect x="0" y="0" width="1350" height="120" rx="0" fill="#f8f1e3" stroke="#1f1d18" stroke-width="1.5"/>
+
           <rect x="24" y="24" width="30" height="30" rx="0" fill="#ffffff" stroke="#c8553d" stroke-width="2.5"/>
           <text x="72" y="44" font-family="'Playfair Display', Georgia, serif" font-size="32" font-weight="700" fill="#1f1d18">What interests you?</text>
           <rect x="72" y="66" width="1244" height="40" rx="0" fill="#ffffff" stroke="#1f1d18" stroke-width="1"/>
